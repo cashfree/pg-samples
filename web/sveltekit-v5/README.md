@@ -4,13 +4,15 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Setup](#setup)
-- [Configuration](#configuration)
-- [Running the App](#running-the-app)
-- [How It Works](#how-it-works)
-- [Troubleshooting](#troubleshooting)
-- [Further Reading](#further-reading)
+- [SvelteKit v5 Cashfree Payment Sample](#sveltekit-v5-cashfree-payment-sample)
+	- [Table of Contents](#table-of-contents)
+	- [Prerequisites](#prerequisites)
+	- [Setup](#setup)
+	- [Configuration](#configuration)
+	- [Running the App](#running-the-app)
+	- [How It Works](#how-it-works)
+	- [Troubleshooting](#troubleshooting)
+	- [Further Reading](#further-reading)
 
 ## Prerequisites
 
@@ -25,8 +27,6 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
    git clone <your-repo-url>
    cd web/sveltekit-v5
    ```
-
-````
 
 2. **Install dependencies:**
 
@@ -119,4 +119,3 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 - [Cashfree Payments Documentation](https://docs.cashfree.com)
 - [Cashfree Node.js SDK on npm](https://www.npmjs.com/package/cashfree-pg)
 - [Cashfree JS SDK on npm](https://www.npmjs.com/package/@cashfreepayments/cashfree-js)
-````
