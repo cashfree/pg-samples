@@ -24,7 +24,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 1. **Clone the repository and navigate to the project folder:**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/cashfree/pg-samples.git
    cd web/sveltekit-v5
    ```
 
@@ -38,13 +38,13 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 1. **Environment Variables:**
 
-   Create a copy of the provided `.env.example` file and rename it to [.env](http://_vscodecontentref_/0).
+   Create a copy of the provided `.env.example` file and rename it to .env
 
    ```bash
    cp .env.example .env
    ```
 
-   Open the [.env](http://_vscodecontentref_/1) file and set the following environment variables with your Cashfree credentials:
+   Open the .env file and set the following environment variables with your Cashfree credentials:
 
    ```
    CASHFREE_PG_APP_ID=your_cashfree_app_id
@@ -89,29 +89,29 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 - **Checkout Flow:**
 
-  1. On the client-side, the [+page.svelte](http://_vscodecontentref_/2) file loads Cashfree via `@cashfreepayments/cashfree-js` and uses Svelte’s `onMount` hook to initialize the checkout.
-  2. When a user initiates a payment (for example, by clicking a button), the app sends a POST request to the `/api/order` endpoint. This endpoint is implemented in [+server.ts](http://_vscodecontentref_/3).
-  3. The server endpoint in [+server.ts](http://_vscodecontentref_/4) uses the Cashfree Node.js SDK (see [cashfree.ts](http://_vscodecontentref_/5)) to create an order and initiate a payment session.
+  1. On the client-side, the [+page.svelte](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/routes/%2Bpage.svelte) file loads Cashfree via `@cashfreepayments/cashfree-js` and uses Svelte’s `onMount` hook to initialize the checkout.
+  2. When a user initiates a payment (for example, by clicking a button), the app sends a POST request to the `/api/order` endpoint. This endpoint is implemented in [+server.ts](<[http://_vscodecontentref_/3](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/routes/api/order/%2Bserver.ts)>).
+  3. The server endpoint in [+server.ts](<[http://_vscodecontentref_/4](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/routes/api/order/%2Bserver.ts)>) uses the Cashfree Node.js SDK (see [cashfree.ts](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/lib/server/cashfree.ts)) to create an order and initiate a payment session.
   4. After the order is created, the client calls `cashfree.checkout` with the provided `paymentSessionId`. The checkout is rendered as a popup.
   5. Once payment is completed, the client-side code verifies the payment status by sending a GET request to the same `/api/order` endpoint to check the order status.
 
 - **Server-Side Integration:**
 
-  - The file [cashfree.ts](http://_vscodecontentref_/6) is where the Cashfree SDK is initialized. It loads environment variables from the [.env](http://_vscodecontentref_/7) file and exposes two functions:
-    - [CreateOrder](http://_vscodecontentref_/8) – To create a new order.
-    - [CheckOrderStatus](http://_vscodecontentref_/9) – To check the order status using the order ID.
+  - The file [cashfree.ts](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/lib/server/cashfree.ts) is where the Cashfree SDK is initialized. It loads environment variables from the .env file and exposes two functions:
+    - [CreateOrder](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/lib/server/cashfree.ts) – To create a new order.
+    - [CheckOrderStatus](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/lib/server/cashfree.ts) – To check the order status using the order ID.
 
 ## Troubleshooting
 
 - **Environment Variables:**
-  - Ensure that your environment variables in [.env](http://_vscodecontentref_/10) are correctly set. If not, the SDK will not initialize properly.
+  - Ensure that your environment variables in .env are correctly set. If not, the SDK will not initialize properly.
 - **API Endpoint Issues:**
 
   - Check the [network tab](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor) of your browser's developer tools to ensure the API requests to `/api/order` are succeeding.
   - Look at the SvelteKit app logs in the integrated terminal for any errors.
 
 - **Popup Checkout:**
-  - If the Cashfree popup checkout does not appear, verify that the `cashfree.checkout` call in [+page.svelte](http://_vscodecontentref_/11) is receiving a valid `paymentSessionId` from the server.
+  - If the Cashfree popup checkout does not appear, verify that the `cashfree.checkout` call in [+page.svelte](https://github.com/cashfree/pg-samples/blob/main/web/sveltekit-v5/src/routes/%2Bpage.svelte) is receiving a valid `paymentSessionId` from the server.
 
 ## Further Reading
 
