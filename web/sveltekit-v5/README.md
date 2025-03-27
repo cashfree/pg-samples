@@ -1,4 +1,3 @@
-````markdown
 # SvelteKit v5 Cashfree Payment Sample
 
 This sample app demonstrates how to collect payments using the Cashfree JavaScript and Node.js SDKs with a popup checkout. It is built using SvelteKit and includes both client-side code and server-side API endpoints.
@@ -26,6 +25,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
    git clone <your-repo-url>
    cd web/sveltekit-v5
    ```
+
 ````
 
 2. **Install dependencies:**
@@ -119,7 +119,4 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 - [Cashfree Payments Documentation](https://docs.cashfree.com)
 - [Cashfree Node.js SDK on npm](https://www.npmjs.com/package/cashfree-pg)
 - [Cashfree JS SDK on npm](https://www.npmjs.com/package/@cashfreepayments/cashfree-js)
-
-```
-
-```
+````
