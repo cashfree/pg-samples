@@ -1,0 +1,27 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output of the Go compiler
+*.o
+*.a
+
+# Dependency directories (vendor/)
+vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
