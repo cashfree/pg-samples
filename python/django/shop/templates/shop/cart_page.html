@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">Fakeazon</div>
+    <a href="{% url 'cart_page' %}" class="cart">Cart (<span id="cart-count">0</span>)</a>
+  </div>
+  <div class="container">
+    <div class="cart-container">
+      <div class="cart-header">
+        <a href="{% url 'landing_page' %}">Continue Shopping</a>
+        <h1>Shopping Cart</h1>
+      </div>
+      <div class="cart-items">
+        <!-- Cart items will be dynamically loaded here -->
+      </div>
+      <form>
+        {% csrf_token %}
+        <div class="cart-total">
+          <div class="total-amount">
+            Total: ₹<span id="total-amount">0.00</span>
+          </div>
+          <button type="button" class="pay-now" disabled>Pay Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const cashfree = Cashfree({
+      mode: "sandbox"
+    });
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    function updateCartCount() {
+      let count = 0;
+      for (let id in cart) {
+        count += cart[id].quantity;
+      }
+      $('#cart-count').text(count);
+    }
+
+    function updateTotalAmount() {
+      let total = 0;
+      for (let id in cart) {
+        total += parseFloat(cart[id].price) * parseInt(cart[id].quantity);
+      }
+      $('#total-amount').text(total.toFixed(2));
+      if (total > 0) {
+        $('.pay-now').prop('disabled', false);
+      } else {
+        $('.pay-now').prop('disabled', true);
+      }
+    }
+
+    function updateQuantity(productId, quantity) {
+      if (quantity <= 0) {
+        delete cart[productId];
+        $(`.cart-item[data-id=${productId}]`).remove();
+      } else {
+        cart[productId].quantity = quantity;
+        $(`.cart-item .quantity[data-id=${productId}]`).text(quantity);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      updateTotalAmount();
+    }
+
+    function loadCartItems() {
+      const cartContainer = $('.cart-items');
+      cartContainer.empty();
+
+      for (let id in cart) {
+        const item = cart[id];
+        const cartItemHtml = `
+          <div class="cart-item" data-id="${item.id}">
+            <img src="${item.image}" alt="${item.title}">
+            <div class="cart-item-details">
+              <h2>${item.title}</h2>
+              <p>${item.description}</p>
+            </div>
+            <div class="cart-item-actions">
+              <button class="decrease" data-id="${item.id}">-</button>
+              <span class="quantity" data-id="${item.id}">${item.quantity}</span>
+              <button class="increase" data-id="${item.id}">+</button>
+              <span class="price">₹${item.price}</span>
+              <button class="delete" data-id="${item.id}">&#128465;</button>
+            </div>
+          </div>
+        `;
+        cartContainer.append(cartItemHtml);
+      }
+    }
+
+    $(document).ready(function () {
+      // Load cart items on page load
+      loadCartItems();
+      updateCartCount();
+      updateTotalAmount();
+
+      // Handle increase and decrease buttons
+      $(document).on('click', '.increase', function () {
+        const productId = $(this).data('id');
+        const quantity = cart[productId].quantity + 1;
+        updateQuantity(productId, quantity);
+      });
+
+      $(document).on('click', '.decrease', function () {
+        const productId = $(this).data('id');
+        const quantity = cart[productId].quantity - 1;
+        updateQuantity(productId, quantity);
+      });
+
+      // Handle delete button
+      $(document).on('click', '.delete', function () {
+        const productId = $(this).data('id');
+        updateQuantity(productId, 0);
+      });
+
+      // Handle Pay Now button click
+      $('.pay-now').click(function () {
+        const csrftoken = $('input[name="csrfmiddlewaretoken"]').val();
+        const cartData = JSON.stringify(cart);
+        console.log('Cart data being sent:', cart);
+        $.ajax({
+          url: '/create-order/',
+          method: 'POST',
+          headers: { 'X-CSRFToken': csrftoken },
+          data: { cart: cartData },
+          success: function (response) {
+            if (response.status === 'success') {
+              const paymentSessionId = response.payment_session_id;
+              const checkoutOptions = {
+                paymentSessionId: paymentSessionId,
+                redirectTarget: '_self'
+              };
+              cashfree.checkout(checkoutOptions);
+            } else {
+              alert('Failed to create order: ' + response.message);
+            }
+          },
+          error: function () {
+            alert('Failed to create order. Please try again.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

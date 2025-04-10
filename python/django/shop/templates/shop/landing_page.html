@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">Fakeazon</div>
+    <a href="{% url 'cart_page' %}" class="cart">Cart (<span id="cart-count">0</span>)</a>
+  </div>
+  <div class="container">
+    <div class="header">
+      <h1>Get Inspired</h1>
+      <p>Browsing for your next long-haul trip, everyday journey, or just fancy a look at what's new? From community
+        favourites to about-to-sell-out items, see them all here.</p>
+    </div>
+    <div class="filters">
+      <select>
+        <option>All Categories</option>
+      </select>
+      <select>
+        <option>All Colors</option>
+      </select>
+      <select>
+        <option>All Features</option>
+      </select>
+      <select>
+        <option>From ₹0 - ₹1000</option>
+      </select>
+      <select>
+        <option>New In</option>
+      </select>
+    </div>
+    <div class="product-grid">
+      {% for product in products %}
+      <div class="product-item">
+        <img src="{{ product.image }}" alt="{{ product.title }}">
+        <h2>{{ product.title }}</h2>
+        <p>₹{{ product.price }}</p>
+        <div class="product-actions">
+          <button class="add-to-cart" data-id="{{ product.id }}" data-title="{{ product.title }}"
+            data-description="{{ product.description }}" data-image="{{ product.image }}"
+            data-price="{{ product.price }}">Add to cart</button>
+          <div class="quantity-selector" data-id="{{ product.id }}" style="display: none;">
+            <button class="decrease" data-id="{{ product.id }}">-</button>
+            <span class="quantity" data-id="{{ product.id }}">1</span>
+            <button class="increase" data-id="{{ product.id }}">+</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    function updateCartCount() {
+      let count = 0;
+      for (let id in cart) {
+        count += cart[id].quantity;
+      }
+      $('#cart-count').text(count);
+    }
+
+    function updateQuantity(productId, quantity) {
+      if (quantity <= 0) {
+        delete cart[productId];
+        $(`.product-item .add-to-cart[data-id=${productId}]`).show();
+        $(`.product-item .quantity-selector[data-id=${productId}]`).hide();
+      } else {
+        cart[productId].quantity = quantity;
+        $(`.product-item .quantity[data-id=${productId}]`).text(quantity);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    $(document).ready(function () {
+      // Update cart count on page load
+      updateCartCount();
+
+      $('.add-to-cart').click(function () {
+        const productId = $(this).data('id');
+        const title = $(this).data('title');
+        const description = $(this).data('description');
+        const image = $(this).data('image');
+        const price = $(this).data('price');
+
+        if (!cart[productId]) {
+          cart[productId] = { id: productId, title, description, image, price, quantity: 1 };
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+
+        $(this).hide();
+        $(`.product-item .quantity-selector[data-id=${productId}]`).show();
+      });
+
+      $('.increase').click(function () {
+        const productId = $(this).data('id');
+        const quantity = cart[productId].quantity + 1;
+        updateQuantity(productId, quantity);
+      });
+
+      $('.decrease').click(function () {
+        const productId = $(this).data('id');
+        const quantity = cart[productId].quantity - 1;
+        updateQuantity(productId, quantity);
+      });
+    });
+  </script>
+</body>
+
+</html>
