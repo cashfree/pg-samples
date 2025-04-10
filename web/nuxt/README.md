@@ -58,7 +58,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
    Use the following command to start the development server:
 
    ```bash
-   npm run dev -- -o
+   npm run dev
    ```
 
    The app will be available at [http://localhost:3000](http://localhost:3000).
