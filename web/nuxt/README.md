@@ -38,7 +38,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 1. **Environment Variables:**
 
-   Create a .enc file
+   Create a .env file
 
    ```bash
    touch .env
