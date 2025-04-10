@@ -14,16 +14,16 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+const cashfree = new Cashfree(
+    CFEnvironment.SANDBOX,
+    process.env.APP_ID,
+    process.env.SECRET_KEY
+);
+
 app.post("/api/create-order", async (req, res) => {
     try {
-        var cashfree = new Cashfree(
-            CFEnvironment.SANDBOX,
-            process.env.APP_ID,
-            process.env.SECRET_KEY
-        );
-
         const orderRequest = {
-            order_amount: 1.0,
+            order_amount: 1.01,
             order_currency: "INR",
             order_id: "devstudio_" + Date.now(), // generate unique order_id
             customer_details: {
@@ -32,7 +32,7 @@ app.post("/api/create-order", async (req, res) => {
             },
             order_meta: {
                 notify_url:
-                    "https://www.cashfree.com/devstudio/preview/pg/webhooks/19140510",
+                    "https://647b-163-116-219-40.ngrok-free.app/order/webhooks",
             },
         };
 
@@ -42,6 +42,19 @@ app.post("/api/create-order", async (req, res) => {
         res.status(500).json({
             error: "Something went wrong",
         });
+    }
+});
+
+app.post("/order/webhooks", async (req, res) => {
+    try {
+        const response = await cashfree.PGVerifyWebhookSignature(
+            req.headers["x-webhook-signature"],
+            JSON.stringify(req.body),
+            req.headers["x-webhook-timestamp"]
+        );
+        console.log(response);
+    } catch (e) {
+        console.log(e);
     }
 });
 
