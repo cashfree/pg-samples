@@ -106,11 +106,13 @@
                         const cashfree = new Cashfree({ mode: 'sandbox' });
                         cashfree.checkout({
                             paymentSessionId: paymentSessionId,
-                            returnUrl: `http://localhost:8080/status?order_id=${data.order_id}`
+                            returnUrl: `http://localhost:8080/status?order_id=${data.order_id}`,
+                            redirectTarget: "_modal",
                         }).then(function (result) {
                             if (result.error) {
                                 alert(result.error.message);
                             }
+                            window.location.href = `/status?order_id=${data.order_id}`
                         });
                     } else {
                         alert("Failed to create order");
