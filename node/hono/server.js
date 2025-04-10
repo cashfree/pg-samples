@@ -49,6 +49,17 @@ app.post("/api/create-order", async (c) => {
     }
 });
 
+app.post("/api/get-order", async (c) => {
+    try {
+        const reqBody = await c.req.json();
+        const { order_id } = reqBody;
+        const response = await cashfree.PGFetchOrder(order_id);
+        return c.json(response.data);
+    } catch (error) {
+        return c.json({ error: "Something went wrong" }, 500);
+    }
+});
+
 app.post("/order/webhooks", async (c) => {
     try {
         const reqBody = await c.req.json();
