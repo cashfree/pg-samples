@@ -38,4 +38,22 @@ class ProductsController < ApplicationController
     response = http.request(request)
     render json: { status: response.code, body: JSON.parse(response.body) }
   end
+
+  def confirmation
+    @order_id = params[:products]
+
+    uri = URI("https://sandbox.cashfree.com/pg/orders/#{@order_id}")
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Get.new(uri.path, {
+      "Content-Type" => "application/json",
+      "x-client-id" => ENV["CASHFREE_CLIENT_ID"],
+      "x-client-secret" => ENV["CASHFREE_CLIENT_SECRET"],
+      "x-api-version" => "2025-01-01"
+    })
+
+    response = http.request(request)
+    @response_data = JSON.parse(response.body)
+  end
 end
