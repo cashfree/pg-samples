@@ -53,41 +53,28 @@
                         };
 
                         function fetchPaymentStatus(orderId) {
-                            fetch(`https://sandbox.cashfree.com/pg/orders/${orderId}/payments`, {
-                                method: 'GET',
-                                headers: {
-                                    'x-client-id': 'TEST430329ae80e0f32e41a393d78b923034',
-                                    'x-client-secret': 'TESTaf195616268bd6202eeb3bf8dc458956e7192a85',
-                                    'x-api-version': '2025-01-01',
-                                    'Accept': 'application/json'
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                const status = data?.payment_list?.[0]?.payment_status;
-                                const redirectUrl = `/cashfree/thankyou?status=${status}&order_id=${orderId}`;
-                                location = redirectUrl;
-                            })
-                            .catch(error => {
-                                console.error("Error fetching payment status:", error);
-                                window.location.href = `/cashfree/thankyou?status=failed&order_id=${orderId}`;
-                            });
+                            fetch(`/cashfree/check-payment?order_id=${orderId}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    const status = data.payment_status?.toUpperCase() === 'FAILED' ? 'FAILED' : 'SUCCESS';
+                                    location = `/cashfree/thankyou?status=${status}&order_id=${orderId}`;
+                                })
+                                .catch(error => {
+                                    console.error("Error fetching payment status:", error);
+                                    location = `/cashfree/thankyou?status=failed&order_id=${orderId}`;
+                                });
                         }
+
 
                         cashfree.checkout(checkoutOptions).then((result) => {
                             if(result.error){
-                                // This will be true whenever user clicks on close icon inside the modal or any error happens during the payment
                                 console.log("User has closed the popup or there is some payment error, Check for Payment Status");
                                 console.log(result.error);
                             }
                             if(result.redirect){
-                                // This will be true when the payment redirection page couldnt be opened in the same window
-                                // This is an exceptional case only when the page is opened inside an inAppBrowser
-                                // In this case the customer will be redirected to return url once payment is completed
                                 console.log("Payment will be redirected");
                             }
                             if(result.paymentDetails){
-                                // This will be called whenever the payment is completed irrespective of transaction status
                                 console.log("Payment has been completed, Check for Payment Status");
                                 console.log(result.paymentDetails.paymentMessage);
                                 const orderId = response.order_id;

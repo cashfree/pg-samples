@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container text-center mt-5">
-    <?php $isSuccess = ($status === 'success'); ?>
+    <?php $isSuccess = ($status === 'SUCCESS'); ?>
 
     <h1 class="mb-4 <?= $isSuccess ? 'text-success' : 'text-danger' ?>">
         <?= $isSuccess ? '🎉 Thank You for Your Purchase!' : '❌ Payment Failed' ?>

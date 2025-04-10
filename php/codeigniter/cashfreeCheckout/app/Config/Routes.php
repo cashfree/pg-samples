@@ -9,3 +9,4 @@ $routes->get('/', 'Home::index');
 $routes->get('cashfree', 'CashfreeController::index');
 $routes->get('cashfree/confirm', 'CashfreeController::confirm');
 $routes->get('cashfree/thankyou', 'CashfreeController::thankyou');
+$routes->get('cashfree/check-payment', 'CashfreeController::checkPayment');

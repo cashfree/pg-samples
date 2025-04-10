@@ -12,7 +12,7 @@ class CashfreeController extends Controller
 
     public function confirm()
     {
-        $order_id = uniqid("Order_");
+        $order_id = uniqid("Order_1");
         $order_amount = "1.00";
         $order_currency = "INR";
         $customer_details = [
@@ -31,13 +31,14 @@ class CashfreeController extends Controller
                 "notify_url" => site_url('cashfree/notify')
             ],
         ];
-        //echo $data['order_meta']['return_url'];
+        $clientId = env('CF_CLIENT_ID');
+        $clientSecret = env('CF_CLIENT_SECRET');
 
         $headers = [
             'Content-Type: application/json',
             'x-api-version: 2025-01-01',
-            'x-client-id: TEST430329ae80e0f32e41a393d78b923034',
-            'x-client-secret: TESTaf195616268bd6202eeb3bf8dc458956e7192a85' 
+            "x-client-id: $clientId",
+            "x-client-secret: $clientSecret"
         ];
 
         $environment = 'sandbox';
@@ -83,5 +84,49 @@ class CashfreeController extends Controller
     {
         log_message('info', 'Cashfree Notify Payload: ' . json_encode($this->request->getPost()));
         return $this->response->setStatusCode(200);
+    }
+
+    public function checkPayment()
+    {
+        $orderId = $this->request->getGet('order_id');
+        if (!$orderId) {
+            return $this->response->setJSON(['error' => 'Missing order_id'])->setStatusCode(400);
+        }
+
+        $clientId = env('CF_CLIENT_ID');
+        $clientSecret = env('CF_CLIENT_SECRET');
+
+        $headers = [
+            'Accept: application/json',
+            'x-api-version: 2025-01-01',
+            "x-client-id: $clientId",
+            "x-client-secret: $clientSecret"
+        ];
+
+        $url = "https://sandbox.cashfree.com/pg/orders/{$orderId}/payments";
+
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => $headers
+        ]);
+
+        $response = curl_exec($ch);
+        $err = curl_error($ch);
+        curl_close($ch);
+
+        if ($err) {
+            return $this->response->setJSON(['error' => $err])->setStatusCode(500);
+        }
+
+        $payments = json_decode($response, true);
+
+        if (!is_array($payments) || empty($payments)) {
+            return $this->response->setJSON(['payment_status' => 'UNKNOWN']);
+        }
+
+        $status = $payments[0]['payment_status'] ?? 'UNKNOWN';
+
+        return $this->response->setJSON(['payment_status' => $status]);
     }
 }
