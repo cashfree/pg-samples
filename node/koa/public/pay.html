@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashfree Payment</title>
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d6da3;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2d6da3;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e5b8e;
+        }
+
+        .error-message {
+            color: #d9534f;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .success-message {
+            color: #5cb85c;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .payment-details {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-details h2 {
+            margin-bottom: 15px;
+            color: #2d6da3;
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .details-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        .detail-value {
+            text-align: right;
+        }
+    </style>
+    <script>
+        async function createOrder() {
+            // Collect input values
+            const customerId = document.getElementById('customerId').value;
+            const customerPhone = document.getElementById('customerPhone').value;
+            const customerEmail = document.getElementById('customerEmail').value;
+            const orderAmount = document.getElementById('orderAmount').value;
+
+            // Remove existing payment details if present
+            const existingDetails = document.getElementById('payment-detail-container');
+            if (existingDetails) {
+                existingDetails.remove();
+            }
+
+            // Show loading state
+            const button = document.querySelector('button');
+            button.textContent = 'Processing...';
+            button.disabled = true;
+
+            try {
+                // Send data to the backend API
+                const response = await fetch('/api/create-order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        customerId,
+                        customerPhone,
+                        customerEmail,
+                        orderAmount
+                    })
+                });
+
+                const data = await response.json();
+                if (data.paymentSessionId) {
+                    const cashfree = Cashfree({ mode: 'sandbox' }); // Use 'production' for live
+                    cashfree.checkout({
+                        paymentSessionId: data.paymentSessionId,
+                        redirectTarget: "_modal",
+                    }).then((result) => {
+                        if (result.error) {
+                            // This will be true whenever user clicks on close icon inside the modal or any error happens during the payment
+                            console.log("User has closed the popup or there is some payment error, Check for Payment Status");
+                            console.log(result.error);
+                            checkForPaymentStatus(data);
+                        }
+                        
+                        if (result.redirect) {
+                            console.log("Payment will be redirected");
+                        }
+                        
+                        if(result.paymentDetails) {
+                            // This will be called whenever the payment is completed irrespective of transaction status
+                            console.log("Payment has been completed, Check for Payment Status", result);
+                            checkForPaymentStatus(data);
+                        }
+                    });
+                } else {
+                    showError('Failed to create order: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                showError('Error processing payment: ' + error.message);
+            } finally {
+                // Reset button state
+                button.textContent = 'Pay Now';
+                button.disabled = false;
+            }
+        }
+
+        async function checkForPaymentStatus(data) {
+            // Get order ID and fetch complete order details
+            const orderData = await fetchOrderDetails(data.orderId);
+
+            if (orderData.success) {
+                // Display payment details in the UI
+                displayPaymentDetails(orderData.order);
+            } else {
+                showError(`Failed to fetch order details: ${orderData.error}`);
+                return;
+            }
+            
+            // Show payment message
+            const paymentMessage = orderData.order.order_status === 'PAID' ? 'Payment Processed' : 'Payment Failed';
+            const messageType = orderData.order.order_status === 'PAID' ? 'success' : 'error';
+            showMessage(paymentMessage, messageType);
+        }
+
+        // Fetch order details from API
+        async function fetchOrderDetails(orderId) {
+            try {
+                const response = await fetch(`/api/get-order-status/${orderId}`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching order details:', error);
+                showError('Failed to fetch order details. Please check console for more information.');
+            }
+        }
+        
+        // Display payment details in the UI
+        function displayPaymentDetails(orderData) {
+            console.log('Full order data:', orderData);
+            
+            // Create elements to display payment details
+            const detailsContainer = document.createElement('div');
+            detailsContainer.id = 'payment-detail-container';
+            detailsContainer.className = 'payment-details';
+            
+            // Add payment details heading
+            const heading = document.createElement('h2');
+            heading.textContent = 'Payment Details';
+            detailsContainer.appendChild(heading);
+            
+            // Create a table for payment details
+            const table = document.createElement('table');
+            table.className = 'details-table';
+            
+            // Add order information
+            addTableRow(table, 'Order ID', orderData.order_id);
+            addTableRow(table, 'Amount', `${orderData.order_amount} ${orderData.order_currency}`);
+            addTableRow(table, 'Status', orderData.order_status);
+        
+            
+            // Add payment information if available
+            if (orderData.payments && orderData.payments.length > 0) {
+                const payment = orderData.payments[0];
+                addTableRow(table, 'Payment ID', payment.cf_payment_id);
+                addTableRow(table, 'Payment Amount', payment.payment_amount);
+                addTableRow(table, 'Payment Method', payment.payment_method?.type || 'N/A');
+                addTableRow(table, 'Payment Time', new Date(payment.payment_time * 1000).toLocaleString());
+                
+                // Add payment details if available
+                if (payment.payment_method?.card) {
+                    addTableRow(table, 'Card Network', payment.payment_method.card.card_network);
+                    addTableRow(table, 'Card Type', payment.payment_method.card.card_type);
+                    addTableRow(table, 'Card Country', payment.payment_method.card.card_country);
+                    addTableRow(table, 'Card BIN', payment.payment_method.card.card_bin);
+                    addTableRow(table, 'Card Last 4', payment.payment_method.card.card_last_4);
+                }
+                
+                if (payment.payment_method?.upi) {
+                    addTableRow(table, 'UPI ID', payment.payment_method.upi.upi_id);
+                }
+                
+                if (payment.payment_method?.netbanking) {
+                    addTableRow(table, 'Bank Name', payment.payment_method.netbanking.netbanking_bank_name);
+                }
+            }
+            
+            detailsContainer.appendChild(table);
+            
+            // Add details container after the form
+            const form = document.querySelector('form');
+            form.insertAdjacentElement('afterend', detailsContainer);
+        }
+        
+        // Helper function to add a row to the table
+        function addTableRow(table, label, value) {
+            const row = document.createElement('tr');
+            
+            const labelCell = document.createElement('td');
+            labelCell.className = 'detail-label';
+            labelCell.textContent = label;
+            row.appendChild(labelCell);
+            
+            const valueCell = document.createElement('td');
+            valueCell.className = 'detail-value';
+            valueCell.textContent = value || 'N/A';
+            row.appendChild(valueCell);
+            
+            table.appendChild(row);
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('error-message');
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+        }
+
+        function showError(message) {
+            showMessage(message, 'error');
+            console.error(message);
+        }
+    </script>
+</head>
+<body>
+    <h1>Secure Payment</h1>
+    <form onsubmit="event.preventDefault(); createOrder();">
+        <label for="customerId">Customer ID</label>
+        <input type="text" id="customerId" placeholder="Enter your customer ID" required>
+
+        <label for="customerPhone">Phone Number</label>
+        <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+
+        <label for="customerEmail">Email Address</label>
+        <input type="email" id="customerEmail" placeholder="Enter your email address" required>
+
+        <label for="orderAmount">Amount (INR)</label>
+        <input type="number" id="orderAmount" min="1" step="0.01" placeholder="Enter amount to pay" required>
+
+        <button type="submit">Pay Now</button>
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </form>
+</body>
+</html>
