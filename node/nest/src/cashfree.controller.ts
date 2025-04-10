@@ -1,4 +1,4 @@
-import { Controller, Get, Logger, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post, Res, Headers } from '@nestjs/common';
 import { Response } from 'express';
 import { CashfreeService } from './cashfree.service';
 import * as path from 'path';
@@ -39,6 +39,26 @@ export class CashfreeController {
   @Post('/order')
   async createOrder() {
     return this.cashfreeService.createOrder();
+  }
+
+  /**
+   * POST /order/webhooks
+   * Endpoint to handle incoming webhook requests from Cashfree.
+   * Verifies the webhook signature to ensure the request's authenticity and processes the webhook data.
+   * 
+   * @param signature - The signature sent in the `x-webhook-signature` header of the webhook request.
+   * @param timestamp - The timestamp sent in the `x-webhook-timestamp` header of the webhook request.
+   * @param body - The body of the webhook request containing the event data.
+   * @returns A promise resolving to the result of the webhook verification and processing.
+   */
+  @Post('/order/webhooks')
+  async trigerWebhook(
+    @Headers('x-webhook-signature') signature: string,
+    @Headers('x-webhook-timestamp') timestamp: string,
+    @Body() body: any,) {
+    return this.cashfreeService.triggerWebHook(signature,
+      JSON.stringify(body),
+      timestamp,);
   }
 
   /**
