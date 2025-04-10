@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            height: 100px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+
+        #payNow {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #28a745;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #payNow:hover {
+            background: #218838;
+            transform: translateY(-5px);
+        }
+
+        #payNow:active {
+            transform: translateY(2px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Page</h1>
+        <img src="https://gcf-test-101.myshopify.com/cdn/shop/products/udy6_7ewi_210528_1_1.jpg?v=1675847648&width=1646" alt="Dummy Shirt" class="product-image">
+        <p><strong>Product Name:</strong> Stylish Shirt</p>
+        <p><strong>Price:</strong> ₹100</p>
+        <button id="payNow">Buy Now</button>
+    </div>
+
+    <script>
+        document.getElementById("payNow").addEventListener("click", function () {
+            fetch("/create-order", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.payment_session_id) {
+                        const paymentSessionId = data.payment_session_id;
+
+                        // Initialize Cashfree JS SDK
+                        const cashfree = new Cashfree({ mode: 'sandbox' });
+                        cashfree.checkout({
+                            paymentSessionId: paymentSessionId,
+                            returnUrl: `http://localhost:8080/status?order_id=${data.order_id}`,
+                            redirectTarget: "_modal",
+                        }).then(function (result) {
+                            if (result.error) {
+                                alert(result.error.message);
+                            }
+                            window.location.href = `/status?order_id=${data.order_id}`
+                        });
+                    } else {
+                        alert("Failed to create order");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
