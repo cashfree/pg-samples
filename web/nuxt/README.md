@@ -4,7 +4,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 ## Table of Contents
 
-- [Nuxtjs v5 Cashfree Payment Sample](#nuxtjs-v5-cashfree-payment-sample)
+- [Nuxt Cashfree Payment Sample](#nuxt-cashfree-payment-sample)
 	- [Table of Contents](#table-of-contents)
 	- [Prerequisites](#prerequisites)
 	- [Setup](#setup)
@@ -25,7 +25,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
    ```bash
    git clone https://github.com/cashfree/pg-samples.git
-   cd web/nuxtjs-v5
+   cd web/nuxt
    ```
 
 2. **Install dependencies:**
@@ -81,7 +81,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 - **Checkout Flow:**
 
-  1. On the client-side, the [app.vue](https://github.com/cashfree/pg-samples/blob/main/web/nuxtjs-v5/app.vue) file loads Cashfree js sdk via cdn.
+  1. On the client-side, the [app.vue](https://github.com/cashfree/pg-samples/blob/main/web/nuxt/app.vue) file loads Cashfree js sdk via cdn.
   2. When a user initiates a payment (for example, by clicking a button), the app sends a POST request to the `/api/payments` endpoint. This endpoint is implemented in [payment.ts](<[http://_vscodecontentref_/3](https://github.com/cashfree/pg-samples/blob/main/web/nuxt/server/api/payment.ts)>).
   3. The server endpoint in [payment.ts](<[http://_vscodecontentref_/4](https://github.com/cashfree/pg-samples/blob/main/web/nuxt/server/api/payment.ts)>) uses the Cashfree Node.js SDK to create an order and initiate a payment session.
   4. After the order is created, the client calls `cashfree.checkout` with the provided `paymentSessionId`. The checkout is rendered as a popup.
