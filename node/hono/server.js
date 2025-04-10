@@ -38,8 +38,7 @@ app.post("/api/create-order", async (c) => {
                 customer_phone: "8474090589",
             },
             order_meta: {
-                notify_url:
-                    "https://647b-163-116-219-40.ngrok-free.app/order/webhooks",
+                notify_url: "https://yourhost.com/order/webhooks",
             },
         };
 
