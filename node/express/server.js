@@ -44,6 +44,18 @@ app.post("/api/create-order", async (req, res) => {
     }
 });
 
+app.post("/api/get-order", async (req, res) => {
+    try {
+        const { order_id } = req.body;
+        const response = await cashfree.PGFetchOrder(order_id);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({
+            error: "Something went wrong",
+        });
+    }
+});
+
 app.post("/order/webhooks", async (req, res) => {
     try {
         const response = await cashfree.PGVerifyWebhookSignature(
