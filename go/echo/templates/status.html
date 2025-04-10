@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #d4fc79, #96e6a1);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #28a745;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .order-details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home:hover {
+            background: #0056b3;
+            transform: translateY(-5px);
+        }
+
+        .back-home:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✔</div>
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your purchase. Your payment has been processed successfully.</p>
+        <div class="order-details">
+            <p><strong>Order ID:</strong> {{.OrderID}}</p>
+            <p><strong>Status:</strong> {{.OrderStatus}}</p>
+            <p><strong>Product Name:</strong> Stylish Shirt</p>
+            <p><strong>Order Amount:</strong> ₹100</p>
+        </div>
+        <a href="/product" class="back-home">Back to Home</a>
+    </div>
+</body>
+</html>
