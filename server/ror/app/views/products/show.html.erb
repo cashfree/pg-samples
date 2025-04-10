@@ -1,2 +1,116 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<script>
+    const cashfree = Cashfree({
+        mode: "sandbox"
+    });
+
+    function createOrder() {
+        fetch('/api/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({})
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let checkoutOptions = {
+                paymentSessionId: data.body.payment_session_id,
+                redirectTarget: "_modal",
+            };
+            return cashfree.checkout(checkoutOptions)
+        })
+        .then((result) => {
+            if(result.error){
+                // This will be true whenever user clicks on close icon inside the modal or any error happens during the payment
+                console.log("User has closed the popup or there is some payment error, Check for Payment Status");
+                console.log(result.error);
+            }
+            if(result.redirect){
+                // This will be true when the payment redirection page couldnt be opened in the same window
+                // This is an exceptional case only when the page is opened inside an inAppBrowser
+                // In this case the customer will be redirected to return url once payment is completed
+                console.log("Payment will be redirected");
+            }
+            if(result.paymentDetails){
+                // This will be called whenever the payment is completed irrespective of transaction status
+                console.log("Payment has been completed, Check for Payment Status");
+                console.log(result.paymentDetails.paymentMessage);
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            alert('Failed to create order. Please try again.');
+        });
+    }
+</script>
+
+<div class="product-page">
+    <div class="product-header">
+        <h1 class="product-title"><%= @product[:name] %></h1>
+    </div>
+    
+    <div class="product-image">
+        <img src="<%= @product[:image_url] %>" alt="<%= @product[:name] %>" style="max-width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    
+    <div class="product-details">
+        <p class="product-description"><%= @product[:description] %></p>
+        <p class="product-price">
+            <strong>Price:</strong> <%= @product[:price] %>
+        </p>
+    </div>
+    
+    <div class="product-actions">
+        <button class="buy-now-button" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;" onclick="createOrder()">
+            Buy Now
+        </button>
+    </div>
+</div>
+
+<style>
+    .product-page {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+    .product-title {
+        text-align: center;
+        color: #333;
+    }
+    .product-image {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .product-description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+    }
+    .product-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin: 10px 0px;
+    }
+    .product-actions {
+        display: block;
+        height: 40px;
+    }
+    .buy-now-button {
+        float: right;
+    }
+    .buy-now-button:hover {
+        background-color: #0056b3;
+    }
+</style>
