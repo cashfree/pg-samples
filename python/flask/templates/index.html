@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy T-Shirt</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dummy T-Shirt</h1>
+        <p>Price: ₹100</p>
+        <button id="payNowButton">Pay Now</button>
+    </div>
+
+    <script>
+        document.getElementById("payNowButton").addEventListener("click", function () {
+            fetch("/create_order", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.payment_session_id) {
+                        let checkoutOptions = {
+                            paymentSessionId: data.payment_session_id, // This replaces order_token
+                            redirectTarget: "_modal" // Modal instead of redirect
+                        };
+                        const cashfree = Cashfree({ mode: "sandbox" });
+                        cashfree.checkout(checkoutOptions).then((result) => {
+                            if (result.error) {
+                                console.log("User closed the modal or payment error occurred.");
+                                console.log(result.error);
+                            }
+                            if (result.redirect) {
+                                console.log("Redirected due to in-app browser limitation.");
+                            }
+                            if (result.paymentDetails) {
+                                console.log("Payment completed. Check Payment Status.");
+                                console.log(result.paymentDetails.paymentMessage);
+                                fetch(`/get-order?order_id=${data.order_id}`, {method: "GET"})
+                                    .then(response => response.json())
+                                    .then(resp => {
+                                        if (resp[0].payment_status && resp[0].payment_status == "SUCCESS") {
+                                            window.location.href = "/thank-you";
+                                        } else {
+                                            console.log("payment failed")
+                                        }
+                                    })
+                            }
+                        });
+                    } else {
+                        alert("Failed to create order. Please try again.");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
