@@ -1,0 +1,24 @@
+<h1 style="font-size: 2.5rem; color: #4CAF50; margin-bottom: 20px; text-align: center;">Order Confirmation</h1>
+
+<p style="font-size: 1.2rem; color: #333; text-align: center;">Thank you for your purchase!</p>
+
+<div class="order-details" style="border: 1px solid #ddd; padding: 20px; border-radius: 5px; background-color: #f9f9f9; margin: 20px auto; max-width: 600px;">
+    <h2 style="font-size: 1.8rem; color: #555; margin-bottom: 15px;">Order Details</h2>
+    <p style="font-size: 1rem; color: #333;">
+        <strong>Order Number:</strong>
+        <span style="color: #000;"><%= @response_data["order_id"] %></span>
+    </p>
+    <p style="font-size: 1rem; color: #333;">
+        <strong>Total Amount:</strong>
+        <span style="color: #000;">₹<%= @response_data["order_amount"] %></span>
+    </p>
+    <p style="font-size: 1rem; color: #333;">
+        <strong>Customer Phone:</strong>
+        <span style="color: #000;"><%= @response_data["customer_details"]["customer_phone"] %></span>
+    </p>
+</div>
+
+<p class="contact-info" style="font-size: 1rem; color: #666; text-align: center; margin-top: 20px;">
+    If you have any questions, please contact us at 
+    <a href="mailto:support@example.com" style="color: #007BFF; text-decoration: none;">support@example.com</a>.
+</p>
