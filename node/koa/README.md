@@ -67,7 +67,5 @@ Open `http://localhost:3000/pay.html` in your browser to access the payment form
 
 ## API Endpoints
 
-- `POST /api/createOrder` - Create a new payment order
-- `GET /api/getOrderStatus/:orderId` - Get details of an existing order
-- `GET /status?order_id=xxx` - View payment status page
-- `POST /webhook` - Receive payment status updates from Cashfree
+- `POST /api/create-order` - Create a new payment order
+- `GET /api/get-order-status/:orderId` - Get details of an existing order
