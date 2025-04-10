@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Successful</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #4CAF50;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .countdown {
+      font-size: 1.5em;
+      color: #ff4500;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Order Successful</h1>
+    <p>Thank you for your purchase! Your order has been placed successfully.</p>
+    <h2>Ordered Items:</h2>
+    <ul id="order-items">
+      <!-- Ordered items will be populated here by JavaScript -->
+    </ul>
+    <p>You will be redirected to the home page in <span id="countdown">10</span> seconds...</p>
+  </div>
+  <script>
+    // Get the cart data from local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    // Populate the ordered items
+    const orderItemsElement = document.getElementById('order-items');
+    for (let id in cart) {
+      const item = cart[id];
+      const listItem = document.createElement('li');
+      listItem.textContent = `${item.title} - ₹${item.price} x ${item.quantity}`;
+      orderItemsElement.appendChild(listItem);
+    }
+
+    // Countdown timer and redirect
+    let countdown = 10;
+    const countdownElement = document.getElementById('countdown');
+
+    const interval = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
+      if (countdown === 5) {
+        // Clear the cart in local storage after 5 seconds
+        localStorage.removeItem('cart');
+      }
+      if (countdown === 0) {
+        clearInterval(interval);
+        window.location.href = "/";
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
