@@ -38,10 +38,10 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 1. **Environment Variables:**
 
-   Create a copy of the provided `.env.example` file and rename it to .env
+   Create a .enc file
 
    ```bash
-   cp .env.example .env
+   touch .env
    ```
 
    Open the .env file and set the following environment variables with your Cashfree credentials:
