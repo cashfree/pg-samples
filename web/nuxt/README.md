@@ -16,7 +16,7 @@ This sample app demonstrates how to collect payments using the Cashfree JavaScri
 
 ## Prerequisites
 
-- Node.js (v14 or later)
+- Node.js (v16 or later)
 - npm
 
 ## Setup
