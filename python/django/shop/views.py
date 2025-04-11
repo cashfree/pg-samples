@@ -18,6 +18,7 @@ Cashfree.XEnvironment = (
     Cashfree.SANDBOX if os.getenv('CASHFREE_ENVIRONMENT') == 'SANDBOX' 
     else Cashfree.PRODUCTION
 )
+x_api_version = "2023-08-01"
 
 @csrf_exempt
 def create_order(request):
