@@ -7,13 +7,17 @@ from cashfree_pg.models.customer_details import CustomerDetails
 from cashfree_pg.models.order_meta import OrderMeta
 from django.views.decorators.csrf import csrf_exempt
 import json
+import os
 
 # Configuration
-Cashfree.XClientId = 'TEST430329ae80e0f32e41a393d78b923034'
-Cashfree.XClientSecret = 'TESTaf195616268bd6202eeb3bf8dc458956e7192a85'
-Cashfree.XEnvironment = Cashfree.SANDBOX
-x_api_version = "2023-08-01"
 
+# Configuration using env variables
+Cashfree.XClientId = os.getenv('CASHFREE_CLIENT_ID')
+Cashfree.XClientSecret = os.getenv('CASHFREE_CLIENT_SECRET')
+Cashfree.XEnvironment = (
+    Cashfree.SANDBOX if os.getenv('CASHFREE_ENVIRONMENT') == 'SANDBOX' 
+    else Cashfree.PRODUCTION
+)
 
 @csrf_exempt
 def create_order(request):
