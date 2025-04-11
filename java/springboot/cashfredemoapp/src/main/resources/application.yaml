@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: cashfredemoapp
+
+cashfree:
+  client-id: your-client-id
+  client-secret: your-client-secret
+  environment: sandbox # use 'production' for production
+
