@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Buy Product</title>
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 320px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-description {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .buy-btn {
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #43a047;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1>Super Gadget</h1>
+    <p class="product-description">Get the latest gadget for just ₹1</p>
+    <button class="buy-btn" onclick="createOrder()">Buy Now</button>
+</div>
+
+<script>
+    async function createOrder() {
+      const data = {
+        orderAmount: 1,
+        orderCurrency: "INR",
+        customerDetails: {
+          customerName: "Ajeet",
+          customerPhone: "8877697829",
+          customerId: "1234"
+        },
+        orderMeta: {
+          notifyUrl: "http://localhost:5500/api/webhook/cashfree"
+        }
+      };
+
+      try {
+        const response = await fetch("http://localhost:8081/api/orders/create", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        const cashfree = Cashfree({ mode: "sandbox" });
+        const checkoutResult = await cashfree.checkout({
+          paymentSessionId: result.paymentSessionId,
+          redirectTarget: "_modal"
+        });
+
+        if (checkoutResult?.error) {
+          alert(checkoutResult.error.message);
+          return;
+        }
+
+        if (checkoutResult.paymentDetails) {
+          const orderId = result.orderId;
+          const orderRes = await fetch(`http://localhost:8081/api/orders/${orderId}`);
+          const orderData = await orderRes.json();
+          console.log(orderData);
+          if (orderData.orderStatus === 'PAID') {
+            alert('Payment successful');
+          } else {
+            alert('Payment failed');
+          }
+        } else {
+          alert('Something is not right');
+        }
+      } catch (error) {
+        console.error(error);
+        alert("An error occurred: " + error.message);
+      }
+    }
+  </script>
+</body>
+</html>
