@@ -1,0 +1,40 @@
+<div class="product-page">
+  <header class="navbar">
+    <div class="logo">HOME SHOPIEE</div>
+    <div class="nav-actions">
+      <span>🔍</span>
+      <span>🔔</span>
+      <span>👤</span>
+    </div>
+  </header>
+
+  <div class="product-container">
+    <div class="image-section">
+      <img
+        src="https://m.media-amazon.com/images/I/614hWI0OETL._SX679_.jpg"
+        alt="PS5"
+      />
+    </div>
+
+    <div class="details-section">
+      <h1>PlayStation 5 Digital Edition</h1>
+      <h2>₹44,999</h2>
+      <p>
+        Experience lightning fast loading with ultra-high speed SSD, deeper
+        immersion with support for haptic feedback.
+      </p>
+      <ul class="offers">
+        <li>✅ 10% off with CRED coins</li>
+        <li>✅ No-cost EMI available</li>
+        <li>✅ 1-year warranty included</li>
+      </ul>
+      <button
+        (click)="buyNow()"
+        [disabled]="isLoading"
+        class="bg-yellow-500 px-4 py-2 text-white rounded flex items-center gap-2"
+      >
+        {{ isLoading ? "Processing..." : "Buy Now" }}
+      </button>
+    </div>
+  </div>
+</div>

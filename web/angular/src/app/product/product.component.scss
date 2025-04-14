@@ -1,0 +1,92 @@
+.product-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #111;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  .nav-actions span {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+}
+
+.product-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-section {
+  flex: 1;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.details-section {
+  flex: 2;
+  padding-left: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #e53935;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .offers {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+
+    li {
+      background: #e0f2f1;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 0.95rem;
+    }
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+}
+
