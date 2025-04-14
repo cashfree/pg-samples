@@ -16,12 +16,13 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
+
 	// Routes
-	e.GET("/product", handlers.ProductPageHandler)
-	e.POST("/create-order", handlers.CreateOrderHandler)
-	e.GET("/status", handlers.StatusPageHandler)
-	e.POST("/webhook", handlers.WebhookHandler)
+	e.GET("/product", handlers.ProductPageHandler) // Route for the product page
+	e.POST("/create-order", handlers.CreateOrderHandler) // Route for creating an order
+	e.GET("/status", handlers.StatusPageHandler) // Route for the status page
+	e.POST("/webhook", handlers.WebhookHandler) // Route for handling webhooks
 
 	// Start server
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":8080")) // Start the server on port 8080
 }
