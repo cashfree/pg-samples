@@ -6,11 +6,15 @@ import (
     "os"
 )
 
+// Config represents the application configuration.
+// It contains fields for the server port and environment.
 type Config struct {
     Port string
     Env  string
 }
 
+// LoadConfig loads the application configuration from the .env file.
+// It returns a Config struct with the loaded values.
 func LoadConfig() Config {
     err := godotenv.Load()
     if err != nil {
@@ -23,6 +27,8 @@ func LoadConfig() Config {
     }
 }
 
+// getEnv retrieves the value of an environment variable.
+// If the variable is not set, it returns the provided default value.
 func getEnv(key, defaultValue string) string {
     if value, exists := os.LookupEnv(key); exists {
         return value

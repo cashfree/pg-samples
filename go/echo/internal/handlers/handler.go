@@ -11,31 +11,39 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// OrderResponse represents the response structure for order creation.
 type OrderResponse struct {
 	OrderID          string `json:"order_id"`
 	PaymentSessionID string `json:"payment_session_id"`
 	URL              string `json:"url"`
 }
 
+// OrderStatusResponse represents the response structure for order status.
 type OrderStatusResponse struct {
 	OrderID     string `json:"order_id"`
 	OrderStatus string `json:"order_status"`
 }
 
-// HandleGet handles GET requests
+// HandleGet handles GET requests.
+// This is a sample handler that returns a success message for GET requests.
 func HandleGet(c echo.Context) error {
 	return c.String(http.StatusOK, "GET request successful")
 }
 
-// HandlePost handles POST requests
+// HandlePost handles POST requests.
+// This is a sample handler that returns a success message for POST requests.
 func HandlePost(c echo.Context) error {
 	return c.String(http.StatusOK, "POST request successful")
 }
 
+// ProductPageHandler serves the product page.
+// It renders the product.html template.
 func ProductPageHandler(c echo.Context) error {
 	return c.File("templates/product.html")
 }
 
+// CreateOrderHandler handles the creation of a new order.
+// It interacts with the Cashfree API to generate a payment session ID.
 func CreateOrderHandler(c echo.Context) error {
 	clientID := os.Getenv("CASHFREE_CLIENT_ID")
 	clientSecret := os.Getenv("CASHFREE_CLIENT_SECRET")
@@ -71,6 +79,8 @@ func CreateOrderHandler(c echo.Context) error {
 	return c.JSON(http.StatusOK, orderResponse)
 }
 
+// StatusPageHandler serves the status page.
+// It fetches the order status from the Cashfree API and renders the status.html template.
 func StatusPageHandler(c echo.Context) error {
 	orderID := c.QueryParam("order_id")
 	if orderID == "" {
@@ -105,6 +115,8 @@ func StatusPageHandler(c echo.Context) error {
 	return tmpl.Execute(c.Response().Writer, orderStatusResponse)
 }
 
+// WebhookHandler handles webhook notifications from Cashfree.
+// It verifies the webhook signature and processes the event.
 func WebhookHandler(c echo.Context) error {
 	fmt.Print("request recieved for webhook")
 	clientID := os.Getenv("CASHFREE_CLIENT_ID")
