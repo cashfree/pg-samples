@@ -1,16 +1,19 @@
+# Import necessary modules and initialize the Flask app
 from flask import Flask, render_template, request, jsonify
 import requests
 import uuid
 
 app = Flask(__name__)
 
-# Replace with your Cashfree credentials
+# Define the Cashfree API URL for creating orders
 CASHFREE_API_URL = "https://sandbox.cashfree.com/pg/orders"  # Use sandbox for testing
 
+# Route for the home page, rendering the main HTML template
 @app.route("/")
 def index():
     return render_template("index.html")
 
+# Route for creating an order, interacting with the Cashfree API
 @app.route("/create_order", methods=["POST"])
 def create_order():
     # Generate a unique order ID
@@ -43,6 +46,7 @@ def create_order():
     else:
         return jsonify({"error": "Failed to create order"}), 400
 
+# Route for fetching order details, using the order ID
 @app.route("/get-order", methods=["GET"])
 def fetchOrderDetails():
     order_id = request.args.get("order_id")
@@ -59,9 +63,11 @@ def fetchOrderDetails():
     else:
         return jsonify({"error": "Failed to fetch order details", "status_code": response.status_code}), response.status_code
 
+# Route for the Thank You page, displayed after successful payment
 @app.route("/thank-you")
 def thank_you():
     return render_template("thank_you.html")
 
+# Run the Flask app in debug mode
 if __name__ == "__main__":
     app.run(debug=True)
