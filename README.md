@@ -1,3 +1,5 @@
+![GitHub License](https://img.shields.io/github/license/cashfree/pg-samples) ![Discord](https://img.shields.io/discord/931125665669972018)
+
 # Payment Gateway Sample Apps
 
 This repository contains a collection of **sample applications** demonstrating the integration of **Cashfree Payments’ Payment Gateway (PG)** across various web, mobile, and backend frameworks. Whether you're building modern frontends, mobile apps, or robust backend services, you'll find examples tailored to your preferred tech stack.
