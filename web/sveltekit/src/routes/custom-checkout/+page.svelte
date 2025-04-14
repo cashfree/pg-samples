@@ -1,4 +1,5 @@
 <script>
+	// Importing necessary modules and components
 	import { load } from '@cashfreepayments/cashfree-js';
 	import { onMount } from 'svelte';
 	import CardNumber from '$lib/cashfree/CardNumber.svelte';
@@ -6,10 +7,12 @@
 	import CardCVV from '$lib/cashfree/CardCVV.svelte';
 	import CardHolder from '$lib/cashfree/CardHolder.svelte';
 
+	// Variables for card fields and Cashfree instance
 	let cardNumberField;
 	let cardExpiryField;
 	let cashfree;
 
+	// Style options for card fields
 	let styleOptions = {
 		styles: {
 			base: {
@@ -30,12 +33,14 @@
 		}
 	};
 
+	// Initialize Cashfree on component mount
 	onMount(async function () {
 		cashfree = await load({
 			mode: 'sandbox'
 		});
 	});
 
+	// Event handler for form changes
 	function formChange(event) {
 		console.log('Card Number Change Event:', event);
 	}
