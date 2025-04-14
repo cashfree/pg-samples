@@ -14,7 +14,8 @@ config();
 
 // Initialize Hono app
 const app = new Hono();
-// Enable CORS for all routes
+
+// Enable CORS for all routes to allow cross-origin requests
 app.use("*", cors());
 
 // Get directory name for the current module (ES module)
@@ -23,16 +24,16 @@ const __dirname = dirname(__filename);
 
 // Route handler for root path - serves the HTML interface
 app.get("/", (c) => {
-    const html = readFileSync(join(__dirname, "index.html"), "utf8");
-    return c.html(html);
+  const html = readFileSync(join(__dirname, "index.html"), "utf8"); // Read the HTML file
+  return c.html(html); // Return the HTML content as a response
 });
 
 // Initialize Cashfree SDK with environment and credentials from .env
 // CFEnvironment.SANDBOX is for testing, use CFEnvironment.PRODUCTION for live environment
 const cashfree = new Cashfree(
-    CFEnvironment.SANDBOX,
-    process.env.APP_ID,
-    process.env.SECRET_KEY
+  CFEnvironment.SANDBOX,
+  process.env.APP_ID, // Application ID from .env
+  process.env.SECRET_KEY // Secret Key from .env
 );
 
 /**
@@ -40,28 +41,28 @@ const cashfree = new Cashfree(
  * This is called when the user clicks the "Buy Now" button
  */
 app.post("/api/create-order", async (c) => {
-    try {
-        // Define order details
-        const orderRequest = {
-            order_amount: 1.01, // Amount to be charged
-            order_currency: "INR", // Currency code
-            order_id: "devstudio_" + Date.now(), // Unique order ID (using timestamp)
-            customer_details: {
-                customer_id: "devstudio_user", // Unique ID for the customer
-                customer_phone: "8474090589", // Customer's phone number
-            },
-            order_meta: {
-                notify_url: "https://yourhost.com/order/webhooks", // Webhook URL for payment notifications
-            },
-        };
+  try {
+    // Define order details
+    const orderRequest = {
+      order_amount: 1.01, // Amount to be charged
+      order_currency: "INR", // Currency code
+      order_id: "devstudio_" + Date.now(), // Unique order ID (using timestamp)
+      customer_details: {
+        customer_id: "devstudio_user", // Unique ID for the customer
+        customer_phone: "8474090589", // Customer's phone number
+      },
+      order_meta: {
+        notify_url: "https://yourhost.com/order/webhooks", // Webhook URL for payment notifications
+      },
+    };
 
-        // Call Cashfree API to create an order
-        const response = await cashfree.PGCreateOrder(orderRequest);
-        return c.json(response.data);
-    } catch (error) {
-        // Handle any errors during order creation
-        return c.json({ error: "Something went wrong" }, 500);
-    }
+    // Call Cashfree API to create an order
+    const response = await cashfree.PGCreateOrder(orderRequest);
+    return c.json(response.data); // Return the response data as JSON
+  } catch (error) {
+    // Handle any errors during order creation
+    return c.json({ error: "Something went wrong" }, 500);
+  }
 });
 
 /**
@@ -69,18 +70,18 @@ app.post("/api/create-order", async (c) => {
  * Used to verify the status of a payment after checkout
  */
 app.post("/api/get-order", async (c) => {
-    try {
-        // Get order_id from request body
-        const reqBody = await c.req.json();
-        const { order_id } = reqBody;
+  try {
+    // Get order_id from request body
+    const reqBody = await c.req.json();
+    const { order_id } = reqBody;
 
-        // Call Cashfree API to get order details
-        const response = await cashfree.PGFetchOrder(order_id);
-        return c.json(response.data);
-    } catch (error) {
-        // Handle any errors while fetching order details
-        return c.json({ error: "Something went wrong" }, 500);
-    }
+    // Call Cashfree API to get order details
+    const response = await cashfree.PGFetchOrder(order_id);
+    return c.json(response.data); // Return the response data as JSON
+  } catch (error) {
+    // Handle any errors while fetching order details
+    return c.json({ error: "Something went wrong" }, 500);
+  }
 });
 
 /**
@@ -88,27 +89,27 @@ app.post("/api/get-order", async (c) => {
  * This endpoint receives real-time updates about payment status changes
  */
 app.post("/order/webhooks", async (c) => {
-    try {
-        // Get the webhook data from request body
-        const reqBody = await c.req.json();
+  try {
+    // Get the webhook data from request body
+    const reqBody = await c.req.json();
 
-        // Verify the authenticity of webhook using signature validation
-        const response = await cashfree.PGVerifyWebhookSignature(
-            c.req.header("x-webhook-signature"),
-            JSON.stringify(reqBody),
-            c.req.header("x-webhook-timestamp")
-        );
-        console.log(response);
-    } catch (e) {
-        // Log any errors during webhook processing
-        console.log(e);
-    }
+    // Verify the authenticity of webhook using signature validation
+    const response = await cashfree.PGVerifyWebhookSignature(
+      c.req.header("x-webhook-signature"), // Webhook signature header
+      JSON.stringify(reqBody), // Webhook payload
+      c.req.header("x-webhook-timestamp") // Webhook timestamp header
+    );
+    console.log(response); // Log the verification response
+  } catch (e) {
+    // Log any errors during webhook processing
+    console.log(e);
+  }
 });
 
 // Start the server on port 3000
 serve({
-    fetch: app.fetch,
-    port: 3000,
+  fetch: app.fetch, // Hono app fetch handler
+  port: 3000, // Port number
 });
 
-console.log(`Server running at http://localhost:3000`);
+console.log(`Server running at http://localhost:3000`); // Log server start message
