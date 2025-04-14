@@ -1,14 +1,14 @@
 server:
-  port: 8081
+  port: 8081 # The port on which the application will run
 
 spring:
   profiles:
-    active: local
+    active: local # The active Spring profile
   application:
-    name: cashfredemoapp
+    name: cashfredemoapp # The name of the Spring Boot application
 
 cashfree:
-  client-id: your-client-id
-  client-secret: your-client-secret
-  environment: sandbox # use 'production' for production
+  client-id: your-client-id # Cashfree client ID for authentication
+  client-secret: your-client-secret # Cashfree client secret for authentication
+  environment: sandbox # Environment for Cashfree API (sandbox or production)
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,12 @@
     <link rel="stylesheet" href="/static/css/styles.css">
     <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 </head>
+
 <body>
+    <!-- This is the main page for the Flask application, showcasing a dummy product and integrating Cashfree payment gateway -->
+    <!-- The head section includes metadata, styles, and the Cashfree SDK -->
+    <!-- The body contains the product details and a button to initiate payment -->
+    <!-- JavaScript handles the payment process by interacting with the Cashfree API -->
     <div class="container">
         <h1>Dummy T-Shirt</h1>
         <p>Price: ₹100</p>
@@ -36,7 +42,7 @@
                             if (result.paymentDetails) {
                                 console.log("Payment completed. Check Payment Status.");
                                 console.log(result.paymentDetails.paymentMessage);
-                                fetch(`/get-order?order_id=${data.order_id}`, {method: "GET"})
+                                fetch(`/get-order?order_id=${data.order_id}`, { method: "GET" })
                                     .then(response => response.json())
                                     .then(resp => {
                                         if (resp[0].payment_status && resp[0].payment_status == "SUCCESS") {
@@ -55,4 +61,5 @@
         });
     </script>
 </body>
+
 </html>

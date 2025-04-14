@@ -1,3 +1,6 @@
+# This file defines the base class for system tests.
+# System tests simulate user interactions with the application.
+
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase

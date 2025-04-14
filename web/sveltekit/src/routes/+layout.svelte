@@ -1,6 +1,8 @@
 <script lang="ts">
+	// Importing global styles
 	import '../app.css';
 
+	// Destructuring children from props
 	let { children } = $props();
 </script>
 

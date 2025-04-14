@@ -1,3 +1,6 @@
+# This file is used to define custom inflection rules for the application.
+# Inflections are used to handle pluralization and singularization of words.
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections

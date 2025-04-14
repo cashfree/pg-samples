@@ -1,3 +1,6 @@
+# This file is used to set up the test environment for the application.
+# Add any test-specific configurations or helper methods here.
+
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
