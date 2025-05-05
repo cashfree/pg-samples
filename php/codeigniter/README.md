@@ -40,6 +40,7 @@ This project demonstrates how to integrate Cashfree's payment gateway with php c
 
 ## Project Structure
 
+```
 cashfreeApp/
 ├── app
     |──Config                               
@@ -51,7 +52,7 @@ cashfreeApp/
         └── cashfree_view.php               
 ├── env                                     # secrets
 └── README.md                               # Project documentation
-
+```
 ## API Endpoints 
 
 1. /confirm (POST)
