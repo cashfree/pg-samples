@@ -1,4 +1,4 @@
-# Cashfree Payment Integration with Flask
+# Cashfree Payment Integration with Codeigniter
 
 This project demonstrates how to integrate Cashfree's payment gateway with php codeigniter application. It includes functionality for creating orders, handling payments, and fetching order details.
 
