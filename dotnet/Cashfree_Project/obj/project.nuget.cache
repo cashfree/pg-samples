@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "+IUZ/bEy4Dc=",
+  "success": true,
+  "projectFilePath": "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/Cashfree_Project.csproj",
+  "expectedPackageFiles": [
+    "/Users/r.rahul/.nuget/packages/cashfree_pg/5.0.6/cashfree_pg.5.0.6.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/jsonsubtypes/2.0.1/jsonsubtypes.2.0.1.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/polly/7.2.3/polly.7.2.3.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/sentry/3.41.0/sentry.3.41.0.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/Users/r.rahul/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

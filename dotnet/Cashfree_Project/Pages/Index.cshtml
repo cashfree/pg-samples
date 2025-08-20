@@ -1,0 +1,81 @@
+﻿@page
+@model Cashfree_Project.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row justify-content-center mt-4">
+  <div class="col-md-6">
+    <form method="post" asp-page-handler="CreateOrder">
+      <h3>Create Cashfree Order</h3>
+
+      <div class="form-group mb-2">
+        <label for="OrderId">Order ID</label>
+        <input type="text" class="form-control" id="OrderId" name="OrderId" required />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="OrderAmount">Amount</label>
+        <input type="number" step="0.01" class="form-control" id="OrderAmount" name="OrderAmount" required />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="CustomerName">Customer Name</label>
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" required />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="CustomerEmail">Customer Email</label>
+        <input type="email" class="form-control" id="CustomerEmail" name="CustomerEmail" required />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="CustomerPhone">Customer Phone</label>
+        <input type="tel" class="form-control" id="CustomerPhone" name="CustomerPhone" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create Order</button>
+    </form>
+
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+      <div class="alert alert-danger mt-3">@Model.ErrorMessage</div>
+    }
+
+    @if (Model.OrderResponse is not null)
+    {
+      <div class="alert alert-success mt-3">
+        <strong>Order Created!</strong><br />
+        Order ID: @Model.OrderIdOut <br />
+        Payment Session ID: @Model.PaymentSessionIdOut
+      </div>
+    }
+
+    @* Auto-redirect to Cashfree Checkout if session is present *@
+    @if (!string.IsNullOrWhiteSpace(Model.PaymentSessionIdOut))
+    {
+      <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+      <script>
+        (async () => {
+          try {
+            const psid = "@Model.PaymentSessionIdOut";
+            if (!psid) return;
+
+            const cf = Cashfree({ mode: "sandbox" }); // production in live
+            const r = await cf.checkout({
+              paymentSessionId: psid,
+              redirectTarget: "_self"
+            });
+            if (r && r.error) {
+              console.error("Checkout error:", r.error);
+              alert(r.error.message || "Failed to start checkout");
+            }
+          } catch (e) {
+            console.error("Cashfree checkout error:", e);
+            alert("Could not start checkout. See console for details.");
+          }
+        })();
+      </script>
+    }
+  </div>
+</div>
