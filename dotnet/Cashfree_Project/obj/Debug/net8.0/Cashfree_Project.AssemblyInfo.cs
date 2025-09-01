@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cashfree_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3721b7f7066407ee6c2bc0f47d406158fd6cf123")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cashfree_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cashfree_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

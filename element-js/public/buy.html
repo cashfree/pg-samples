@@ -1,0 +1,842 @@
+<!-- public/buy.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout – Choose Payment Method</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  <style>
+    :root {
+      --bg1: #f7f9fc;
+      --card: #ffffff;
+      --text: #12151d;
+      --muted: #6b7280;
+      --accent: #ff7a00;
+      --accent2: #ff9b3d;
+      --border: #e5e7eb;
+      --ring: #2563eb22;
+      --shadow: 0 8px 24px rgba(16, 24, 40, .08), 0 2px 6px rgba(16, 24, 40, .06);
+      --shadow-sm: 0 2px 10px rgba(16, 24, 40, .06);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #dde7ff 0%, transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, #ffe8d6 0%, transparent 55%),
+        var(--bg1);
+      -webkit-font-smoothing: antialiased;
+      font-size: 16.5px;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 40px auto;
+      padding: 0 20px
+    }
+
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .badge {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow-sm)
+    }
+
+    .head a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      transition: .2s
+    }
+
+    .head a:hover {
+      box-shadow: var(--shadow-sm);
+      color: #374151
+    }
+
+    .checkout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden
+    }
+
+    .menu {
+      padding: 10px;
+      background: linear-gradient(180deg, #fafbff, #f7f9ff);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #374151;
+      transition: .18s;
+      border: 1px solid transparent
+    }
+
+    .menu-item+.menu-item {
+      margin-top: 6px
+    }
+
+    .menu-item:hover {
+      background: #f1f5ff;
+      border-color: #e2e8ff
+    }
+
+    .menu-item.active {
+      color: #0b0b0b;
+      background: linear-gradient(135deg, #f5f2f2, #a2a0a0);
+      border-color: #0f172a;
+      box-shadow: inset 0 0 0 1px #00000033, 0 4px 14px rgba(15, 23, 42, .25)
+    }
+
+    .menu-item .icon {
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 18px;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border)
+    }
+
+    .menu-item.active .icon {
+      background: #0f1115;
+      color: #fff;
+      border-color: #2a2f39
+    }
+
+    .content {
+      padding: 26px
+    }
+
+    .title {
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: .2px
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0 0 18px
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .ipt {
+      width: 100%;
+      min-height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      box-shadow: inset 0 1px 0 rgba(16, 24, 40, .02);
+      transition: .2s
+    }
+
+    .ipt:focus-within {
+      outline: none;
+      border-color: #c7d2fe;
+      box-shadow: 0 0 0 6px var(--ring)
+    }
+
+    select.ipt,
+    input.ipt {
+      padding: 12px 14px
+    }
+
+    .box {
+      border: 1px dashed #e6eaf2;
+      background: #fbfcff;
+      border-radius: 14px;
+      padding: 18px
+    }
+
+    .pricebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff, #fafafa)
+    }
+
+    .total {
+      display: flex;
+      flex-direction: column;
+      gap: 4px
+    }
+
+    .total .amt {
+      font-weight: 700;
+      font-size: 20px
+    }
+
+    .paybtn {
+      padding: 14px 22px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(255, 122, 0, .22);
+      transition: .18s
+    }
+
+    .paybtn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(255, 122, 0, .28)
+    }
+
+    .paybtn:active {
+      transform: translateY(0)
+    }
+
+    .paybtn:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+      box-shadow: none
+    }
+
+    .note {
+      font-size: 12.5px;
+      color: var(--muted)
+    }
+
+    @media (max-width:980px) {
+      .checkout {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* center wrappers for SDK components */
+    .cf-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px
+    }
+
+    .cf-mount {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .cf-mount canvas,
+    .cf-mount img {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges
+    }
+
+    .upiTabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px
+    }
+
+    .upiModeBtn {
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer
+    }
+
+    .upiModeBtn.active {
+      border-color: #ff7a00;
+      background: #fff4ec;
+      color: #ff7a00;
+      font-weight: 600
+    }
+
+    /* Grid cards (used for banks + wallets) */
+    .bank-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 12px
+    }
+
+    .bank-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: .18s
+    }
+
+    .bank-card:hover {
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px)
+    }
+
+    .bank-card.selected {
+      border-color: #ff7a00;
+      background: #fff4ec;
+      box-shadow: 0 0 0 2px #ff7a0022
+    }
+
+    .bank-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #f5f7ff;
+      border: 1px solid #e9ecff;
+      overflow: hidden
+    }
+
+    .bank-name {
+      font-weight: 600;
+      color: #111827
+    }
+
+    .bank-sdk-host {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden
+    }
+
+    /* QR crisp sizing */
+    #upiQr canvas {
+      width: 220px !important;
+      height: 220px !important;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="brand">
+        <h2 style="margin:0;">Super Bike – ₹1</h2>
+        <span class="badge">Checkout</span>
+      </div>
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <div class="checkout">
+      <!-- LEFT: Methods -->
+      <div class="panel">
+        <div class="menu" id="menu">
+          <div class="menu-item active" data-tab="card"><span class="icon">💳</span>Credit / Debit Card</div>
+          <div class="menu-item" data-tab="upi"><span class="icon">⚡</span>UPI</div>
+          <div class="menu-item" data-tab="netbanking"><span class="icon">🏦</span>Net Banking</div>
+          <div class="menu-item" data-tab="wallet"><span class="icon">📱</span>Wallets</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Content -->
+      <div class="panel">
+        <div class="content">
+          <h3 class="title" id="methodTitle">Card</h3>
+          <p class="muted" id="methodDesc">Pay securely using your credit or debit card.</p>
+
+          <!-- CARD -->
+          <div id="cardSection" class="box">
+            <div class="grid2" style="align-items:start">
+              <div>
+                <div id="cardNumber" class="ipt"></div>
+                <div id="cardHolder" class="ipt" style="margin-top:12px"></div>
+              </div>
+              <div>
+                <div class="grid2">
+                  <div id="cardExpiry" class="ipt"></div>
+                  <div id="cardCvv" class="ipt"></div>
+                </div>
+                <div id="savePI" style="margin-top:12px"></div>
+              </div>
+            </div>
+            <p class="note" style="margin-top:8px">Fields: Card Number, Card Holder Name, Expiry (MM/YY), CVV, Save
+              Card.</p>
+          </div>
+
+          <!-- UPI -->
+          <div id="upiSection" class="box" style="display:none">
+            <div class="upiTabs">
+              <button type="button" class="upiModeBtn active" data-mode="collect">Collect</button>
+              <button type="button" class="upiModeBtn" data-mode="qr">QR Code</button>
+            </div>
+
+            <!-- Collect -->
+            <div id="upiCollectWrap">
+              <div class="grid2">
+                <div>
+                  <div id="vpainput" class="ipt"></div>
+                  <p class="note" style="margin-top:8px">
+                    Samples: <code>testsuccess@gocash</code> ✅ <code>testfailure@gocash</code> ❌
+                    <code>testinvalid@gocash</code> ⚠️
+                  </p>
+                </div>
+                <div class="cf-wrap">
+                  <div id="upiCollectMount" class="cf-mount"></div>
+                </div>
+              </div>
+              <p id="upiCollectMsg" class="note" style="margin-top:8px"></p>
+            </div>
+
+            <!-- QR -->
+            <div id="upiQrWrap" class="cf-wrap" style="display:none">
+              <div id="upiQr" class="cf-mount"></div>
+            </div>
+
+            <p id="upiStatus" class="note" style="margin-top:10px"></p>
+          </div>
+
+          <!-- NETBANKING -->
+          <div id="netbankingSection" class="box" style="display:none">
+            <h4 class="title" style="margin-top:0">Select Bank</h4>
+            <div class="bank-sdk-host">
+              <div id="nb-hdfcr-host"></div>
+              <div id="nb-kkbkr-host"></div>
+              <div id="nb-sbinr-host"></div>
+              <div id="nb-icicr-host"></div>
+            </div>
+            <div class="bank-grid" id="bankGrid">
+              <button class="bank-card" data-bank="HDFCR"><span class="bank-logo">
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="3" fill="#e31e25" />
+                    <rect x="7" y="7" width="10" height="10" fill="#fff" />
+                    <rect x="9" y="9" width="6" height="6" fill="#2b2e83" />
+                  </svg>
+                </span><span class="bank-name">HDFC Bank</span></button>
+
+              <button class="bank-card" data-bank="KKBKR"><span class="bank-logo">
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="#0d3b66" />
+                    <path d="M7 12c0-2 2-4 5-4s5 2 5 4-2 4-5 4-5-2-5-4z" fill="#ff1f3d" />
+                  </svg>
+                </span><span class="bank-name">Kotak Bank</span></button>
+
+              <button class="bank-card" data-bank="SBINR"><span class="bank-logo">
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="#00a1e0" />
+                    <circle cx="12" cy="8" r="2" fill="#fff" />
+                  </svg>
+                </span><span class="bank-name">SBI Bank</span></button>
+
+              <button class="bank-card" data-bank="ICICR"><span class="bank-logo">
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="12" rx="9" ry="10" fill="#b21f1f" />
+                    <ellipse cx="12" cy="12" rx="5" ry="7" fill="#ff7a00" />
+                  </svg>
+                </span><span class="bank-name">ICICI Bank</span></button>
+            </div>
+            <p id="nbMsg" class="note" style="margin-top:12px"></p>
+          </div>
+
+          <!-- WALLETS -->
+          <div id="walletSection" class="box" style="display:none">
+            <h4 class="title" style="margin-top:0">Select Wallet</h4>
+            <div class="bank-sdk-host">
+              <div id="wl-phonepe-host"></div>
+              <div id="wl-paytm-host"></div>
+              <div id="wl-amazonpay-host"></div>
+              <div id="wl-airtel-host"></div>
+              <div id="wl-ola-host"></div>
+              <div id="wl-freecharge-host"></div>
+            </div>
+            <div class="bank-grid" id="walletGrid">
+              <button class="bank-card" data-wallet="phonepe"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="#6c2bd9" />
+                  </svg>
+                </span><span class="bank-name">PhonePe</span></button>
+
+              <button class="bank-card" data-wallet="paytm"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <rect x="4" y="4" width="16" height="16" rx="3" fill="#17a2e7" />
+                  </svg>
+                </span><span class="bank-name">Paytm</span></button>
+
+              <button class="bank-card" data-wallet="amazonpay"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <path d="M4 12c5 6 11 6 16 0" fill="none" stroke="#ff9900" stroke-width="2" />
+                  </svg>
+                </span><span class="bank-name">Amazon Pay</span></button>
+
+              <button class="bank-card" data-wallet="airtel"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <path d="M6 12c2-5 10-5 12 0" fill="#ff0033" />
+                  </svg>
+                </span><span class="bank-name">Airtel</span></button>
+
+              <button class="bank-card" data-wallet="ola"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8" fill="#23c552" />
+                  </svg>
+                </span><span class="bank-name">Ola</span></button>
+
+              <button class="bank-card" data-wallet="freecharge"><span class="bank-logo">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <path d="M6 18l12-6-12-6" fill="#ff6a00" />
+                  </svg>
+                </span><span class="bank-name">Freecharge</span></button>
+            </div>
+            <p id="walletMsg" class="note" style="margin-top:12px"></p>
+          </div>
+
+          <p id="paymentMessage" class="note" style="margin-top:12px"></p>
+        </div>
+
+        <div class="pricebar">
+          <div class="total">
+            <div class="amt">Total: ₹1</div>
+            <div class="muted" id="payLabel">via Card</div>
+          </div>
+          <button class="paybtn" id="continueBtn" disabled>Pay</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ---------- Config ---------- */
+      const RETURN_URL = "https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}";
+      const REDIRECT_TARGET = "_self";
+
+      /* ---------- Cashfree init ---------- */
+      const cashfree = Cashfree({ mode: "sandbox" });
+
+      /* ---------- Shared helpers ---------- */
+      const msg = (t, isErr = false) => { const m = document.getElementById("paymentMessage"); m.textContent = t || ""; m.style.color = isErr ? "#df1b41" : "#6b7280"; }
+      const setText = (id, t, isErr = false) => { const el = document.getElementById(id); if (!el) return; el.textContent = t || ""; el.style.color = isErr ? "#df1b41" : "#6b7280"; }
+      const niceErr = (d) => typeof d?.error === "string" ? d.error : (d?.error?.message || JSON.stringify(d?.error || {}));
+
+      async function createOrderFor(note) {
+        const r = await fetch("/api/create-order", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            order_amount: 1.00,
+            customer_id: "CUST_001",
+            customer_email: "rahul@example.com",
+            customer_phone: "9999999999",
+            order_note: note,
+            return_url: RETURN_URL
+          })
+        });
+        const data = await r.json();
+        if (!r.ok) throw new Error((data && (data.message || data.error)) || "Order creation failed");
+        return { psi: data.payment_session_id, orderId: data.order_id };
+      }
+
+      /* ---------- Card Elements ---------- */
+      const style = {
+        base: { fontSize: "16px", border: "1px solid transparent", borderRadius: "12px", padding: "14px", background: "#ffffff" },
+        invalid: { color: "#df1b41" },
+        focus: { border: "1px solid #c7d2fe", boxShadow: "0 0 0 6px rgba(37,99,235,0.12)" }
+      };
+      let cardNumber, cardHolder, cardExpiry, cardCvv, savePI;
+      (function mountCard() {
+        cardNumber = cashfree.create("cardNumber", { style, values: { placeholder: "4111 1111 XXXX 1111" } });
+        cardHolder = cashfree.create("cardHolder", { style, values: { placeholder: "Name on Card" } });
+        cardExpiry = cashfree.create("cardExpiry", { style });
+        cardCvv = cashfree.create("cardCvv", { style });
+        savePI = cashfree.create("savePaymentInstrument", { style, values: { label: "Save card for later" } });
+        cardNumber.mount("#cardNumber"); cardHolder.mount("#cardHolder");
+        cardExpiry.mount("#cardExpiry"); cardCvv.mount("#cardCvv"); savePI.mount("#savePI");
+      })();
+
+      /* ---------- Netbanking state ---------- */
+      let nbPSI = null, nbOrderId = null; const nbComps = {}; let nbSelected = null;
+
+      /* ---------- Wallet state ---------- */
+      let wlPSI = null, wlOrderId = null; const wlComps = {}; let wlSelected = null; const WALLET_PHONE = "8474090589";
+
+      /* ---------- Tabs ---------- */
+      const tabs = ["card", "upi", "netbanking", "wallet"];
+      const titles = {
+        card: ["Card", "Pay securely using your credit or debit card."],
+        upi: ["UPI", "Pay via UPI Collect or QR."],
+        netbanking: ["Net Banking", "Pay directly through your bank account."],
+        wallet: ["Wallets", "Pay using supported wallets."]
+      };
+      const sections = {
+        card: document.getElementById("cardSection"),
+        upi: document.getElementById("upiSection"),
+        netbanking: document.getElementById("netbankingSection"),
+        wallet: document.getElementById("walletSection")
+      };
+      const titleEl = document.getElementById("methodTitle");
+      const descEl = document.getElementById("methodDesc");
+      const payLbl = document.getElementById("payLabel");
+      const payBtn = document.getElementById("continueBtn");
+
+      function setTab(tab) {
+        document.querySelectorAll(".menu-item").forEach(mi => mi.classList.remove("active"));
+        document.querySelector(`.menu-item[data-tab="${tab}"]`).classList.add("active");
+        tabs.forEach(t => sections[t].style.display = (t === tab ? "block" : "none"));
+        titleEl.textContent = titles[tab][0];
+        descEl.textContent = titles[tab][1];
+        payLbl.textContent = `via ${titles[tab][0]}`;
+        sessionStorage.setItem("selectedMethod", tab);
+
+        if (tab === "card") { payBtn.disabled = false; payBtn.textContent = "Pay"; }
+        if (tab === "upi") { setUpiMode("collect"); payBtn.textContent = "Send Collect"; }
+        if (tab === "netbanking") { nbSelected = null; payBtn.disabled = true; payBtn.textContent = "Pay"; prepareNetbanking(); }
+        if (tab === "wallet") { wlSelected = null; payBtn.disabled = true; payBtn.textContent = "Pay"; prepareWallet(); }
+      }
+      document.getElementById("menu").addEventListener("click", (e) => {
+        const item = e.target.closest(".menu-item"); if (!item) return; setTab(item.dataset.tab);
+      });
+      setTab(sessionStorage.getItem("selectedMethod") || "card");
+
+      /* ---------- UPI: Collect + QR ---------- */
+      const upiCollectWrap = document.getElementById("upiCollectWrap");
+      const upiQrWrap = document.getElementById("upiQrWrap");
+      let upiQr, upiCollect, currentUpiPsi = null, currentUpiOrderId = null;
+
+      document.querySelectorAll(".upiModeBtn").forEach(btn => {
+        btn.addEventListener("click", () => setUpiMode(btn.dataset.mode));
+      });
+
+      async function setUpiMode(mode) {
+        document.querySelectorAll(".upiModeBtn").forEach(b => b.classList.toggle("active", b.dataset.mode === mode));
+        sessionStorage.setItem("upiMode", mode);
+        setText("upiStatus", ""); setText("upiCollectMsg", ""); msg("");
+
+        if (mode === "collect") {
+          payBtn.textContent = "Send Collect";
+          upiQrWrap.style.display = "none"; upiCollectWrap.style.display = "block";
+          const { psi, orderId } = await createOrderFor("UPI Collect");
+          currentUpiPsi = psi; currentUpiOrderId = orderId;
+          mountUpiCollectInput(); mountUpiCollectButton(psi); toggleCollectPayDisabled();
+        } else {
+          payBtn.textContent = "Regenerate QR";
+          upiCollectWrap.style.display = "none"; upiQrWrap.style.display = "flex";
+          const { psi, orderId } = await createOrderFor("UPI QR");
+          currentUpiPsi = psi; currentUpiOrderId = orderId; mountUpiQr(psi); payBtn.disabled = false;
+        }
+      }
+
+      function mountUpiCollectInput() {
+        const host = document.getElementById("vpainput"); host.innerHTML = "";
+        if (window._upiCollectInput?.destroy) _upiCollectInput.destroy();
+        window._upiCollectInput = cashfree.create("upiCollect", { values: { placeholder: "Enter UPI ID" } });
+        _upiCollectInput.mount(host);
+        _upiCollectInput.on("change", toggleCollectPayDisabled);
+        _upiCollectInput.on("loaderror", d => setText("upiCollectMsg", niceErr(d), true));
+      }
+      function mountUpiCollectButton(paymentSessionId) {
+        const area = document.getElementById("upiCollectMount"); area.innerHTML = "";
+        if (upiCollect?.destroy) upiCollect.destroy();
+        upiCollect = cashfree.create("upiCollect", { values: { upiId: "" }, paymentSessionId });
+        upiCollect.mount("#upiCollectMount");
+        upiCollect.on("loaderror", d => setText("upiCollectMsg", niceErr(d), true));
+      }
+      function toggleCollectPayDisabled() { const ok = !!(window._upiCollectInput?.isComplete && _upiCollectInput.isComplete()); payBtn.disabled = !ok; }
+      function mountUpiQr(paymentSessionId) {
+        const target = document.getElementById("upiQr"); target.innerHTML = ""; if (upiQr?.destroy) upiQr.destroy();
+        upiQr = cashfree.create("upiQr", { values: { size: "220px" }, paymentSessionId });
+        upiQr.on("loaderror", d => setText("upiStatus", niceErr(d), true));
+        upiQr.on("ready", d => console.log("upiQr ready:", upiQr.data()?.value || d?.value));
+        upiQr.mount("#upiQr"); setText("upiStatus", "Scan this QR in your UPI app to pay.");
+      }
+
+      /* ---------- Netbanking (tiles) ---------- */
+      async function prepareNetbanking() {
+        const r = await fetch("/api/create-order", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            order_amount: 1.00, customer_id: "CUST_001",
+            customer_email: "rahul@example.com", customer_phone: "9999999999",
+            order_note: "Bike via Netbanking", return_url: RETURN_URL
+          })
+        });
+        const data = await r.json();
+        if (!r.ok) { setText("nbMsg", (data && (data.message || data.error)) || "Order creation failed", true); return; }
+        nbPSI = data.payment_session_id; nbOrderId = data.order_id; setText("nbMsg", "Choose your bank to continue.");
+
+        mountNBComp("HDFCR", "nb-hdfcr-host"); mountNBComp("KKBKR", "nb-kkbkr-host");
+        mountNBComp("SBINR", "nb-sbinr-host"); mountNBComp("ICICR", "nb-icicr-host");
+      }
+      function mountNBComp(code, hostId) {
+        if (nbComps[code]?.destroy) nbComps[code].destroy();
+        const comp = cashfree.create("netbanking", { values: { netbankingBankName: code }, paymentSessionId: nbPSI, style: { base: { fontSize: "22px" } } });
+        comp.mount(`#${hostId}`); comp.on("paymentrequested", () => setText("nbMsg", "Opening secure bank page…"));
+        comp.on("loaderror", d => setText("nbMsg", (d?.error?.message || String(d?.error || "Bank component error")), true));
+        nbComps[code] = comp;
+      }
+      const bankGrid = document.getElementById("bankGrid");
+      bankGrid.addEventListener("click", (e) => {
+        const btn = e.target.closest(".bank-card"); if (!btn) return;
+        bankGrid.querySelectorAll(".bank-card").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        nbSelected = btn.dataset.bank;
+        setText("nbMsg", `Selected ${btn.querySelector(".bank-name").textContent}. Click Pay to continue.`);
+        payBtn.disabled = false;
+      });
+
+      /* ---------- Wallets (tiles) ---------- */
+      async function prepareWallet() {
+        const r = await fetch("/api/create-order", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            order_amount: 1.00, customer_id: "CUST_001",
+            customer_email: "rahul@example.com", customer_phone: "9999999999",
+            order_note: "Bike via Wallet", return_url: RETURN_URL
+          })
+        });
+        const data = await r.json();
+        if (!r.ok) { setText("walletMsg", (data && (data.message || data.error)) || "Order creation failed", true); return; }
+        wlPSI = data.payment_session_id; wlOrderId = data.order_id; setText("walletMsg", "Choose a wallet to continue.");
+
+        mountWalletComp("phonepe", "wl-phonepe-host");
+        mountWalletComp("paytm", "wl-paytm-host");
+        mountWalletComp("amazonpay", "wl-amazonpay-host");
+        mountWalletComp("airtel", "wl-airtel-host");
+        mountWalletComp("ola", "wl-ola-host");
+        mountWalletComp("freecharge", "wl-freecharge-host");
+      }
+      function mountWalletComp(provider, hostId) {
+        if (wlComps[provider]?.destroy) wlComps[provider].destroy();
+        wlComps[provider] = cashfree.create("wallet", {
+          values: { provider, phone: WALLET_PHONE, buttonText: provider.charAt(0).toUpperCase() + provider.slice(1), buttonIcon: true },
+          paymentSessionId: wlPSI, style: { base: { fontSize: "22px" } }
+        });
+        wlComps[provider].mount(`#${hostId}`);
+        wlComps[provider].on("paymentrequested", () => setText("walletMsg", "Opening wallet…"));
+        wlComps[provider].on("loaderror", d => setText("walletMsg", (d?.error?.message || String(d?.error || "Wallet component error")), true));
+      }
+      const walletGrid = document.getElementById("walletGrid");
+      walletGrid.addEventListener("click", (e) => {
+        const btn = e.target.closest(".bank-card"); if (!btn) return;
+        walletGrid.querySelectorAll(".bank-card").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        wlSelected = btn.dataset.wallet;
+        setText("walletMsg", `Selected ${btn.querySelector(".bank-name").textContent}. Click Pay to continue.`);
+        payBtn.disabled = false;
+      });
+
+      /* ---------- Pay button ---------- */
+      document.getElementById("continueBtn").addEventListener("click", async () => {
+        msg(""); setText("upiStatus", ""); setText("upiCollectMsg", ""); setText("nbMsg", ""); setText("walletMsg", "");
+        const method = sessionStorage.getItem("selectedMethod") || "card";
+        try {
+          if (method === "card") {
+            const { psi } = await createOrderFor("Bike via Card");
+            const result = await cashfree.pay({
+              paymentMethod: cardNumber,
+              paymentSessionId: psi,
+              savePaymentInstrument: savePI,
+              redirectTarget: REDIRECT_TARGET
+            });
+            if (result?.error) msg(result.error.message || "Payment failed.", true);
+            return;
+          }
+
+          if (method === "upi") {
+            const mode = sessionStorage.getItem("upiMode") || "collect";
+            if (mode === "qr") {
+              const { psi } = await createOrderFor("Bike via UPI QR");
+              mountUpiQr(psi); return;
+            }
+            if (!window._upiCollectInput || !currentUpiPsi) {
+              const { psi } = await createOrderFor("UPI Collect"); currentUpiPsi = psi; mountUpiCollectInput(); mountUpiCollectButton(psi);
+            }
+            payBtn.disabled = true; payBtn.textContent = "Please wait…";
+            const res = await cashfree.pay({
+              paymentMethod: window._upiCollectInput,
+              paymentSessionId: currentUpiPsi,
+              returnUrl: RETURN_URL,
+              redirectTarget: REDIRECT_TARGET
+            });
+            if (res?.error) {
+              setText("upiCollectMsg", res.error.message || "UPI payment failed.", true);
+              payBtn.textContent = "Retry Collect"; payBtn.disabled = false;
+            } else {
+              setText("upiCollectMsg", "Collect request sent. Approve in your UPI app.");
+              payBtn.textContent = "Send Collect"; toggleCollectPayDisabled();
+            }
+            return;
+          }
+
+          if (method === "netbanking") {
+            if (!nbSelected) { setText("nbMsg", "Please select a bank.", true); return; }
+            if (!nbPSI) { await prepareNetbanking(); }
+            const comp = nbComps[nbSelected]; if (!comp) { setText("nbMsg", "Bank not ready. Please reselect.", true); return; }
+            payBtn.disabled = true; payBtn.textContent = "Redirecting…";
+            const res = await cashfree.pay({ paymentMethod: comp, paymentSessionId: nbPSI, returnUrl: RETURN_URL, redirectTarget: "_self" });
+            if (res?.error) { setText("nbMsg", res.error.message || "Netbanking payment failed.", true); payBtn.textContent = "Pay"; payBtn.disabled = false; }
+            return;
+          }
+
+          if (method === "wallet") {
+            if (!wlSelected) { setText("walletMsg", "Please select a wallet.", true); return; }
+            if (!wlPSI) { await prepareWallet(); }
+            const comp = wlComps[wlSelected]; if (!comp) { setText("walletMsg", "Wallet not ready. Please reselect.", true); return; }
+            payBtn.disabled = true; payBtn.textContent = "Redirecting…";
+            const res = await cashfree.pay({ paymentMethod: comp, paymentSessionId: wlPSI, returnUrl: RETURN_URL, redirectTarget: "_self" });
+            if (res?.error) { setText("walletMsg", res.error.message || "Wallet payment failed.", true); payBtn.textContent = "Pay"; payBtn.disabled = false; }
+            return;
+          }
+        } catch (e) {
+          console.error(e);
+          msg(e.message || "Something went wrong while initiating payment.", true);
+          payBtn.textContent = "Pay"; payBtn.disabled = false;
+        }
+      });
+    </script>
+</body>
+
+</html>

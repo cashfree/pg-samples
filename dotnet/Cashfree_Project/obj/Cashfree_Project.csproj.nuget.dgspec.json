@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/Cashfree_Project.csproj": {}
+    "/Users/r.rahul/Desktop/pg-samples/dotnet/Cashfree_Project/Cashfree_Project.csproj": {}
   },
   "projects": {
-    "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/Cashfree_Project.csproj": {
+    "/Users/r.rahul/Desktop/pg-samples/dotnet/Cashfree_Project/Cashfree_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/Cashfree_Project.csproj",
+        "projectUniqueName": "/Users/r.rahul/Desktop/pg-samples/dotnet/Cashfree_Project/Cashfree_Project.csproj",
         "projectName": "Cashfree_Project",
-        "projectPath": "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/Cashfree_Project.csproj",
+        "projectPath": "/Users/r.rahul/Desktop/pg-samples/dotnet/Cashfree_Project/Cashfree_Project.csproj",
         "packagesPath": "/Users/r.rahul/.nuget/packages/",
-        "outputPath": "/Users/r.rahul/Documents/Dotnet Project/Cashfree_Project/obj/",
+        "outputPath": "/Users/r.rahul/Desktop/pg-samples/dotnet/Cashfree_Project/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/r.rahul/.nuget/NuGet/NuGet.Config"
