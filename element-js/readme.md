@@ -26,16 +26,21 @@ npm install
 
 ▶️ Running the Project
 
-Start the server:
+Start the server: Run the below command in your terminal.
 
-npm start
+CASHFREE_ENV=sandbox \
+TEST_CLIENT_ID=<>Some_client_id \
+TEST_CLIENT_SECRET=<Some_client_secret> \
+TEST_BASE_URL=https://sandbox.cashfree.com/pg \
+PORT=5173 \
+node server.js
 
 
-By default, the app will run on http://localhost:3000
+By default, the app will run on http://localhost:5173
 
 🌐 Usage
 
-Open http://localhost:3000 in your browser.
+Open http://localhost:5173 in your browser.
 
 Navigate to the Buy Now page (buy.html).
 
@@ -68,6 +73,4 @@ This project is for demo and learning purposes only.
 For production-grade implementation, follow the official Cashfree Documentation
 .
 
-
-Do you also want me to add **separate instructions for running order creation on port 3001 and status check on port 3002** (as per your recent setup), or should I keep it simple with a single `npm start`?
 
