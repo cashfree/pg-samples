@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cashfree PG Demo</title>
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+</head>
+<body>
+  <button id="pay">Pay Now</button>
+
+  <script>
+    let sessionId = "";
+
+    fetch("/get-session-id")
+      .then(r => r.json())
+      .then(d => sessionId = d.payment_session_id);
+
+    document.getElementById("pay").onclick = () => {
+      if (!sessionId) return alert("Session not loaded!");
+
+      Cashfree({ mode: "sandbox" }).checkout({
+        paymentSessionId: sessionId,
+        redirectTarget: "_self",
+      });
+    };
+  </script>
+</body>
+</html>
