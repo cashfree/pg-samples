@@ -18,10 +18,15 @@ yarn.lock
 /build
 /.next
 /out
+bin/
+obj/
+target/
+vendor/
 
 # Logs
 /logs
 *.log
+logs/
 
 # OS specific files
 .DS_Store
@@ -31,3 +36,30 @@ yarn.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Secrets & sensitive data
+secrets.json
+credentials.json
+*.key
+*.pem
+
+# Language-specific
+__pycache__/
+*.py[cod]
+.Python
+venv/
+env/
+.venv
+*.class
+*.jar
+.gradle/
+Gemfile.lock
+.bundle/
+composer.lock
