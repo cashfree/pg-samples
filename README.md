@@ -1,119 +1,116 @@
-![GitHub License](https://img.shields.io/github/license/cashfree/pg-samples) ![Discord](https://img.shields.io/discord/931125665669972018)
-
 # Payment Gateway Sample Apps
 
-This repository contains a collection of **sample applications** demonstrating the integration of **Cashfree Payments’ Payment Gateway (PG)** across various web, mobile, and backend frameworks. Whether you're building modern frontends, mobile apps, or robust backend services, you'll find examples tailored to your preferred tech stack.
+![GitHub License](https://img.shields.io/github/license/cashfree/pg-samples)
+![Discord](https://img.shields.io/discord/931125665669972018)
 
----
+This repository contains sample applications that demonstrate how to integrate Cashfree Payments Payment Gateway across backend frameworks, frontend stacks, mobile-friendly web apps, and language-specific SDK examples.
 
-## 🚀 Getting Started
+Each sample lives in its own folder and usually includes setup steps, required credentials, and a basic payment flow using Cashfree PG test mode.
 
-Each directory in this repository is organized by tech stack or framework. Navigate to the relevant directory, follow the instructions provided in the respective `README`, and start integrating.
+## Getting Started
 
-### 📁 Repository Structure
+1. Clone this repository.
+2. Open the sample folder that matches your preferred tech stack.
+3. Follow the setup instructions in that sample's local `README.md`.
+4. Add your Cashfree PG credentials and run the app locally.
 
-```
-sample-apps/
-  ├── dotnet/
-  │   ├── MVC/
-  │   │   └── [app-files]
-  ├── go/
-  │   ├── echo/
-  │   │   └── [app-files]
-  │   └── gin/
-  │       └── [app-files]
-  ├── java/
-  │   ├── hibernate/
-  │   │   └── [app-files]
-  │   └── springboot/
-  │       └── [app-files]
-  ├── node/
-  │   ├── express/
-  │   │   └── [app-files]
-  │   ├── hono/
-  │   │   └── [app-files]
-  │   ├── koa/
-  │   │   └── [app-files]
-  │   └── nest/
-  │       └── [app-files]
-  ├── php/
-  │   ├── codeigniter/
-  │   │   └── [app-files]
-  │   └── laravel/
-  │       └── [app-files]
-  ├── python/
-  │   ├── django/
-  │   │   └── [app-files]
-  │   └── flask/
-  │       └── [app-files]
-  ├── ruby/
-  │   └── ror/
-  │       └── [app-files]
-  ├── web/
-  │   ├── angular/
-  │   │   └── [app-files]
-  │   ├── next/
-  │   │   └── [app-files]
-  │   ├── nuxt/
-  │   │   └── [app-files]
-  │   └── sveltekit/
-  │       └── [app-files]
+## Current Repository Structure
+
+```text
+pg-samples/
+├── Asp.net Webforms/
+├── dotnet core/
+├── element-js/
+├── go/
+│   ├── echo/
+│   ├── gin/
+│   └── htmx/
+├── java/
+│   ├── hibernate/
+│   └── springboot/
+├── node/
+│   ├── express/
+│   ├── hono/
+│   ├── koa/
+│   └── nest/
+├── node-js(express)/
+│   └── server/
+├── php/
+│   ├── codeigniter/
+│   ├── laravel/
+│   └── PHP_SDK_Sample/
+├── python/
+│   ├── django/
+│   └── flask/
+├── ruby/
+│   └── ror/
+├── sub-sample/
+│   └── node/
+└── web/
+    ├── angular/
+    ├── next/
+    ├── nuxt/
+    └── sveltekit/
 ```
 
-Each directory contains sample applications demonstrating the integration of **Cashfree Payments’ Payment Gateway (PG)** for the respective framework or tech stack.
+## Sample Links
 
-### 📁 Project Links
+| Category | Sample | Path |
+| --- | --- | --- |
+| .NET | ASP.NET Webforms | [Asp.net Webforms](Asp.net%20Webforms/) |
+| .NET | .NET Core | [dotnet core](dotnet%20core/) |
+| Frontend | Element JS | [element-js](element-js/) |
+| Go | Echo | [go/echo](go/echo/) |
+| Go | Gin | [go/gin](go/gin/) |
+| Go | HTMX | [go/htmx](go/htmx/) |
+| Java | Hibernate | [java/hibernate](java/hibernate/) |
+| Java | Spring Boot | [java/springboot](java/springboot/) |
+| Node.js | Express | [node/express](node/express/) |
+| Node.js | Hono | [node/hono](node/hono/) |
+| Node.js | Koa | [node/koa](node/koa/) |
+| Node.js | Nest | [node/nest](node/nest/) |
+| Node.js | Legacy Express Server | [node-js(express)/server](node-js(express)/server/) |
+| PHP | CodeIgniter | [php/codeigniter](php/codeigniter/) |
+| PHP | Laravel | [php/laravel](php/laravel/) |
+| PHP | PHP SDK Sample | [php/PHP_SDK_Sample](php/PHP_SDK_Sample/) |
+| Python | Django | [python/django](python/django/) |
+| Python | Flask | [python/flask](python/flask/) |
+| Ruby | Ruby on Rails | [ruby/ror](ruby/ror/) |
+| Sub Sample | Node Express | [sub-sample/node](sub-sample/node/) |
+| Web | Angular | [web/angular](web/angular/) |
+| Web | Next.js | [web/next](web/next/) |
+| Web | Nuxt | [web/nuxt](web/nuxt/) |
+| Web | SvelteKit | [web/sveltekit](web/sveltekit/) |
 
-| Language/Framework | Link                            |
-| ------------------ | ------------------------------- |
-| .NET               | [dotnet](dotnet/)               |
-| Go                 | [echo](go/echo/)                |
-| Go                 | [gin](go/gin/)                  |
-| Java               | [hibernate](java/hibernate/)    |
-| Java               | [springboot](java/springboot/)  |
-| Node.js            | [express](node/express/)        |
-| Node.js            | [hono](node/hono/)              |
-| Node.js            | [koa](node/koa/)                |
-| Node.js            | [nest](node/nest/)              |
-| PHP                | [codeigniter](php/codeigniter/) |
-| PHP                | [laravel](php/laravel/)         |
-| Python             | [django](python/django/)        |
-| Python             | [flask](python/flask/)          |
-| Ruby               | [ror](ruby/ror/)                |
-| Web                | [angular](web/angular/)         |
-| Web                | [next](web/next/)               |
-| Web                | [nuxt](web/nuxt/)               |
-| Web                | [sveltekit](web/sveltekit/)     |
+## What You'll Typically Find In A Sample
 
-This repository will continue to grow as more sample applications are added. Contributions are welcome!
+- Local setup instructions
+- Environment or config placeholders for Cashfree credentials
+- Server-side order creation flow
+- Frontend checkout initiation using Cashfree
+- Success and failure handling
+- Return URL or payment status verification examples
 
----
+## Contribution Guidelines
 
-## 🧾 Contribution Guidelines
+We welcome new PG sample apps and improvements to existing ones.
 
-We encourage developers to contribute by adding sample apps in different frameworks.
+### Minimum Expectations
 
-### ✅ Minimum Requirements
+- Add the project in the appropriate tech-stack directory
+- Include a clear `README.md` with setup and usage instructions
+- Use Cashfree PG test credentials and test environment defaults
+- Demonstrate an end-to-end payment flow
 
-- A `README.md` with clear setup and usage instructions
-- A basic user interface
-- Integration with **Cashfree PG** using test credentials
-- A complete flow: **Product Landing Page → Checkout → Confirmation Page**
+### Suggested Flow
 
-### 📬 Submission Process
+1. Fork this repository.
+2. Create or update a sample in the relevant folder.
+3. Test the integration locally.
+4. Commit your changes and push to your fork.
+5. Open a pull request.
 
-1. Fork this repository
-2. Add your sample app under the appropriate directory
-3. Commit your changes and push to your fork
-4. Open a pull request for review
-
-Once reviewed, your app will be merged into the main repository.
-
----
-
-## 📞 Support
-
-If you have any questions, run into issues, or need assistance, feel free to:
+## Support
 
 - [Open a GitHub issue](https://github.com/cashfree/pg-samples/issues/new)
-- Join our developer community on [Discord](https://discord.gg/ed9VWDnrh7)
+- Join the developer community on [Discord](https://discord.gg/ed9VWDnrh7)
