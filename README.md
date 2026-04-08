@@ -19,7 +19,6 @@ Each sample lives in its own folder and usually includes setup steps, required c
 ```text
 pg-samples/
 ├── Asp.net Webforms/
-├── dotnet core/
 ├── element-js/
 ├── go/
 │   ├── echo/
@@ -58,7 +57,6 @@ pg-samples/
 | Category | Sample | Path |
 | --- | --- | --- |
 | .NET | ASP.NET Webforms | [Asp.net Webforms](Asp.net%20Webforms/) |
-| .NET | .NET Core | [dotnet core](dotnet%20core/) |
 | Frontend | Element JS | [element-js](element-js/) |
 | Go | Echo | [go/echo](go/echo/) |
 | Go | Gin | [go/gin](go/gin/) |
