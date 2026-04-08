@@ -1,0 +1,90 @@
+@page
+@model Cashfree_Project.Pages.ReturnModel
+@{
+    ViewData["Title"] = "Payment Return";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">
+                        @if (Model.PaymentStatus?.ToLower() == "paid")
+                        {
+                            <span class="text-success">✅ Payment Successful</span>
+                        }
+                        else if (Model.PaymentStatus?.ToLower() == "failed")
+                        {
+                            <span class="text-danger">❌ Payment Failed</span>
+                        }
+                        else
+                        {
+                            <span class="text-warning">⏳ Payment Pending</span>
+                        }
+                    </h2>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">
+                            @Model.ErrorMessage
+                        </div>
+                    }
+                    else
+                    {
+                        <table class="table table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <th class="bg-light">ORDER ID</th>
+                                    <td>@Model.OrderId</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">ORDER AMOUNT</th>
+                                    <td>@Model.OrderAmount</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">PAYMENT STATUS</th>
+                                    <td>
+                                        @if (Model.PaymentStatus?.ToLower() == "paid")
+                                        {
+                                            <span class="badge bg-success">✅ @Model.PaymentStatus</span>
+                                        }
+                                        else if (Model.PaymentStatus?.ToLower() == "failed")
+                                        {
+                                            <span class="badge bg-danger">❌ @Model.PaymentStatus</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-warning">⏳ @Model.PaymentStatus</span>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">CASHFREE PAYMENT ID</th>
+                                    <td>@Model.CfPaymentId</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">BANK UTR</th>
+                                    <td>@Model.BankReference</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">PAYMENT MODE</th>
+                                    <td>@Model.PaymentMode</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-light">PAYMENT TIME</th>
+                                    <td>@Model.PaymentTime</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="text-center mt-4">
+                            <a href="/" class="btn btn-primary">Create New Order</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
