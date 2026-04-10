@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashfree WebView Demo</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <div class="banner">
+          Android Native WebView app with Cashfree JS SDK integration.
+          UPI intent is enabled using a feature-flag based approach so supported PSP apps are shown
+          and the app bridge handles redirection back to status.
+        </div>
+
+        <h1>Cashfree Checkout</h1>
+        <p>This screen creates an order from backend and starts Cashfree JS SDK checkout.</p>
+
+        <div class="controls">
+          <button id="payBtn" class="btn-primary">Pay INR 1.00</button>
+          <button id="statusBtn" class="btn-secondary">Open Latest Status</button>
+        </div>
+
+        <p class="warning">
+          Make sure server credentials are configured in <code>server/.env</code>.
+        </p>
+
+        <div id="log" class="log">Ready.</div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

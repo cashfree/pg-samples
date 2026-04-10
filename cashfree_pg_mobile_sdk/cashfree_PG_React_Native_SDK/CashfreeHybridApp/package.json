@@ -1,0 +1,51 @@
+{
+  "name": "CashfreeHybridApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest",
+    "demo:clean": "sh scripts/demo-clean.sh",
+    "demo:android": "sh scripts/demo-android.sh",
+    "demo:ios": "sh scripts/demo-ios.sh",
+    "android:emulator": "\"$HOME/Library/Android/sdk/emulator/emulator\" @Pixel_9_API_35",
+    "android:boot-and-run": "sh -c '\"$HOME/Library/Android/sdk/platform-tools/adb\" wait-for-device; until \"$HOME/Library/Android/sdk/platform-tools/adb\" shell getprop sys.boot_completed 2>/dev/null | grep -q 1; do sleep 2; done; \"$HOME/Library/Android/sdk/platform-tools/adb\" reverse tcp:8081 tcp:8081; cd android && ./gradlew app:installDebug; \"$HOME/Library/Android/sdk/platform-tools/adb\" shell am start -n com.cashfreehybridapp/.MainActivity'",
+    "ios:build-install-launch": "sh -c 'xcrun simctl boot \"iPhone 17 Pro\" >/dev/null 2>&1 || true; open -a Simulator; xcodebuild -workspace ios/CashfreeHybridApp.xcworkspace -scheme CashfreeHybridApp -configuration Debug -destination \"platform=iOS Simulator,name=iPhone 17 Pro,OS=26.4\" -derivedDataPath ios/build build && xcrun simctl install booted ios/build/Build/Products/Debug-iphonesimulator/CashfreeHybridApp.app && xcrun simctl launch booted org.reactjs.native.example.CashfreeHybridApp'",
+    "dev:android": "concurrently -k -s first \"cd backend && npm run dev\" \"npm start\" \"npm run android:boot-and-run\"",
+    "dev:ios": "concurrently -k -s first \"cd backend && npm run dev\" \"npm start\" \"npm run ios:build-install-launch\""
+  },
+  "dependencies": {
+    "@react-native/new-app-screen": "0.84.1",
+    "react": "19.2.3",
+    "react-native": "0.84.1",
+    "react-native-cashfree-pg-sdk": "2.3.0",
+    "react-native-safe-area-context": "^5.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/babel-preset": "0.84.1",
+    "@react-native/eslint-config": "0.84.1",
+    "@react-native/metro-config": "0.84.1",
+    "@react-native/typescript-config": "0.84.1",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.2.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.2.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">= 22.11.0"
+  }
+}

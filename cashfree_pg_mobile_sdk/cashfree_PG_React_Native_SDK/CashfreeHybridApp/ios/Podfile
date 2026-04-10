@@ -1,0 +1,64 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+
+# Keep the default React Native iOS setup so prebuilt artifacts can be used
+# when available. This significantly reduces first-build time for merchants.
+# If Xcode ever fails from a path containing spaces, move the repo to a path
+# without spaces before running `pod install` again.
+
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+target 'CashfreeHybridApp' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  post_install do |installer|
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false,
+      # :ccache_enabled => true
+    )
+
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |build_configuration|
+        build_configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+
+        # Xcode 26.4 rejects the older fmt pod in C++20 mode; keep the fix scoped
+        # to fmt so the rest of React Native can continue compiling with C++20.
+        if target.name == 'fmt'
+          build_configuration.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+        end
+
+        next unless target.name == 'react-native-cashfree-pg-sdk'
+
+        swift_flags = build_configuration.build_settings['OTHER_SWIFT_FLAGS']
+        next if swift_flags.nil?
+
+        if swift_flags.is_a?(Array)
+          build_configuration.build_settings['OTHER_SWIFT_FLAGS'] =
+            swift_flags.reject { |flag| flag == '-import-underlying-module' }
+        else
+          build_configuration.build_settings['OTHER_SWIFT_FLAGS'] =
+            swift_flags.gsub(' -import-underlying-module', '')
+        end
+      end
+    end
+  end
+end

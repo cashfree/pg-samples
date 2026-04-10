@@ -1,0 +1,8 @@
+{
+  "cashfree": {
+    "clientId": "YOUR_CASHFREE_CLIENT_ID",
+    "clientSecret": "YOUR_CASHFREE_CLIENT_SECRET",
+    "apiVersion": "2025-01-01",
+    "environment": "sandbox"
+  }
+}

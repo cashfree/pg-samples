@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Status</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Payment Status</h1>
+        <p>Order status fetched from backend using Cashfree order status API.</p>
+
+        <p>
+          Order ID: <strong id="orderId">-</strong>
+        </p>
+        <p>
+          Status:
+          <span id="statusPill" class="status-pill pending">CHECKING</span>
+        </p>
+
+        <div class="controls">
+          <button id="refreshBtn" class="btn-secondary">Refresh Status</button>
+          <button id="homeBtn" class="btn-primary">Go To Home</button>
+        </div>
+
+        <div id="statusLog" class="log">Checking status...</div>
+      </section>
+    </main>
+
+    <script src="/status.js"></script>
+  </body>
+</html>

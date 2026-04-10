@@ -1,0 +1,120 @@
+:root {
+  --bg: #f5f8ff;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --brand: #0d9488;
+  --brand-dark: #0f766e;
+  --accent: #dbeafe;
+  --warn: #7c2d12;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  background: linear-gradient(145deg, #eef2ff 0%, #ecfeff 100%);
+  color: var(--ink);
+}
+
+.page {
+  width: min(760px, 92vw);
+  margin: 24px auto;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+.banner {
+  background: var(--accent);
+  border-left: 5px solid var(--brand);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #0b2f55;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--brand-dark);
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.log {
+  margin-top: 12px;
+  background: #0b1022;
+  color: #d1e8ff;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 74px;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.status-pill.pending {
+  background: #fef3c7;
+  color: #854d0e;
+}
+
+.warning {
+  color: var(--warn);
+  font-weight: 600;
+}

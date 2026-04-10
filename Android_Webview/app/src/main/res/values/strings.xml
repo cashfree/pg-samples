@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android_Webview</string>
+    <string name="native_banner_text">Android Native WebView App | Cashfree JS SDK | UPI Intent via Feature Flag</string>
+</resources>
