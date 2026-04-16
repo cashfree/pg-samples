@@ -1,0 +1,235 @@
+:root {
+    color-scheme: light;
+    --ink: #172026;
+    --muted: #5f6f78;
+    --line: #d7e1e7;
+    --panel: #ffffff;
+    --page: #edf4f2;
+    --accent: #12695f;
+    --accent-strong: #0b514b;
+    --warning: #8a5a00;
+    --danger: #a12626;
+    --success: #0d6b3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+        linear-gradient(135deg, rgba(18, 105, 95, 0.12), rgba(223, 238, 230, 0.3)),
+        var(--page);
+}
+
+.shell {
+    width: min(940px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    padding: 32px 0;
+}
+
+.panel {
+    width: min(720px, 100%);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 24px 80px rgba(23, 32, 38, 0.12);
+}
+
+.intro {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.02;
+}
+
+p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.meta-grid,
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 18px 0 0;
+}
+
+.meta-grid div,
+.status-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px;
+    min-width: 0;
+}
+
+.meta-grid span,
+.status-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.meta-grid strong,
+.status-card strong {
+    display: block;
+    margin-top: 6px;
+    overflow-wrap: anywhere;
+}
+
+.form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-weight: 800;
+}
+
+.inline-field,
+.amount-field {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.amount-field {
+    grid-template-columns: auto 1fr;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding-left: 14px;
+    background: #fff;
+}
+
+.amount-field span {
+    color: var(--muted);
+    font-weight: 800;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0 14px;
+    color: var(--ink);
+    font: inherit;
+}
+
+.amount-field input {
+    border: 0;
+    border-left: 1px solid var(--line);
+    border-radius: 0 8px 8px 0;
+}
+
+button,
+.link-button {
+    min-height: 48px;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 18px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary {
+    margin-top: 12px;
+    color: #fff;
+    background: var(--accent);
+}
+
+.primary:hover {
+    background: var(--accent-strong);
+}
+
+.secondary {
+    color: var(--accent-strong);
+    background: #dcefeb;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+}
+
+.status {
+    margin-top: 18px;
+    min-height: 48px;
+    border-radius: 8px;
+    padding: 14px;
+    background: #f4f8f7;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.status[data-tone="success"] {
+    color: var(--success);
+    background: #e7f5ee;
+}
+
+.status[data-tone="warn"] {
+    color: var(--warning);
+    background: #fff6de;
+}
+
+.status[data-tone="error"] {
+    color: var(--danger);
+    background: #ffeded;
+}
+
+.panel > .status-card + .status-card {
+    margin-top: 12px;
+}
+
+.link-button {
+    margin-top: 16px;
+    color: #fff;
+    background: var(--accent);
+}
+
+@media (max-width: 680px) {
+    .panel {
+        padding: 22px;
+    }
+
+    .meta-grid,
+    .detail-grid,
+    .inline-field {
+        grid-template-columns: 1fr;
+    }
+}

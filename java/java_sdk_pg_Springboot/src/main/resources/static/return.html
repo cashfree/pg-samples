@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashfree PG Payment Status</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/return.js" defer></script>
+</head>
+<body>
+<main class="shell">
+    <section class="panel">
+        <div class="intro">
+            <p class="eyebrow">Return URL Flow</p>
+            <h1>Payment Status</h1>
+            <p>The browser has returned from Cashfree. This page polls the backend check status API.</p>
+        </div>
+
+        <div class="status-card">
+            <span>Order ID</span>
+            <strong id="orderId">-</strong>
+        </div>
+
+        <div class="status-card">
+            <span>Current status</span>
+            <strong id="orderStatus">Checking...</strong>
+        </div>
+
+        <div id="paymentDetails" class="detail-grid" hidden>
+            <div class="status-card">
+                <span>Cashfree Transaction ID</span>
+                <strong id="cfPaymentId">-</strong>
+            </div>
+            <div class="status-card">
+                <span>Bank UTR</span>
+                <strong id="bankReference">-</strong>
+            </div>
+            <div class="status-card">
+                <span>Payment Mode</span>
+                <strong id="paymentGroup">-</strong>
+            </div>
+            <div class="status-card">
+                <span>Payment Time</span>
+                <strong id="paymentTime">-</strong>
+            </div>
+            <div id="failedReasonCard" class="status-card" hidden>
+                <span>Failed Reason</span>
+                <strong id="paymentMessage">-</strong>
+            </div>
+        </div>
+
+        <div id="details" class="status"></div>
+        <a class="link-button" href="/">Create another order</a>
+    </section>
+</main>
+</body>
+</html>

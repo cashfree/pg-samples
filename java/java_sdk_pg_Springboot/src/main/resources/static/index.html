@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashfree PG Java SDK Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js" defer></script>
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<main class="shell">
+    <section class="panel">
+        <div class="intro">
+            <p class="eyebrow">Cashfree Payment Gateway</p>
+            <h1>Java Backend SDK Merchant Walkthrough</h1>
+            <p>This app is built to test Cashfree PG SDK integration end to end.</p>
+        </div>
+
+        <div class="meta-grid" aria-label="SDK details">
+            <div>
+                <span>Backend SDK</span>
+                <strong id="sdkType">Java Backend SDK</strong>
+            </div>
+            <div>
+                <span>SDK version</span>
+                <strong id="sdkVersion">5.0.1</strong>
+            </div>
+            <div>
+                <span>Mode</span>
+                <strong id="environment">SANDBOX</strong>
+            </div>
+        </div>
+
+        <form id="orderForm" class="form">
+            <label for="orderId">Order ID</label>
+            <div class="inline-field">
+                <input id="orderId" name="orderId" type="text" inputmode="latin" autocomplete="off"
+                       pattern="[A-Za-z0-9_-]{3,50}" maxlength="50" required>
+                <button id="generateOrderId" type="button" class="secondary">Generate</button>
+            </div>
+
+            <label for="amount">Amount</label>
+            <div class="amount-field">
+                <span>INR</span>
+                <input id="amount" name="amount" type="number" min="1" max="100000" step="0.01" value="1.00" required>
+            </div>
+
+            <button id="payButton" type="submit" class="primary">Create Order and Pay</button>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+</main>
+</body>
+</html>

@@ -32,7 +32,7 @@ pg-samples/
 │   └── htmx/
 ├── java/
 │   ├── hibernate/
-│   └── springboot/
+│   └── java_sdk_pg_Springboot/
 ├── node/
 │   ├── express/
 │   ├── hono/
@@ -73,7 +73,7 @@ pg-samples/
 | Go | Gin | [go/gin](go/gin/) |
 | Go | HTMX | [go/htmx](go/htmx/) |
 | Java | Hibernate | [java/hibernate](java/hibernate/) |
-| Java | Spring Boot | [java/springboot](java/springboot/) |
+| Java | Java SDK PG Spring Boot | [java/java_sdk_pg_Springboot](java/java_sdk_pg_Springboot/) |
 | Node.js | Express | [node/express](node/express/) |
 | Node.js | Hono | [node/hono](node/hono/) |
 | Node.js | Koa | [node/koa](node/koa/) |

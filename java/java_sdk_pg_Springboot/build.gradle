@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example.cashfree'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+def demoConfig = new java.util.Properties()
+def demoConfigFile = file('config/cashfree-demo.properties')
+if (demoConfigFile.exists()) {
+    demoConfigFile.withInputStream { demoConfig.load(it) }
+}
+
+ext {
+    cashfreeSdkVersion = demoConfig.getProperty('cashfree.sdk-version', '5.0.1')
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "com.cashfree.pg.java:cashfree_pg:${cashfreeSdkVersion}"
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.30'
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
