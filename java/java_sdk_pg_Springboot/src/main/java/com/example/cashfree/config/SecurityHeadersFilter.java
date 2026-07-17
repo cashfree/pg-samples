@@ -24,11 +24,12 @@ public class SecurityHeadersFilter extends OncePerRequestFilter {
         response.setHeader("Content-Security-Policy",
                 "default-src 'self'; "
                         + "script-src 'self' https://sdk.cashfree.com; "
-                        + "connect-src 'self' https://sandbox.cashfree.com https://api.cashfree.com; "
-                        + "style-src 'self'; "
+                        + "connect-src 'self' https://sandbox.cashfree.com https://api.cashfree.com https://sdk.cashfree.com; "
+                        + "style-src 'self' 'unsafe-inline'; "
                         + "img-src 'self' data:; "
+                        + "frame-src https://sdk.cashfree.com; "
                         + "base-uri 'self'; "
-                        + "form-action 'self' https://sandbox.cashfree.com https://api.cashfree.com; "
+                        + "form-action 'self' https://*.cashfree.com; "
                         + "frame-ancestors 'none'");
 
         if (request.getRequestURI().startsWith("/api/")) {

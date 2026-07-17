@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="cashfree_pg" Version="5.0.6" />
+    <PackageReference Include="cashfree-dotnet-pg" Version="6.0.7" />
   </ItemGroup>
 
 </Project>
