@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashfree Subscription Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/subscription.css">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js" defer></script>
+    <script src="/subscription.js" defer></script>
+</head>
+<body>
+<main class="shell">
+    <section class="panel">
+
+        <nav class="page-nav">
+            <a href="/">Payment Orders</a>
+            <a href="/subscription.html" class="active">Subscriptions</a>
+        </nav>
+
+        <div class="intro">
+            <p class="eyebrow">Cashfree Payment Gateway</p>
+            <h1>Subscription Demo</h1>
+            <p>Create and manage recurring subscriptions using the Cashfree Java Backend SDK.</p>
+        </div>
+
+        <div class="meta-grid" aria-label="SDK details">
+            <div>
+                <span>Backend SDK</span>
+                <strong id="sdkType">Java Backend SDK</strong>
+            </div>
+            <div>
+                <span>SDK version</span>
+                <strong id="sdkVersion">5.0.1</strong>
+            </div>
+            <div>
+                <span>Mode</span>
+                <strong id="environment">SANDBOX</strong>
+            </div>
+        </div>
+
+        <!-- Phase 1: Create -->
+        <div id="createSection">
+            <form id="subscriptionForm" class="form">
+                <label for="subscriptionId">Subscription ID</label>
+                <div class="inline-field">
+                    <input id="subscriptionId" name="subscriptionId" type="text"
+                           inputmode="latin" autocomplete="off"
+                           pattern="[A-Za-z0-9_.\- ]{3,250}" maxlength="250" required>
+                    <button id="generateSubId" type="button" class="secondary">Generate</button>
+                </div>
+
+                <label for="maxAmount">Max Amount per Charge</label>
+                <div class="amount-field">
+                    <span>INR</span>
+                    <input id="maxAmount" name="maxAmount" type="number"
+                           min="1" max="100000" step="0.01" value="500.00" required>
+                </div>
+
+                <button id="createButton" type="submit" class="primary">
+                    Create Subscription &amp; Authorize
+                </button>
+            </form>
+
+            <div id="createStatus" class="status" role="status" aria-live="polite"></div>
+        </div>
+
+        <!-- Phase 2: Status + Manage + Payments -->
+        <div id="manageSection" hidden>
+
+            <!-- Auth result banner — shown only on return from Cashfree -->
+            <div id="authBanner" class="auth-banner" hidden>
+                <div class="auth-banner__icon" id="authBannerIcon"></div>
+                <div class="auth-banner__body">
+                    <p class="auth-banner__title" id="authBannerTitle"></p>
+                    <p class="auth-banner__sub" id="authBannerSub"></p>
+                </div>
+            </div>
+
+            <div class="sub-header">
+                <h2>Subscription Details</h2>
+                <button id="startOver" type="button" class="secondary small">Create new</button>
+            </div>
+
+            <div class="detail-grid" id="subscriptionCard">
+                <div class="status-card">
+                    <span>Subscription ID</span>
+                    <strong id="subId">-</strong>
+                </div>
+                <div class="status-card">
+                    <span>Cashfree Sub ID</span>
+                    <strong id="cfSubId">-</strong>
+                </div>
+                <div class="status-card span-2">
+                    <span>Authorization Status</span>
+                    <strong id="subStatus">-</strong>
+                </div>
+            </div>
+
+            <div class="manage-actions" id="manageActions">
+                <p class="section-label">Manage Subscription</p>
+                <div class="action-row">
+                    <button id="btnActivate" type="button" class="secondary" data-action="ACTIVATE">Activate</button>
+                    <button id="btnPause"    type="button" class="secondary" data-action="PAUSE">Pause</button>
+                    <button id="btnCancel"   type="button" class="danger-btn" data-action="CANCEL">Cancel</button>
+                </div>
+            </div>
+
+            <div id="manageStatus" class="status" role="status" aria-live="polite"></div>
+
+            <div class="payments-section">
+                <div class="payments-header">
+                    <p class="section-label">Payments</p>
+                    <button id="refreshPayments" type="button" class="secondary small">Refresh</button>
+                </div>
+                <div id="paymentsContainer">
+                    <p class="empty-state">No payments yet.</p>
+                </div>
+            </div>
+
+            <a class="link-button" href="/">Back to Orders</a>
+        </div>
+
+    </section>
+</main>
+</body>
+</html>
