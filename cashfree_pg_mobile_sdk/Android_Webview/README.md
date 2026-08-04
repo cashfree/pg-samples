@@ -27,7 +27,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 1. Create a backend env file:
 
 ```bash
-cd Android_Webview/server
+cd cashfree_pg_mobile_sdk/Android_Webview/server
 cp .env.example .env
 ```
 
