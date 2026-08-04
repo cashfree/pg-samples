@@ -18,10 +18,11 @@ Each sample lives in its own folder and usually includes setup steps, required c
 
 ```text
 pg-samples/
-├── Android_Webview/
 ├── Asp.net Webforms/
 ├── cashfree_pg_mobile_sdk/
+│   ├── Android_Webview/
 │   ├── cashfree_PG_Android_Native_SDK/
+│   ├── cashfree_PG_Flutter_Element_SDK/
 │   ├── cashfree_PG_Flutter_SDK/
 │   └── cashfree_PG_React_Native_SDK/
 ├── dotnet-core/
@@ -62,8 +63,9 @@ pg-samples/
 
 | Category | Sample | Path |
 | --- | --- | --- |
-| Mobile | Android WebView | [Android_Webview](Android_Webview/) |
+| Mobile | Android WebView | [cashfree_pg_mobile_sdk/Android_Webview](cashfree_pg_mobile_sdk/Android_Webview/) |
 | Mobile SDK | Android Native SDK | [cashfree_pg_mobile_sdk/cashfree_PG_Android_Native_SDK](cashfree_pg_mobile_sdk/cashfree_PG_Android_Native_SDK/) |
+| Mobile SDK | Flutter Element SDK | [cashfree_pg_mobile_sdk/cashfree_PG_Flutter_Element_SDK](cashfree_pg_mobile_sdk/cashfree_PG_Flutter_Element_SDK/) |
 | Mobile SDK | Flutter SDK | [cashfree_pg_mobile_sdk/cashfree_PG_Flutter_SDK](cashfree_pg_mobile_sdk/cashfree_PG_Flutter_SDK/) |
 | Mobile SDK | React Native SDK | [cashfree_pg_mobile_sdk/cashfree_PG_React_Native_SDK/CashfreeHybridApp](cashfree_pg_mobile_sdk/cashfree_PG_React_Native_SDK/CashfreeHybridApp/) |
 | .NET | ASP.NET Webforms | [Asp.net Webforms](Asp.net%20Webforms/) |
