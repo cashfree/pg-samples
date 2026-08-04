@@ -1,0 +1,1 @@
+/bin/zsh -lc 'if ! pgrep -fl "Pixel_9_API_35" >/dev/null; then /Users/r.rahul/Library/Android/sdk/emulator/emulator -avd Pixel_9_API_35 >/tmp/pixel9-emulator.log 2>&1 & fi; adb wait-for-device; until [[ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == "1" ]]; do sleep 2; done; flutter run -d emulator-5554'
