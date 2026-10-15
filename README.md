@@ -41,6 +41,7 @@ pg-samples/
 │   └── nest/
 ├── node-js(express)/
 │   └── server/
+├── partner_oauth_flow/
 ├── php/
 │   ├── codeigniter/
 │   ├── laravel/
@@ -80,6 +81,7 @@ pg-samples/
 | Node.js | Hono | [node/hono](node/hono/) |
 | Node.js | Koa | [node/koa](node/koa/) |
 | Node.js | Nest | [node/nest](node/nest/) |
+| Partner OAuth | Embedded Partner OAuth Flow | [partner_oauth_flow](partner_oauth_flow/) |
 | Node.js | Legacy Express Server | [node-js(express)/server](node-js(express)/server/) |
 | PHP | CodeIgniter | [php/codeigniter](php/codeigniter/) |
 | PHP | Laravel | [php/laravel](php/laravel/) |

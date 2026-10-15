@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashfree Partner OAuth Sandbox</title>
+    <link rel="stylesheet" href="/public/styles.css">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>Cashfree Partner OAuth Sandbox</h1>
+          <p id="configLine">Loading configuration...</p>
+        </div>
+        <button id="refreshMerchants" type="button">Refresh</button>
+      </section>
+
+      <section class="grid">
+        <form id="linkForm" class="panel">
+          <h2>Link Merchant</h2>
+          <div class="reference-field">
+            <label for="merchantReference">Merchant reference ID</label>
+            <div class="input-action">
+              <input id="merchantReference" name="merchant_id" placeholder="business_reference_id" maxlength="40" required>
+              <button id="generateMerchantId" type="button">Generate ID</button>
+            </div>
+          </div>
+          <button type="submit">Generate OAuth Link</button>
+          <a id="authLink" class="auth-link" target="_blank" rel="noreferrer"></a>
+        </form>
+
+        <form id="orderForm" class="panel">
+          <h2>Create Test Order</h2>
+          <label>
+            Linked merchant ID
+            <input name="merchant_id" placeholder="business_reference_id" required>
+          </label>
+          <label>
+            Amount
+            <input name="order_amount" type="number" min="1" step="0.01" value="10" required>
+          </label>
+          <label>
+            Customer phone
+            <input name="customer_phone" value="9999999999" required>
+          </label>
+          <button type="submit">Create Order</button>
+          <button id="checkoutButton" class="secondary" type="button" disabled>Open Checkout</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Linked Merchants</h2>
+        <div id="merchantList" class="merchant-list"></div>
+      </section>
+
+      <form id="paymentsForm" class="panel">
+        <h2>Check Payment Status</h2>
+        <label>Linked merchant ID<input name="merchant_id" required></label>
+        <label>Order ID<input name="order_id" required></label>
+        <button type="submit">Fetch Payments</button>
+      </form>
+
+      <section class="panel">
+        <h2>Response</h2>
+        <pre id="output">{}</pre>
+      </section>
+    </main>
+    <script src="/public/app.js"></script>
+  </body>
+</html>
