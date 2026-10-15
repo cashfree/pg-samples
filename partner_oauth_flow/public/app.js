@@ -2,6 +2,7 @@ const output = document.querySelector("#output");
 const authLink = document.querySelector("#authLink");
 const checkoutButton = document.querySelector("#checkoutButton");
 let lastPaymentSessionId = "";
+let checkoutMode;
 
 document.querySelector("#generateMerchantId").addEventListener("click", () => {
   const input = document.querySelector("#merchantReference");
@@ -32,8 +33,8 @@ document.querySelector("#orderForm").addEventListener("submit", async event => {
 });
 
 checkoutButton.addEventListener("click", () => {
-  if (!lastPaymentSessionId || !window.Cashfree) return;
-  const cashfree = Cashfree({ mode: "sandbox" });
+  if (!lastPaymentSessionId || !checkoutMode || !window.Cashfree) return;
+  const cashfree = Cashfree({ mode: checkoutMode });
   cashfree.checkout({ paymentSessionId: lastPaymentSessionId, redirectTarget: "_self" });
 });
 
@@ -41,8 +42,9 @@ document.querySelector("#refreshMerchants").addEventListener("click", loadMercha
 
 async function loadConfig() {
   const config = await request("/api/config", { quiet: true });
+  checkoutMode = config.env;
   document.querySelector("#configLine").textContent =
-    `${config.env} | redirect: ${config.redirectUrl} | partner key: ${config.hasPartnerApiKey ? "set" : "missing"} | oauth client: ${config.hasOAuthClientId ? "set" : "missing"}`;
+    `${config.env} | return: ${config.returnUrl} | redirect: ${config.redirectUrl} | partner key: ${config.hasPartnerApiKey ? "set" : "missing"} | oauth client: ${config.hasOAuthClientId ? "set" : "missing"}`;
 }
 
 async function loadMerchants() {

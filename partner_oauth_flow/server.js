@@ -7,26 +7,20 @@ const { URL } = require("url");
 loadEnv();
 
 const PORT = Number(process.env.PORT || 3000);
-const ENV = "sandbox";
-if (process.env.CASHFREE_ENV && process.env.CASHFREE_ENV !== ENV) {
-  throw new Error("This sample only supports sandbox credentials and endpoints");
-}
+const config = require("./config").configure();
+const ENV = config.environment;
 const APP_PASSWORD = process.env.APP_PASSWORD || "";
 if (APP_PASSWORD.length < 24 || APP_PASSWORD.includes(":")) {
   throw new Error("Set APP_PASSWORD to a random password of at least 24 characters without colons");
 }
-const APP_BASE_URL = (process.env.APP_BASE_URL || `http://localhost:${PORT}`).replace(/\/$/, "");
+const APP_BASE_URL = config.appBaseUrl;
 const OAUTH_CLIENT_ID = process.env.CASHFREE_OAUTH_CLIENT_ID || "";
 const OAUTH_CLIENT_SECRET = process.env.CASHFREE_OAUTH_CLIENT_SECRET || "";
 const PARTNER_API_KEY = process.env.CASHFREE_PARTNER_API_KEY || "";
-const API_BASE = "https://api-sandbox.cashfree.com";
-const PG_BASE = "https://sandbox.cashfree.com";
+const API_BASE = config.apiBase;
+const PG_BASE = config.pgBase;
 const ROOT = __dirname;
 const base = new URL(APP_BASE_URL);
-if (base.origin !== APP_BASE_URL || base.username || base.password ||
-    !(base.protocol === "https:" || (base.protocol === "http:" && base.hostname === "localhost"))) {
-  throw new Error("APP_BASE_URL must be an HTTPS origin or http://localhost:PORT, without a path");
-}
 const merchants = new Map();
 const states = new Map();
 const sessions = new Map();
@@ -43,7 +37,7 @@ const server = http.createServer(async (req, res) => {
     }
     // Webhooks authenticate using the signature below; all operator routes require login.
     if (url.pathname !== "/webhooks/cashfree" && !authenticate(req)) {
-      res.setHeader("WWW-Authenticate", 'Basic realm="Sandbox operator", charset="UTF-8"');
+      res.setHeader("WWW-Authenticate", 'Basic realm="Partner OAuth operator", charset="UTF-8"');
       return json(res, 401, { error: "Operator authentication required" });
     }
     const now = Date.now();
@@ -78,6 +72,8 @@ const server = http.createServer(async (req, res) => {
         env: ENV,
         appBaseUrl: APP_BASE_URL,
         redirectUrl: `${APP_BASE_URL}/oauth/callback`,
+        returnUrl: config.returnUrl,
+        pgApiVersion: config.pgApiVersion,
         hasPartnerApiKey: Boolean(PARTNER_API_KEY),
         hasOAuthClientId: Boolean(OAUTH_CLIENT_ID),
         endpoints: { apiBase: API_BASE, pgBase: PG_BASE }
@@ -183,12 +179,12 @@ const server = http.createServer(async (req, res) => {
           order_currency: "INR",
           customer_details: {
             customer_id: body.customer_id || `cust_${Date.now()}`,
-            customer_name: body.customer_name || "Sandbox Customer",
+            customer_name: body.customer_name || "Sample Customer",
             customer_email: body.customer_email || "customer@example.com",
             customer_phone: body.customer_phone || "9999999999"
           },
           order_meta: {
-            return_url: `${APP_BASE_URL}/?order_id={order_id}`
+            return_url: config.returnUrl
           }
         }
       });
@@ -226,7 +222,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 if (require.main === module) server.listen(PORT, "127.0.0.1", () => {
-  console.log(`Cashfree sandbox app running at http://localhost:${PORT}`);
+  console.log(`Cashfree ${ENV} app listening on 127.0.0.1:${PORT}`);
   console.log(`OAuth redirect URL: ${APP_BASE_URL}/oauth/callback`);
 });
 module.exports = server;
@@ -272,7 +268,7 @@ async function pgFetch(route, accessToken, options = {}) {
   const headers = {
     "accept": "application/json",
     "content-type": "application/json",
-    "x-api-version": "2023-08-01",
+    "x-api-version": config.pgApiVersion,
     "authorization": `Bearer ${accessToken}`,
     ...(options.headers || {})
   };

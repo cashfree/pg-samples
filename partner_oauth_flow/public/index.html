@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cashfree Partner OAuth Sandbox</title>
+    <title>Cashfree Partner OAuth Integration</title>
     <link rel="stylesheet" href="/public/styles.css">
     <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
   </head>
@@ -11,7 +11,7 @@
     <main class="shell">
       <section class="topbar">
         <div>
-          <h1>Cashfree Partner OAuth Sandbox</h1>
+          <h1>Cashfree Partner OAuth Integration</h1>
           <p id="configLine">Loading configuration...</p>
         </div>
         <button id="refreshMerchants" type="button">Refresh</button>
@@ -32,7 +32,7 @@
         </form>
 
         <form id="orderForm" class="panel">
-          <h2>Create Test Order</h2>
+          <h2>Create Order</h2>
           <label>
             Linked merchant ID
             <input name="merchant_id" placeholder="business_reference_id" required>
@@ -43,7 +43,7 @@
           </label>
           <label>
             Customer phone
-            <input name="customer_phone" value="9999999999" required>
+            <input name="customer_phone" placeholder="Customer phone for selected environment" required>
           </label>
           <button type="submit">Create Order</button>
           <button id="checkoutButton" class="secondary" type="button" disabled>Open Checkout</button>
