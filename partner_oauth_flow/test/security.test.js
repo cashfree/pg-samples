@@ -8,8 +8,16 @@ process.env.APP_PASSWORD = crypto.randomBytes(32).toString('hex');
 process.env.CASHFREE_OAUTH_CLIENT_SECRET = crypto.randomBytes(32).toString('hex');
 process.env.CASHFREE_OAUTH_CLIENT_ID = crypto.randomUUID();
 process.env.CASHFREE_PARTNER_API_KEY = crypto.randomBytes(32).toString('hex');
-process.env.CASHFREE_ENV = 'sandbox';
-process.env.APP_BASE_URL = 'http://localhost:3000';
+const environment = process.env.OAUTH_TEST_ENV || 'sandbox';
+const origin = environment === 'production' ? 'https://partner.example' : 'http://localhost:3000';
+process.env.CASHFREE_ENV = environment;
+process.env.APP_BASE_URL = origin;
+process.env.CASHFREE_API_BASE_URL = '';
+process.env.CASHFREE_PG_BASE_URL = '';
+process.env.CASHFREE_PG_API_VERSION = '2023-08-01';
+process.env.CASHFREE_RETURN_URL = environment === 'production' ? 'https://merchant.example/payments/return?order_id={order_id}' : '';
+const apiBase = environment === 'production' ? 'https://api.cashfree.com' : 'https://api-sandbox.cashfree.com';
+const pgBase = environment === 'production' ? 'https://cashfree.com' : 'https://sandbox.cashfree.com';
 const server = require('../server');
 const nativeFetch = global.fetch;
 let calls = [];
@@ -22,8 +30,8 @@ const auth = `Basic ${Buffer.from(`operator:${process.env.APP_PASSWORD}`).toStri
 function request(route, { method = 'GET', body, headers = {}, authenticated = true, session = cookie } = {}) {
   return new Promise((resolve, reject) => {
     const req = http.request({ hostname: '127.0.0.1', port: server.address().port, path: route, method,
-      headers: { host: 'localhost:3000', ...(authenticated ? { authorization: auth } : {}),
-        ...(session ? { cookie: session } : {}), ...(method === 'POST' ? { origin: 'http://localhost:3000', 'content-type': 'application/json' } : {}), ...headers }
+      headers: { host: new URL(origin).host, ...(authenticated ? { authorization: auth } : {}),
+        ...(session ? { cookie: session } : {}), ...(method === 'POST' ? { origin, 'content-type': 'application/json' } : {}), ...headers }
     }, res => {
       let text = '';
       res.on('data', chunk => { text += chunk; });
@@ -52,7 +60,7 @@ async function link(merchant = 'demo_merchant') {
 
 before(async () => {
   global.fetch = async (url, options) => {
-    assert.ok(url.startsWith('https://api-sandbox.cashfree.com/') || url.startsWith('https://sandbox.cashfree.com/'));
+    assert.ok(url.startsWith(`${apiBase}/`) || url.startsWith(`${pgBase}/`));
     assert.equal(options.redirect, 'error');
     if (url.includes('/partners/oauth/')) assert.equal(options.headers['oauth-client-secret'], process.env.CASHFREE_OAUTH_CLIENT_SECRET);
     calls.push({ url, options });
@@ -72,12 +80,16 @@ test('operator authentication, session, host and cross-origin protections', asyn
   assert.equal((await request('/api/oauth/auth-link', { method: 'POST', headers: { 'content-type': 'text/plain' }, body: '{}' })).status, 403);
   const config = await request('/api/config');
   assert.equal(config.status, 200);
+  assert.equal(config.json().env, environment);
+  assert.deepEqual(config.json().endpoints, { apiBase, pgBase });
+  assert.equal(config.json().returnUrl, process.env.CASHFREE_RETURN_URL || `${origin}/?order_id={order_id}`);
   assert.equal(config.headers['cache-control'], 'no-store');
   assert.equal(config.headers['referrer-policy'], 'no-referrer');
   assert.match(config.headers['content-security-policy'], /frame-ancestors 'none'/);
   noSecrets(config);
   const home = await request('/', { session: '' });
   assert.match(home.headers['set-cookie'][0], /HttpOnly; SameSite=Lax/);
+  assert.equal(home.headers['set-cookie'][0].includes('; Secure'), environment === 'production');
 });
 
 test('only public assets can be downloaded', async () => {
@@ -142,6 +154,8 @@ test('order uses server-side bearer token and only returns checkout fields', asy
   provider = async (url, options) => {
     assert.equal(options.headers.authorization, `Bearer ${secretAccess}`);
     assert.equal(options.headers['x-partner-apikey'], undefined);
+    assert.equal(options.headers['x-api-version'], '2023-08-01');
+    assert.equal(JSON.parse(options.body).order_meta.return_url, process.env.CASHFREE_RETURN_URL || `${origin}/?order_id={order_id}`);
     return response({ order_id: 'order_demo', order_status: 'ACTIVE', payment_session_id: 'example_session', customer_details: { private: true }, access_token: secretAccess });
   };
   const result = await request('/api/orders', { method: 'POST', body: { merchant_id: 'demo_merchant', order_amount: 10 } });

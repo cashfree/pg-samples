@@ -2,7 +2,7 @@
   "name": "cashfree-partner-oauth-flow",
   "version": "1.0.0",
   "private": true,
-  "description": "Cashfree embedded partner OAuth sandbox sample with server-side credentials.",
+  "description": "Cashfree embedded partner OAuth integration sample with server-side credentials.",
   "scripts": {
     "start": "node server.js",
     "test": "node --test"
