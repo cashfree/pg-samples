@@ -53,6 +53,7 @@ pg-samples/
 │   └── ror/
 ├── sub-sample/
 │   └── node/
+│       └── express/
 └── web/
     ├── angular/
     ├── next/
@@ -89,7 +90,7 @@ pg-samples/
 | Python | Django | [python/django](python/django/) |
 | Python | Flask | [python/flask](python/flask/) |
 | Ruby | Ruby on Rails | [ruby/ror](ruby/ror/) |
-| Sub Sample | Node Express | [sub-sample/node](sub-sample/node/) |
+| Subscriptions | Node Express | [sub-sample/node/express](sub-sample/node/express/) |
 | Web | Angular | [web/angular](web/angular/) |
 | Web | Next.js | [web/next](web/next/) |
 | Web | Nuxt | [web/nuxt](web/nuxt/) |
