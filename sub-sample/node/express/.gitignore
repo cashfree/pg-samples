@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Build output
+dist/
+build/
+out/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+*.DS_Store
+
+# Coverage reports
+coverage/
+
+# IDE files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET
+bin/
+obj/
