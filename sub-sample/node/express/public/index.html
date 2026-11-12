@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://sandbox.cashfree.com https://api.cashfree.com https://payments.cashfree.com https://sdk.cashfree.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://sdk.cashfree.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+  <title>Subscription Plans</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  <style>
+    :root {
+      --page-bg: #f4f6fb;
+      --ink: #1d2433;
+      --muted: #5f6b7d;
+      --line: #e3e7ef;
+      --ok: #1a7f4b;
+      --ok-bg: #e7f6ee;
+      --no: #b42318;
+      --no-bg: #fdecea;
+    }
+    body { background: var(--page-bg); color: var(--ink); }
+    .page { max-width: 1140px; }
+    .page-header h1 { font-weight: 700; letter-spacing: -0.02em; }
+    .page-header p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+    .env-badge { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    .plan-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .plan-card:hover { box-shadow: 0 10px 24px rgba(16, 24, 40, 0.10); transform: translateY(-2px); }
+    .plan-name { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+    .plan-price { font-size: 2.25rem; font-weight: 700; line-height: 1.1; }
+    .plan-price small { font-size: 1rem; font-weight: 500; color: var(--muted); }
+    .plan-meta { color: var(--muted); font-size: 0.875rem; }
+
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    .mode-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+    }
+    .mode-chip.ok { background: var(--ok-bg); color: var(--ok); }
+    .mode-chip.no { background: var(--no-bg); color: var(--no); text-decoration: line-through; }
+
+    .rules { list-style: none; padding: 0; margin: 0; }
+    .rules li { display: flex; gap: 0.6rem; padding: 0.4rem 0; font-size: 0.9rem; line-height: 1.4; }
+    .rules li + li { border-top: 1px dashed var(--line); }
+    .rules i { margin-top: 0.2rem; width: 1rem; flex: none; text-align: center; }
+    .rules .fa-circle-check { color: var(--ok); }
+    .rules .fa-circle-xmark { color: var(--no); }
+    .rules .fa-circle-info { color: #3b6fd8; }
+    .rules .fa-triangle-exclamation { color: #b7791f; }
+
+    .btn-plan { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+    .btn-plan:hover, .btn-plan:focus { background: var(--accent); border-color: var(--accent); color: #fff; filter: brightness(0.92); }
+
+    .test-banner { background: #fff8e6; border: 1px solid #f3d38a; border-radius: 14px; }
+    .common-rules { background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+  </style>
+</head>
+<body>
+
+<main class="container page py-5">
+  <header class="page-header text-center mb-5">
+    <span id="envBadge" class="badge rounded-pill text-bg-secondary env-badge mb-3">Loading…</span>
+    <h1 class="mb-2">Periodic Subscription Plans</h1>
+    <p>Pick a plan and click Subscribe. The customer authorizes a mandate with UPI AutoPay, card or eNACH in Cashfree checkout.</p>
+  </header>
+
+  <div id="paymentMessage" role="status" aria-live="polite" class="mb-4" hidden></div>
+
+  <!-- Production-only test product -->
+  <section id="productionTestProduct" class="test-banner p-4 mb-4" hidden>
+    <div class="row g-3 align-items-center">
+      <div class="col-lg-8">
+        <h2 class="h5 mb-1"><i class="fas fa-flask me-2"></i>Production One Cycle Test — ₹1 authorization + one ₹1 debit</h2>
+        <p class="mb-2 small text-body-secondary">Real money. Pay with <strong>UPI or card</strong>. eNACH can take 24–48 hours to activate and may miss the next-day charge.</p>
+        <div class="small">
+          <span class="me-3"><strong>First charge:</strong> <span id="testFirstCharge"></span></span>
+          <span><strong>Expires:</strong> <span id="testExpiry"></span></span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-warning w-100 fw-semibold subscribe-btn" data-plan="production_test">Test in production</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="row g-4">
+    <!-- Basic Daily Plan -->
+    <div class="col-md-6 col-lg-4">
+      <article class="plan-card h-100 p-4 d-flex flex-column" style="--accent:#0e8fa8">
+        <div class="plan-name">Basic · Daily</div>
+        <div class="plan-price my-2">₹100 <small>/ day</small></div>
+        <div class="plan-meta mb-3">Plan ID <code>Basic_Day_Plan</code></div>
+
+        <div class="section-label mb-2">Payment modes</div>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="mode-chip ok"><i class="fas fa-check"></i>UPI</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>eNACH</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>Card</span>
+        </div>
+
+        <ul class="rules mb-4">
+          <li><i class="fas fa-circle-check"></i><span>All payment modes support a daily frequency.</span></li>
+          <li><i class="fas fa-circle-check"></i><span>₹100 is under the ₹15,000 limit, so UPI and card debits need no extra customer approval.</span></li>
+          <li><i class="fas fa-circle-check"></i><span>eNACH: up to ₹1 crore. ₹0 authorization; activation takes 24–48 hours.</span></li>
+        </ul>
+        <button class="btn btn-plan w-100 mt-auto subscribe-btn" data-plan="basic">Subscribe</button>
+      </article>
+    </div>
+
+    <!-- Standard Monthly Plan -->
+    <div class="col-md-6 col-lg-4">
+      <article class="plan-card h-100 p-4 d-flex flex-column" style="--accent:#c2410c">
+        <div class="plan-name">Standard · Monthly</div>
+        <div class="plan-price my-2">₹2,500 <small>/ month</small></div>
+        <div class="plan-meta mb-3">Plan ID <code>Standard_Monthly_Plan</code></div>
+
+        <div class="section-label mb-2">Payment modes</div>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="mode-chip ok"><i class="fas fa-check"></i>UPI</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>eNACH</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>Card</span>
+        </div>
+
+        <ul class="rules mb-4">
+          <li><i class="fas fa-circle-check"></i><span>All payment modes support a monthly frequency.</span></li>
+          <li><i class="fas fa-circle-check"></i><span>₹2,500 is under the ₹15,000 limit, so UPI and card debits need no extra customer approval.</span></li>
+          <li><i class="fas fa-circle-check"></i><span>eNACH: up to ₹1 crore. ₹0 authorization; activation takes 24–48 hours.</span></li>
+        </ul>
+        <button class="btn btn-plan w-100 mt-auto subscribe-btn" data-plan="standard">Subscribe</button>
+      </article>
+    </div>
+
+    <!-- Premium Yearly Plan -->
+    <div class="col-md-6 col-lg-4">
+      <article class="plan-card h-100 p-4 d-flex flex-column" style="--accent:#4338ca">
+        <div class="plan-name">Premium · Yearly</div>
+        <div class="plan-price my-2">₹25,000 <small>/ year</small></div>
+        <div class="plan-meta mb-3">Plan ID <code>Premium_Yearly_Plan</code></div>
+
+        <div class="section-label mb-2">Payment modes</div>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="mode-chip ok"><i class="fas fa-check"></i>UPI</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>eNACH</span>
+          <span class="mode-chip ok"><i class="fas fa-check"></i>Card</span>
+        </div>
+
+        <ul class="rules mb-4">
+          <li><i class="fas fa-circle-check"></i><span>UPI AutoPay now supports a yearly frequency.</span></li>
+          <li><i class="fas fa-triangle-exclamation"></i><span>₹25,000 is over the ₹15,000 limit. UPI debits need AFA, which Cashfree must enable (up to ₹1 lakh). Card debits need AFA approved by the customer before 7:00 AM on the charge date.</span></li>
+          <li><i class="fas fa-circle-check"></i><span>eNACH: up to ₹1 crore with no per-debit approval, the best fit for high-value plans.</span></li>
+        </ul>
+        <button class="btn btn-plan w-100 mt-auto subscribe-btn" data-plan="premium">Subscribe</button>
+      </article>
+    </div>
+  </div>
+
+  <!-- Rules that apply to every plan -->
+  <section class="common-rules p-4 mt-4">
+    <h2 class="h6 section-label mb-3">Applies to all plans</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <ul class="rules">
+          <li><i class="fas fa-circle-info"></i><span><strong>First charge date:</strong> UPI and Indian cards from T+1 (if the subscription is created before 9:00 PM, otherwise T+2), at most 14 days ahead. This demo schedules it at T+3, 3:30 PM IST.</span></li>
+          <li><i class="fas fa-circle-info"></i><span><strong>Pre-debit notice:</strong> sent at least 24 hours before each debit. After it is sent, the debit amount can't change.</span></li>
+          <li><i class="fas fa-circle-info"></i><span><strong>Authorization:</strong> ₹1 for UPI and card in this demo; always ₹0 for eNACH.</span></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="rules">
+          <li><i class="fas fa-circle-info"></i><span><strong>Changing the amount:</strong> create a new plan, then call the Manage Subscription API with <code>CHANGE_PLAN</code>. The new amount can't exceed the original plan's maximum amount.</span></li>
+          <li><i class="fas fa-circle-info"></i><span><strong>Cards:</strong> Indian Visa, Mastercard and RuPay; international Visa and Mastercard.</span></li>
+          <li><i class="fas fa-circle-info"></i><span><strong>Retries:</strong> UPI gets 3 automatic hourly retries; card and eNACH are not retried.</span></li>
+          <li><i class="fas fa-envelope"></i><span><strong>Support:</strong> <a href="mailto:care@cashfree.com">care@cashfree.com</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let cashfree;
+
+  function showMessage(text, type = 'info') {
+    const box = document.getElementById('paymentMessage');
+    box.textContent = text;
+    box.className = `alert alert-${type} mb-4`;
+    box.hidden = false;
+  }
+
+  function waitForCashfreeSDK(callback, attempts = 10, delay = 500) {
+    if (typeof Cashfree !== 'undefined') return callback();
+    if (attempts > 0) return setTimeout(() => waitForCashfreeSDK(callback, attempts - 1, delay), delay);
+    showMessage('Cashfree SDK failed to load.', 'danger');
+  }
+
+  waitForCashfreeSDK(async () => {
+    try {
+      const response = await fetch('/api/config');
+      if (!response.ok) throw new Error('Could not load checkout configuration');
+      const config = await response.json();
+      cashfree = Cashfree({ mode: config.mode });
+
+      const badge = document.getElementById('envBadge');
+      const isProduction = config.mode === 'production';
+      badge.textContent = isProduction ? 'Production · live payments' : 'Sandbox · test payments';
+      badge.className = `badge rounded-pill env-badge mb-3 ${isProduction ? 'text-bg-danger' : 'text-bg-success'}`;
+
+      if (isProduction && config.productionTest) {
+        document.getElementById('productionTestProduct').hidden = false;
+        const formatDate = value => new Date(value).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST';
+        document.getElementById('testFirstCharge').textContent = formatDate(config.productionTest.subscription_first_charge_time);
+        document.getElementById('testExpiry').textContent = formatDate(config.productionTest.subscription_expiry_time);
+      }
+    } catch (error) {
+      showMessage(error.message, 'danger');
+    }
+  });
+
+  document.querySelectorAll('.subscribe-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const plan = btn.getAttribute('data-plan');
+      const label = btn.textContent;
+      try {
+        if (!cashfree) throw new Error('Cashfree SDK not initialized');
+        btn.disabled = true;
+        btn.textContent = 'Creating subscription…';
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ plan })
+        });
+        const result = await res.json();
+        if (!res.ok) throw new Error(result.error?.message || result.message || 'Subscription failed');
+
+        const sessionId = result.data?.subscription_session_id;
+        if (!sessionId) throw new Error('Session ID missing in response');
+
+        showMessage(`Subscription ${result.data.subscription_id || ''} created. Checkout opened in a new tab.`, 'success');
+        cashfree.subscriptionsCheckout({ subsSessionId: sessionId, redirectTarget: '_blank' })
+          .catch(err => showMessage(err.message || 'Checkout failed.', 'danger'));
+      } catch (err) {
+        showMessage(err.message || 'Something went wrong.', 'danger');
+        console.error('Subscription error:', err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
+  });
+</script>
+</body>
+</html>
