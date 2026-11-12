@@ -21,8 +21,9 @@ const captureRawBody = (req, res, buffer) => { req.rawBody = buffer.toString('ut
 app.use(express.json({ verify: captureRawBody }));
 app.use(express.urlencoded({ extended: false, verify: captureRawBody })); // Cashfree returns form POSTs
 // Environment variables
-const CASHFREE_APP_ID = process.env.CASHFREE_APP_ID || '11123595750e973ecc95c94ec5532111';
-const CASHFREE_SECRET = process.env.CASHFREE_SECRET || 'TEST307e06bddd583cc3f86edf02f410fa8a69653d7d';
+const CASHFREE_APP_ID = process.env.CASHFREE_APP_ID;
+const CASHFREE_SECRET = process.env.CASHFREE_SECRET;
+if (!CASHFREE_APP_ID || !CASHFREE_SECRET) throw new Error('Set CASHFREE_APP_ID and CASHFREE_SECRET in .env');
 // Plan mapping
 const PLANS = {
   basic: "Basic_Day_Plan",
@@ -54,9 +55,10 @@ app.post("/api/subscribe", async (req, res) => {
     const requestBody = {
       subscription_id: subscriptionId,
       customer_details: {
-        customer_email: "r.rahul@cashfree.com",
-        customer_phone: "9998887765",
-        customer_name: "Rahul Raman"
+        // Replace with your customer's details
+        customer_email: "customer@example.com",
+        customer_phone: "9999999999",
+        customer_name: "Test Customer"
       },
       plan_details: {
         plan_id: PLANS[plan]

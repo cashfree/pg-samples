@@ -7,6 +7,8 @@ const path = require('node:path');
 const logDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'subscription-returns-'));
 process.env.RETURN_LOG_PATH = path.join(logDirectory, 'returns.jsonl');
 process.env.CASHFREE_ENV = 'sandbox';
+process.env.CASHFREE_APP_ID = 'fake-sandbox-id';
+process.env.CASHFREE_SECRET = 'fake-sandbox-secret';
 process.env.APP_BASE_URL = 'http://localhost:4000';
 const app = require('../server');
 let server;
