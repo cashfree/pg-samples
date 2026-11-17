@@ -54,6 +54,8 @@ pg-samples/
 ├── sub-sample/
 │   └── node/
 │       └── express/
+│           ├── Subscription_cashfree_hosted_checkout_app/
+│           └── Subscription_Seamless_Demo_app/
 └── web/
     ├── angular/
     ├── next/
@@ -90,7 +92,8 @@ pg-samples/
 | Python | Django | [python/django](python/django/) |
 | Python | Flask | [python/flask](python/flask/) |
 | Ruby | Ruby on Rails | [ruby/ror](ruby/ror/) |
-| Subscriptions | Node Express | [sub-sample/node/express](sub-sample/node/express/) |
+| Subscriptions | Cashfree hosted checkout | [Subscription_cashfree_hosted_checkout_app](sub-sample/node/express/Subscription_cashfree_hosted_checkout_app/) |
+| Subscriptions | Seamless demo | [Subscription_Seamless_Demo_app](sub-sample/node/express/Subscription_Seamless_Demo_app/) |
 | Web | Angular | [web/angular](web/angular/) |
 | Web | Next.js | [web/next](web/next/) |
 | Web | Nuxt | [web/nuxt](web/nuxt/) |

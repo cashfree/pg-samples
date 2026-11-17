@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#6038cb"><meta name="description" content="Explore Cashfree seamless subscriptions. A merchant integration reference for periodic and on-demand billing."><title>Subscription Lab · Cashfree demo</title><link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="#products"><span class="brand-symbol">c<span>f</span></span><span>cashfree<span class="brand-sub">PAYMENTS</span></span></a>
+<div class="workspace-label">MERCHANT PLAYGROUND <span>DEMO</span></div>
+<nav aria-label="Main navigation"><a href="#products" data-page="products"><span aria-hidden="true">▦</span> Products <span class="nav-count">3</span></a><a href="#subscriptions" data-page="subscriptions"><span aria-hidden="true">↻</span> Subscriptions</a><a href="#inspector" data-page="inspector"><span aria-hidden="true">⌘</span> API inspector</a><a href="#guide" data-page="guide"><span aria-hidden="true">▤</span> Integration guide</a><div class="nav-separator"></div><a href="#settings" data-page="settings"><span aria-hidden="true">⚙</span> Configuration</a></nav>
+<div class="sidebar-bottom"><div class="support-icon">↗</div><strong>Build your recurring story.</strong><p>A working reference, from the first mandate to the next payment.</p><a href="https://www.cashfree.com/docs/payments/subscription/introduction" target="_blank" rel="noreferrer">Explore documentation ↗</a></div>
+<div class="sidebar-foot"><span class="status-dot"></span> Seamless subscriptions <span>v1.0</span></div>
+</aside>
+<div class="workspace"><header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="page-label">Products</strong></div><div class="topbar-actions"><span id="env-badge" class="badge">Loading…</span><a href="#settings" class="topbar-config" aria-label="Configuration">⚙</a><span class="avatar">M</span></div></header>
+<main id="main" tabindex="-1"><div class="loading">Opening your workspace…</div></main>
+<footer class="footer"><span>Built for exploration. Ready for integration.</span><span>Powered by <strong>Cashfree Payments</strong> <span class="footer-dot">•</span> Merchant reference demo</span></footer></div></div>
+<dialog id="drawer" class="drawer"><div id="drawer-content"></div></dialog>
+<dialog id="login" class="login-dialog"><form id="login-form"><span class="eyebrow">MERCHANT WORKSPACE</span><h2>Welcome to Subscription Lab</h2><p>Enter the merchant password configured on this server.</p><label>Workspace password<input name="password" type="password" required autocomplete="current-password"></label><p id="login-error" class="error-text"></p><button class="button primary" type="submit">Open workspace →</button></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body></html>

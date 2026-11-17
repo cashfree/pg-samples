@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
-const cors = require("cors");
+const crypto = require("node:crypto");
+const { summarizeReturn } = require("./security");
 const axios = require("axios");
 const path = require("path");
 const fs = require("node:fs/promises");
@@ -16,14 +17,43 @@ if (CASHFREE_ENV === 'production' && (!process.env.CASHFREE_APP_ID || !process.e
 const CASHFREE_API_URL = CASHFREE_ENV === 'production' ? 'https://api.cashfree.com/pg' : 'https://sandbox.cashfree.com/pg';
 const RETURN_LOG_PATH = process.env.RETURN_LOG_PATH || path.join(__dirname, 'logs', 'return-events.jsonl');
 // Middleware
-app.use(cors());
-const captureRawBody = (req, res, buffer) => { req.rawBody = buffer.toString('utf8'); };
-app.use(express.json({ verify: captureRawBody }));
-app.use(express.urlencoded({ extended: false, verify: captureRawBody })); // Cashfree returns form POSTs
+const HOST=process.env.HOST || '127.0.0.1';
+const password=process.env.MERCHANT_PASSWORD || '';
+const baseOrigin=new URL(APP_BASE_URL);
+const localHosts=['localhost','127.0.0.1','[::1]'];
+if(!['http:','https:'].includes(baseOrigin.protocol)||baseOrigin.username||baseOrigin.password||baseOrigin.pathname!=='/'||baseOrigin.search||baseOrigin.hash)throw new Error('APP_BASE_URL must be an HTTP(S) origin.');
+const publicWorkspace=!localHosts.includes(HOST)||!localHosts.includes(baseOrigin.hostname);
+if(publicWorkspace && (baseOrigin.protocol!=='https:' || password.length<12))throw new Error('Public workspace requires HTTPS and MERCHANT_PASSWORD of at least 12 characters.');
+const attempts=new Map();
+setInterval(()=>{for(const [ip,a] of attempts)if(Date.now()-a.since>900000)attempts.delete(ip);},60000).unref();
+app.use((req,res,next)=>{
+  res.set({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer'});
+  const hostname=req.hostname;
+  if(![...localHosts,baseOrigin.hostname].includes(hostname))return res.status(403).send('Host not allowed');
+  if(req.path!=='/return' && !['GET','HEAD','OPTIONS'].includes(req.method)){
+    if(req.get('origin')){
+      try{const origin=new URL(req.get('origin'));if(origin.origin!==baseOrigin.origin&&origin.host!==req.get('host'))return res.status(403).send('Origin not allowed');}
+      catch{return res.status(403).send('Origin not allowed');}
+    }
+    if(req.path==='/api/subscribe'&&!req.is('application/json'))return res.status(415).send('Use application/json');
+  }
+  if(req.path==='/return' || !password)return next();
+  const ip=req.socket.remoteAddress, now=Date.now(), a=attempts.get(ip);
+  if(a && a.count>=10 && now-a.since<900000)return res.status(429).send('Too many login attempts. Try again in 15 minutes.');
+  const header=req.get('authorization') || '';
+  const supplied=header.startsWith('Basic ')?Buffer.from(header.slice(6),'base64').toString('utf8').split(':').slice(1).join(':'):'';
+  const x=Buffer.from(supplied),y=Buffer.from(password);
+  if(x.length===y.length && crypto.timingSafeEqual(x,y)){attempts.delete(ip);return next();}
+  attempts.set(ip,{count:a&&now-a.since<900000?a.count+1:1,since:a&&now-a.since<900000?a.since:now});
+  res.set('WWW-Authenticate','Basic realm="Subscription demo"').status(401).send('Merchant login required');
+});
+app.use(express.json({ limit:'128kb' }));
+app.use(express.urlencoded({ extended: false, limit:'128kb', parameterLimit:100 })); // Cashfree returns form POSTs
 // Environment variables
 const CASHFREE_APP_ID = process.env.CASHFREE_APP_ID;
 const CASHFREE_SECRET = process.env.CASHFREE_SECRET;
 if (!CASHFREE_APP_ID || !CASHFREE_SECRET) throw new Error('Set CASHFREE_APP_ID and CASHFREE_SECRET in .env');
+function returnState(id,expires){return crypto.createHmac('sha256',CASHFREE_SECRET).update(`${id}:${expires}`).digest('hex');}
 // Plan mapping
 const PLANS = {
   basic: "Basic_Day_Plan",
@@ -47,7 +77,8 @@ app.post("/api/subscribe", async (req, res) => {
     });
   }
   try {
-    const subscriptionId = `Sub_${Date.now()}`;
+    const subscriptionId = `Sub_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+    const returnExpires=String(Date.now()+3600000);
     const chargeDate = new Date();
     chargeDate.setUTCDate(chargeDate.getUTCDate() + 3);
     chargeDate.setUTCHours(10, 0, 0, 0);
@@ -68,7 +99,7 @@ app.post("/api/subscribe", async (req, res) => {
         authorization_amount_refund: false
       },
       subscription_meta: {
-        return_url: `${APP_BASE_URL}/return?subscription_id=${encodeURIComponent(subscriptionId)}`,
+        return_url: `${APP_BASE_URL}/return?subscription_id=${encodeURIComponent(subscriptionId)}&expires=${returnExpires}&state=${returnState(subscriptionId,returnExpires)}`,
         notification_channel: ["EMAIL", "SMS"]
       },
       subscription_first_charge_time: isoFormatted,
@@ -95,7 +126,8 @@ app.post("/api/subscribe", async (req, res) => {
           "x-client-id": CASHFREE_APP_ID,
           "x-client-secret": CASHFREE_SECRET
         },
-        timeout: 15000
+        timeout: 15000,
+        maxRedirects: 0
       }
     );
     res.json({
@@ -104,10 +136,10 @@ app.post("/api/subscribe", async (req, res) => {
       curl: curlCommand
     });
   } catch (error) {
-    console.error("Cashfree API Error:", error.response?.data || error.message);
+    console.error("Cashfree subscription creation failed");
     res.status(500).json({
       message: "Subscription creation failed",
-      error: error.response?.data || error.message
+      error: { message: 'Check merchant configuration and Cashfree API logs.' }
     });
   }
 });
@@ -144,15 +176,14 @@ app.route('/return').get(handleReturn).post(handleReturn);
 
 async function handleReturn(req, res) {
   res.set('Cache-Control', 'no-store');
-  const received = { body: req.body || {}, query: req.query };
+  const received = { body: summarizeReturn(req.body), query: summarizeReturn(req.query) };
   if (req.method === 'POST') {
     try {
       await fs.mkdir(path.dirname(RETURN_LOG_PATH), { recursive: true, mode: 0o700 });
       await fs.appendFile(RETURN_LOG_PATH, JSON.stringify({
         received_at: new Date().toISOString(),
         content_type: req.get('content-type') || '',
-        ...received,
-        raw_body: req.rawBody || ''
+        ...received
       }) + '\n', { mode: 0o600 });
     } catch (error) {
       console.error('Could not save return POST:', error.message);
@@ -172,6 +203,11 @@ async function handleReturn(req, res) {
     return res.status(400).send(render('Invalid subscription ID',
       'The return URL must contain a valid subscription ID.'));
   }
+  const expires=req.query.expires, state=req.query.state;
+  const expected=returnState(subscriptionId,String(expires));
+  if(typeof state!=='string'||!/^[a-f0-9]{64}$/.test(state)||!Number.isFinite(Number(expires))||Number(expires)<Date.now()||Number(expires)>Date.now()+2*3600000||!crypto.timingSafeEqual(Buffer.from(state),Buffer.from(expected))){
+    return res.status(403).send(returnPage('Invalid or expired return link','Start checkout again to generate a new return URL.'));
+  }
   try {
     const response = await axios.get(
       `${CASHFREE_API_URL}/subscriptions/${encodeURIComponent(subscriptionId)}`,
@@ -181,7 +217,8 @@ async function handleReturn(req, res) {
           'x-client-id': CASHFREE_APP_ID,
           'x-client-secret': CASHFREE_SECRET
         },
-        timeout: 15000
+        timeout: 15000,
+        maxRedirects: 0
       }
     );
     const status = response.data.subscription_status || 'UNKNOWN';
@@ -207,7 +244,7 @@ app.get('/', (req, res) => {
 });
 // Start server
 if (require.main === module) {
-  app.listen(PORT, () => {
+  app.listen(PORT, HOST, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 }

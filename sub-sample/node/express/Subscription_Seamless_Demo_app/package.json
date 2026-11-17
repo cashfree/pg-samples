@@ -1,0 +1,23 @@
+{
+  "name": "cashfree-subscription-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Merchant reference demo for Cashfree seamless subscriptions",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check server.js && node --check public/app.js && node --check lib/payments.js",
+    "test:browser": "playwright test"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  }
+}

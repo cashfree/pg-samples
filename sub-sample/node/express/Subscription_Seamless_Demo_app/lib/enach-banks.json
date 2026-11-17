@@ -1,0 +1,5618 @@
+{
+  "source": "https://www.cashfree.com/docs/payments/subscription/payment-modes#bank-account-e-mandate",
+  "updatedAt": "2026-11-14",
+  "banks": [
+    {
+      "id": "ARMX",
+      "name": "510 ARMY BASE W S CREDIT CO OP PRIMARY BANK LTD"
+    },
+    {
+      "id": "NBPX",
+      "name": "Â THE NABAPALLI CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "ABUX",
+      "name": "ABHINANDAN URBAN CO OP BANK AMRAVATI"
+    },
+    {
+      "id": "ABHY",
+      "name": "ABHYUDAYA CO OP BANK"
+    },
+    {
+      "id": "ADCB",
+      "name": "ABU DHABI COMMERCIAL BANK"
+    },
+    {
+      "id": "ACCX",
+      "name": "ACE CO OP BANK LTD"
+    },
+    {
+      "id": "APSX",
+      "name": "ADARNIYA P D PATILSAHEB SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ACBX",
+      "name": "ADARSH CO OP BANK LTD"
+    },
+    {
+      "id": "AMMX",
+      "name": "ADARSH MAHILA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "ABPB",
+      "name": "ADITYA BIRLA IDEA PAYMENTS BANK LTD"
+    },
+    {
+      "id": "SATX",
+      "name": "ADV SHAMRAOJI SHINDE SATYASHODHAK BANK LTD"
+    },
+    {
+      "id": "AGUX",
+      "name": "AGARTALA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "AGDX",
+      "name": "AGRA DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "AGRX",
+      "name": "AGROHA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "AHUX",
+      "name": "AHILYADEVI URBAN CO OP BANK LTD SOLAPUR"
+    },
+    {
+      "id": "AMCB",
+      "name": "AHMEDABAD MERCANTILE CO-OPBANK LTD"
+    },
+    {
+      "id": "ASBX",
+      "name": "AHMEDNAGAR SHAHAR SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "AIRP",
+      "name": "AIRTEL PAYMENTS BANK LTD"
+    },
+    {
+      "id": "AJNX",
+      "name": "AJANTHA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "AJMX",
+      "name": "AJMER CENTRAL CO OP BANK LTD AJMER"
+    },
+    {
+      "id": "AACX",
+      "name": "AKHAND ANAND CO OP BANK LTD"
+    },
+    {
+      "id": "AKKB",
+      "name": "AKKAMAHADEVI MAHILA SAHAKARI BANK NIYAMIT"
+    },
+    {
+      "id": "AKMX",
+      "name": "AKOLA MERCHANT CO OP BANK LTD"
+    },
+    {
+      "id": "ALAX",
+      "name": "ALAVI CO OP BANK LTD"
+    },
+    {
+      "id": "ALIX",
+      "name": "ALIGARH DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "ALLA",
+      "name": "ALLAHABAD BANK"
+    },
+    {
+      "id": "ALLX",
+      "name": "ALLAHABAD DISTRICT CENTRAL CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "AUGX",
+      "name": "ALLAHABAD UP GRAMIN BANK"
+    },
+    {
+      "id": "AUCB",
+      "name": "ALMORA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "AZSX",
+      "name": "ALMORA ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "AMAX",
+      "name": "AMAN SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ACOX",
+      "name": "AMARNATH CO OP BANK LTD"
+    },
+    {
+      "id": "AJPX",
+      "name": "AMBAJOGAI PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "AJSX",
+      "name": "AMBARNATH JAI HIND CO OP BANK LTD"
+    },
+    {
+      "id": "AMZX",
+      "name": "AMRAVATI ZILLA MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "AMRX",
+      "name": "AMRELI JILLA MADHYASTHA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ANBX",
+      "name": "AMRELI NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ANSX",
+      "name": "ANDAMAN AND NICOBAR STATE CO OP BANK LTD"
+    },
+    {
+      "id": "ANDB",
+      "name": "ANDHRA BANK"
+    },
+    {
+      "id": "APGX",
+      "name": "ANDHRA PRADESH GRAMEENA VIKAS BANK"
+    },
+    {
+      "id": "APGB",
+      "name": "ANDHRA PRAGATHI GRAMEENA BANK"
+    },
+    {
+      "id": "AMSB",
+      "name": "ANNASAHEB MAGAR SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "ANUX",
+      "name": "ANURADHA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "APJX",
+      "name": "AP JANATA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "APMC",
+      "name": "AP MAHESH CO OP BANK"
+    },
+    {
+      "id": "APNX",
+      "name": "APANI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ASBL",
+      "name": "APNA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "APRX",
+      "name": "ARUNACHAL PRADESH RURAL BANK"
+    },
+    {
+      "id": "ARCX",
+      "name": "ARUNACHAL PRADESH STATE CO OP APEX BANK LTD"
+    },
+    {
+      "id": "ASKX",
+      "name": "ARVIND SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ARYX",
+      "name": "ARYAVART BANK"
+    },
+    {
+      "id": "ASSX",
+      "name": "ASHOK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ASNX",
+      "name": "ASHOKNAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "AGVX",
+      "name": "ASSAM GRAMIN VIKASH BANK"
+    },
+    {
+      "id": "AMNX",
+      "name": "ASTHA MAHILA NAGRIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "AUBL",
+      "name": "AU SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "UTIB",
+      "name": "AXIS BANK"
+    },
+    {
+      "id": "AZDX",
+      "name": "AZAMGARH DISTRICT CO-OPERATIVE BANK LTD AZAMGARH"
+    },
+    {
+      "id": "BUZX",
+      "name": "BADAUN ZILA SAHAKARI BANK LTD BUDAUN"
+    },
+    {
+      "id": "BDBB",
+      "name": "BAHRAICH DISTRICT CO OPERATIVE BANK LTD BAHRAICH"
+    },
+    {
+      "id": "BGCX",
+      "name": "BALAGERIA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BAGX",
+      "name": "BALANGIR DISTRICT CENTRAL CO OP BANK LTD BALANGIR"
+    },
+    {
+      "id": "BALX",
+      "name": "BALASINOR NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BTCX",
+      "name": "BALITIKURI CO OP BANK LTD"
+    },
+    {
+      "id": "BALB",
+      "name": "BALLY CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "BTUX",
+      "name": "BALOTRA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BANX",
+      "name": "BANARAS MERCHANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "BDOX",
+      "name": "BANDA DISTRICT CO OP BANK LTD BANDA"
+    },
+    {
+      "id": "BDUX",
+      "name": "BANDA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BDBL",
+      "name": "BANDHAN BANK LTD"
+    },
+    {
+      "id": "BGVX",
+      "name": "BANGIYA GRAMIN VIKASH BANK"
+    },
+    {
+      "id": "IFSB",
+      "name": "BANK IFSCS TO BE BLOCKED 2"
+    },
+    {
+      "id": "BOFA",
+      "name": "BANK OF AMERICA"
+    },
+    {
+      "id": "BBKM",
+      "name": "BANK OF BAHRAIN AND KUWAIT"
+    },
+    {
+      "id": "BARB",
+      "name": "BANK OF BARODA"
+    },
+    {
+      "id": "BCEY",
+      "name": "BANK OF CEYLON"
+    },
+    {
+      "id": "BKID",
+      "name": "BANK OF INDIA"
+    },
+    {
+      "id": "MAHB",
+      "name": "BANK OF MAHARASHTRA"
+    },
+    {
+      "id": "BADX",
+      "name": "BANKURA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BCOX",
+      "name": "BAPUJI CO OP BANK LTD"
+    },
+    {
+      "id": "BKSX",
+      "name": "BARAN KENDRIYA SAHAKARI BANK LTD BARAN"
+    },
+    {
+      "id": "BRSX",
+      "name": "BARAN NAGRIK SAHKARI BANK LTD"
+    },
+    {
+      "id": "BARC",
+      "name": "BARCLAYS BANK PLC"
+    },
+    {
+      "id": "BGGX",
+      "name": "BARODA GUJARAT GRAMIN BANK"
+    },
+    {
+      "id": "BRGX",
+      "name": "BARODA RAJASTHAN KSHETRIYA GRAMIN BANK"
+    },
+    {
+      "id": "BUGX",
+      "name": "BARODA UTTAR PRADESH GRAMIN BANK"
+    },
+    {
+      "id": "BACB",
+      "name": "BASSEIN CATHOLIC CO OP BANK LTD"
+    },
+    {
+      "id": "BUCX",
+      "name": "BEAWAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BLGX",
+      "name": "BELAGAVI SHREE BASAVESHWAR CO OP BANK LTD"
+    },
+    {
+      "id": "BBUX",
+      "name": "BELLAD BAGEWADI URBAN SOUHARADA SAHAKARI BANK NYT"
+    },
+    {
+      "id": "BUCL",
+      "name": "BELUR URBAN CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "BNBX",
+      "name": "BETUL NAGRIK SAHAKARI BANK MYDT"
+    },
+    {
+      "id": "BHDX",
+      "name": "BHADOHI URBAN CO OP BANK LTD GYANPUR"
+    },
+    {
+      "id": "BDDX",
+      "name": "BHADRADRI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "BNSX",
+      "name": "BHAGINI NIVEDITA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BFUX",
+      "name": "BHAGYODAYA FRIENDS URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BCBM",
+      "name": "BHARAT CO-OPERATIVE BANK (MUMBAI) LTD"
+    },
+    {
+      "id": "BPCL",
+      "name": "BHARAT PETROLEUM CORP LTD"
+    },
+    {
+      "id": "BHSX",
+      "name": "BHARATI SAHAKARI BANK LTD PUNE"
+    },
+    {
+      "id": "BMBL",
+      "name": "BHARTIYA MAHILA BANK"
+    },
+    {
+      "id": "BNCX",
+      "name": "BHATPARA NAIHATI CO OP BANK LTD"
+    },
+    {
+      "id": "BVSX",
+      "name": "BHAVANI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BVNX",
+      "name": "BHAVNAGAR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "BHBX",
+      "name": "BHILAI NAGARIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "BHUX",
+      "name": "BHILWARA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BHIM",
+      "name": "BHIM SCHEME"
+    },
+    {
+      "id": "BDNX",
+      "name": "BHIND NAGRIK SAHAKARI BANK MYDT"
+    },
+    {
+      "id": "BBLX",
+      "name": "BHINGAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BHOX",
+      "name": "BHOPAL CO-OP CENTRAL BANK"
+    },
+    {
+      "id": "BGBX",
+      "name": "BIHAR GRAMIN BANK"
+    },
+    {
+      "id": "BPSX",
+      "name": "BILAGI PATTANA SAHAKARI BANK NIYAMIT"
+    },
+    {
+      "id": "BBDX",
+      "name": "BIRBHUM DISTRICT CENTRAL COOPERATIVE BANK LTD"
+    },
+    {
+      "id": "BNPA",
+      "name": "BNP PARIBAS"
+    },
+    {
+      "id": "BMCB",
+      "name": "BOMBAY MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "BHMX",
+      "name": "BRAHMADEODADA MANE SAHAKARI BANK LTD SOLAPUR"
+    },
+    {
+      "id": "BRMX",
+      "name": "BRAMHAPURI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "CNRB",
+      "name": "CANARA BANK"
+    },
+    {
+      "id": "CLBL",
+      "name": "CAPITAL SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "CBIN",
+      "name": "CENTRAL BANK OF INDIA"
+    },
+    {
+      "id": "CRBX",
+      "name": "CENTRAL CO OP BANK LTD ARA"
+    },
+    {
+      "id": "CMPX",
+      "name": "CENTRAL MADHYA PRADESH GRAMIN BANK"
+    },
+    {
+      "id": "CRSX",
+      "name": "CG RAJYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CGGX",
+      "name": "CHAITANYA GODAVARI GRAMEENA BANK"
+    },
+    {
+      "id": "CMSV",
+      "name": "CHAITANYA MAHILA SAHAKARI BANK LTD VIJAYAPUR"
+    },
+    {
+      "id": "CHAX",
+      "name": "CHAMOLI ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "CSBX",
+      "name": "CHARTERED SAHAKARI BANK NIYAMITHA"
+    },
+    {
+      "id": "CCCX",
+      "name": "CHENNAI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "CHRX",
+      "name": "CHERPALCHERI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "CGBX",
+      "name": "CHHATTISGARH GRAMIN BANK"
+    },
+    {
+      "id": "CPSN",
+      "name": "CHIKMAGALUR PATTANA SAHAKARA BANK NIYAMITHA"
+    },
+    {
+      "id": "CITX",
+      "name": "CHITRADURGA DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "CHKX",
+      "name": "CHITTORGARH KENDRIYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CTUX",
+      "name": "CHITTORGARH URBAN CO OP BANK LTD CHITTORGARH"
+    },
+    {
+      "id": "CZUX",
+      "name": "CHURU ZILA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "CITI",
+      "name": "CITIBANK N A"
+    },
+    {
+      "id": "CCBL",
+      "name": "CITIZEN CREDIT CO OP BANK LTD"
+    },
+    {
+      "id": "CTBX",
+      "name": "CITIZENS CO OP BANK LTD"
+    },
+    {
+      "id": "CIUB",
+      "name": "CITY UNION BANK LTD"
+    },
+    {
+      "id": "COLX",
+      "name": "COASTAL LOCAL AREA BANK LTD"
+    },
+    {
+      "id": "RDNX",
+      "name": "COL RD NIKAM SAINIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CMCB",
+      "name": "COLOUR MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "CMCX",
+      "name": "COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "CONX",
+      "name": "CONTAI CO OP BANK LTD"
+    },
+    {
+      "id": "CORP",
+      "name": "CORPORATION BANK"
+    },
+    {
+      "id": "COSB",
+      "name": "Cosmos Bank"
+    },
+    {
+      "id": "CRLY",
+      "name": "CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK"
+    },
+    {
+      "id": "CRES",
+      "name": "CREDIT SUISSE AG"
+    },
+    {
+      "id": "CUTX",
+      "name": "CUTTACK CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "DYPX",
+      "name": "D Y PATIL SAHAKARI BANK LTD KOLHAPUR"
+    },
+    {
+      "id": "DSBX",
+      "name": "DAIVADNYA SAHAKARA BANK NIYAMIT"
+    },
+    {
+      "id": "MBGX",
+      "name": "DAKSHIN BIHAR GRAMIN BANK"
+    },
+    {
+      "id": "DOBX",
+      "name": "DAPOLI URBAN CO OP BANK LTD DAPOLI"
+    },
+    {
+      "id": "DDCX",
+      "name": "DARJEELING DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "DKSX",
+      "name": "DAUSA KENDRIYA SAHKARI BANK LTD DAUSA"
+    },
+    {
+      "id": "DAUX",
+      "name": "DAUSA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DVDX",
+      "name": "DAVANAGERE DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "DBSS",
+      "name": "DBS BANK INDIA LTD"
+    },
+    {
+      "id": "DCBL",
+      "name": "DCB BANK LTD"
+    },
+    {
+      "id": "DNSX",
+      "name": "DEENDAYAL NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "DAAX",
+      "name": "DEFENCE ACCOUNTS CO-OP BANK LIMITEDPUNE"
+    },
+    {
+      "id": "DENS",
+      "name": "DELHI NAGRIK SEHKARI BANK LTD"
+    },
+    {
+      "id": "BKDN",
+      "name": "DENA BANK"
+    },
+    {
+      "id": "DEGX",
+      "name": "DENA GUJARAT GRAMIN BANK"
+    },
+    {
+      "id": "DEOX",
+      "name": "DEOGIRI NAGARI SAHAKARI BANK LTD AURANGABAD"
+    },
+    {
+      "id": "DKCL",
+      "name": "DEORIA KASIA DISTRICT COOPERATIVE BANK LTD"
+    },
+    {
+      "id": "DEUT",
+      "name": "DEUTSCHE BANK AG"
+    },
+    {
+      "id": "DEVX",
+      "name": "DEVELOPMENT CO OP BANK LTD KANPUR"
+    },
+    {
+      "id": "DEUX",
+      "name": "DEVIKA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DHKX",
+      "name": "DHAKURIA CO OP BANK LTD"
+    },
+    {
+      "id": "DLXB",
+      "name": "DHANALAXMI BANK"
+    },
+    {
+      "id": "DSUX",
+      "name": "DHARAMVIR SAMBHAJI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DDBX",
+      "name": "DHARMAPURI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "DVSX",
+      "name": "DHULE VIKAS SAHAKARI BANK LTD"
+    },
+    {
+      "id": "DIDH",
+      "name": "DIGI DHAN"
+    },
+    {
+      "id": "DIUX",
+      "name": "DILIP URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DCBX",
+      "name": "DINDIGUL CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "DIBX",
+      "name": "DISTRICT CO OP BANK LTD BARABANKI"
+    },
+    {
+      "id": "DDHX",
+      "name": "DISTRICT CO OP BANK LTD DEHRADUN"
+    },
+    {
+      "id": "FCOX",
+      "name": "DISTRICT CO OP BANK LTD FAIZABAD"
+    },
+    {
+      "id": "DCMX",
+      "name": "DISTRICT CO OP BANK LTD MAINPURI"
+    },
+    {
+      "id": "DCPX",
+      "name": "DISTRICT CO OP BANK LTD PILIBHIT"
+    },
+    {
+      "id": "DTPX",
+      "name": "DISTRICT CO OP BANK LTD PRATAPGARH"
+    },
+    {
+      "id": "DTCX",
+      "name": "DISTRICT CO OP BANK LTD RAEBARELI"
+    },
+    {
+      "id": "DSHX",
+      "name": "DISTRICT CO OP BANK LTD SAHARANPUR"
+    },
+    {
+      "id": "DCSX",
+      "name": "DISTRICT CO OP BANK LTD SHAHJAHANPUR"
+    },
+    {
+      "id": "DISX",
+      "name": "DISTRICT CO OP BANK LTD SITAPUR"
+    },
+    {
+      "id": "DCTX",
+      "name": "DISTRICT CO OP BANK LTD VARANASI"
+    },
+    {
+      "id": "DBJX",
+      "name": "DISTRICT COOPERATIVE BANK LTD JAUNPUR"
+    },
+    {
+      "id": "DMKB",
+      "name": "DMK JAOLI BANK"
+    },
+    {
+      "id": "OIBA",
+      "name": "DOHA BANK QSC"
+    },
+    {
+      "id": "DNSB",
+      "name": "DOMBIVILI NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ABDX",
+      "name": "DR AMBEDKAR NAGRIK SAHAKARI BANK MYDT GWALIOR"
+    },
+    {
+      "id": "ACKX",
+      "name": "DR ANNASAHEB CHOUGULE URBAN CO OP BANK LT VADGAON"
+    },
+    {
+      "id": "DBAX",
+      "name": "DR BABASAHEB AMBEDKAR SAHAKARI BANK LTD NASIK"
+    },
+    {
+      "id": "DMCX",
+      "name": "DURGAPUR MAHILA CO OP BANK LTD"
+    },
+    {
+      "id": "DSPX",
+      "name": "DURGAPUR STEEL PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "EDBX",
+      "name": "ELLAQUAI DEHATI BANK"
+    },
+    {
+      "id": "ESFB",
+      "name": "EQUITAS SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "ESMF",
+      "name": "ESAF SMALL FINANCE BANK"
+    },
+    {
+      "id": "ESAF",
+      "name": "ESAF SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "ETDX",
+      "name": "ETAH DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "EUCX",
+      "name": "ETAH URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "ETCX",
+      "name": "ETAWAH DISTRICT CO OP BANK LTD ETWAH"
+    },
+    {
+      "id": "EWCX",
+      "name": "ETAWAH URBAN CO OP BANK LTD ETAWAH"
+    },
+    {
+      "id": "ECBL",
+      "name": "EXCELLENT CO OP BANK LTD"
+    },
+    {
+      "id": "FDCX",
+      "name": "FATEHPUR DISTRICT CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "FDRL",
+      "name": "FEDERAL BANK"
+    },
+    {
+      "id": "FEKX",
+      "name": "FEROKE CO OP BANK LTD"
+    },
+    {
+      "id": "FINF",
+      "name": "FINCARE SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "FGCB",
+      "name": "FINGROWTH CO OP BANK LTD"
+    },
+    {
+      "id": "FINO",
+      "name": "FINO PAYMENTS BANK LTD"
+    },
+    {
+      "id": "FZSX",
+      "name": "FIROZABAD ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "GSBX",
+      "name": "GANDHIBAG SAHAKARI BANK LTD NAGPUR"
+    },
+    {
+      "id": "GPOX",
+      "name": "GENERAL POST OFFICE"
+    },
+    {
+      "id": "GGNX",
+      "name": "GHOGHAMBA VIBHAG NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "GODX",
+      "name": "GODAVARI URBAN CO OP BANK LTD NASHIK"
+    },
+    {
+      "id": "GUBX",
+      "name": "GODAVARI URBAN CO OP BANK LTD VAZIRABAD"
+    },
+    {
+      "id": "GOSX",
+      "name": "GONDAL NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PJSB",
+      "name": "GP PARSIK SAHAKARI BANK LTD KALWA THANE"
+    },
+    {
+      "id": "MCBL",
+      "name": "GS MAHANAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "GSSX",
+      "name": "GUARDIAN SOUHARDA SAHAKARI BANK NIYAMITA"
+    },
+    {
+      "id": "GACX",
+      "name": "GUJARAT AMBUJA CO OP BANK LTD"
+    },
+    {
+      "id": "GMCX",
+      "name": "GUJARAT MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "GMUX",
+      "name": "GULSHAN MERCANTILE URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "HUCB",
+      "name": "HADAGALI URBAN COOP BANK LTD HADAGALI"
+    },
+    {
+      "id": "HAMX",
+      "name": "HAMIRPUR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "HUCH",
+      "name": "HANAMASAGAR URBAN CO OP BANK LTD HANAMASAGAR"
+    },
+    {
+      "id": "HANX",
+      "name": "HANUMANGARH KENDRIYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "HDCL",
+      "name": "HARDOI DISTRICT CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "HSBX",
+      "name": "HARIHARESHWAR SAHAKARI BANK LTD WAI"
+    },
+    {
+      "id": "HSBM",
+      "name": "HAVELI SAHAKARI BANK MARYADIT MOSHI"
+    },
+    {
+      "id": "HCLX",
+      "name": "HCBL CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "HDFC",
+      "name": "HDFC BANK LTD"
+    },
+    {
+      "id": "HMBX",
+      "name": "HIMACHAL GRAMIN BANK"
+    },
+    {
+      "id": "HMNX",
+      "name": "HIMATNAGAR NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "HPCL",
+      "name": "HINDUSTAN PETROLEUM CORPORATION LTD"
+    },
+    {
+      "id": "HUCX",
+      "name": "HISSAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "HOOX",
+      "name": "HOOGHLY DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "HUBX",
+      "name": "HUBLI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "HUTX",
+      "name": "HUTATMA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ICIC",
+      "name": "ICICI BANK LTD"
+    },
+    {
+      "id": "IBKL",
+      "name": "IDBI BANK"
+    },
+    {
+      "id": "IDFB",
+      "name": "IDFC Bank"
+    },
+    {
+      "id": "IDUX",
+      "name": "IDUKKI DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "ILCB",
+      "name": "ILKAL COOPERATIVE BANK LTD"
+    },
+    {
+      "id": "IUCX",
+      "name": "IMPERIAL URBAN CO OP BANK"
+    },
+    {
+      "id": "IMCX",
+      "name": "IMPERIAL URBAN CO OP BANK LTD JALANDHAR"
+    },
+    {
+      "id": "INCX",
+      "name": "INDAPUR URBAN CO OP BANK LTD INDAPUR"
+    },
+    {
+      "id": "INDX",
+      "name": "INDEPENDENCE CO OP BANK LTD NASIK"
+    },
+    {
+      "id": "IPPB",
+      "name": "INDIA POST PAYMENTS BANK LTD"
+    },
+    {
+      "id": "IDIB",
+      "name": "INDIAN BANK"
+    },
+    {
+      "id": "IOBA",
+      "name": "INDIAN OVERSEAS BANK"
+    },
+    {
+      "id": "IOCL",
+      "name": "INDIANOIL CORPORATION LTD"
+    },
+    {
+      "id": "ICMX",
+      "name": "INDORE CLOTH MARKET CO OP BANK LTD"
+    },
+    {
+      "id": "IPSX",
+      "name": "INDORE PARASPAR SAHAKARI BANK LTD"
+    },
+    {
+      "id": "IPCX",
+      "name": "INDORE PREMIER CO OP BANK LTD INDORE"
+    },
+    {
+      "id": "ISMX",
+      "name": "INDORE SWAYAM MAHILA CO OP BANK LTD"
+    },
+    {
+      "id": "ISBX",
+      "name": "INDRAPRASTHA SEHKARI BANK LTD"
+    },
+    {
+      "id": "INDB",
+      "name": "INDUSIND BANK"
+    },
+    {
+      "id": "IBKO",
+      "name": "INDUSTRIAL BANK OF KOREA"
+    },
+    {
+      "id": "VYSA",
+      "name": "ING VYSYA BANK LTD"
+    },
+    {
+      "id": "IUCB",
+      "name": "INTEGRAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "ITCX",
+      "name": "IRINJALAKUDA TOWN CO OP BANK LTD"
+    },
+    {
+      "id": "XJKG",
+      "name": "J AND K GRAMEEN BANK ACH"
+    },
+    {
+      "id": "CHAS",
+      "name": "J P MORGAN CHASE BANK NA"
+    },
+    {
+      "id": "JMNX",
+      "name": "JABALPUR MAHILA NAGRIK SAHKARI BANK MARYADIT"
+    },
+    {
+      "id": "JCUX",
+      "name": "JAGRUTI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "JAUX",
+      "name": "JAIHIND URBAN CO OP BANK LTD WAKAD"
+    },
+    {
+      "id": "JACX",
+      "name": "JAIN CO OP BANK LTD"
+    },
+    {
+      "id": "JDCX",
+      "name": "JALAUN DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "JJSB",
+      "name": "JALGAON JANATA SAHKARI BANK LTD"
+    },
+    {
+      "id": "JMCX",
+      "name": "JALNA MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "JRSX",
+      "name": "JALORE NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JAMX",
+      "name": "JAMIA CO OP BANK LTD"
+    },
+    {
+      "id": "JAPX",
+      "name": "JAMPETA CO-OPERATIVE URBAN BANK LTD"
+    },
+    {
+      "id": "JMHX",
+      "name": "JAMSHEDPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "JSFB",
+      "name": "JANA SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "JKCX",
+      "name": "JANAKALYAN CO OP BANK LTD NASHIK"
+    },
+    {
+      "id": "JSBL",
+      "name": "JANAKALYAN SAHAKARI BANK"
+    },
+    {
+      "id": "JSBX",
+      "name": "JANASEVA CO OP BANK LTD NASHIK"
+    },
+    {
+      "id": "JASB",
+      "name": "JANASEVA SAHAKARI BANK BORIVLI LTD"
+    },
+    {
+      "id": "JANA",
+      "name": "JANASEVA SAHAKARI BANK LTD PUNE"
+    },
+    {
+      "id": "JCBX",
+      "name": "JANATA CO OP BANK LTD MALEGAON"
+    },
+    {
+      "id": "JSBP",
+      "name": "JANATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JSAX",
+      "name": "JANATA SAHAKARI BANK LTD AJARA"
+    },
+    {
+      "id": "JSMX",
+      "name": "JANATA SAHAKARI BANK LTD AMRAVATI"
+    },
+    {
+      "id": "JASX",
+      "name": "JANATHA SEVA CO OP BANK LTD"
+    },
+    {
+      "id": "JNSX",
+      "name": "JANSEVA NAGARI SAHAKARI BANK MARYDIT"
+    },
+    {
+      "id": "JSWX",
+      "name": "JANSEWA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "JUSX",
+      "name": "JAYSINGPUR UDGAON SAHAKARI BANK LTD JAYSINGPUR"
+    },
+    {
+      "id": "JKEX",
+      "name": "JHALAWAR KENDRIYA SAHKARI BANK LTD"
+    },
+    {
+      "id": "JGBX",
+      "name": "JHARKAND GRAMIN BANK"
+    },
+    {
+      "id": "VGBX",
+      "name": "JHARKHAND RAJYA GRAMIN BANK"
+    },
+    {
+      "id": "JSCX",
+      "name": "JHARKHAND STATE CO OP BANK LTD"
+    },
+    {
+      "id": "JHAX",
+      "name": "JHARNESHWAR NAGRIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "JHUX",
+      "name": "JHUNJHUNU KENDDRIYA SAHAKARI BAK LTD"
+    },
+    {
+      "id": "JMSX",
+      "name": "JIJAMATA MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JIUX",
+      "name": "JIJAU COMMERCIAL CO-OPERATIVE BANK LTD. AMRAVATI."
+    },
+    {
+      "id": "JGWX",
+      "name": "JILA SAHAKARI BANK MYDT GWALIOR"
+    },
+    {
+      "id": "JIKX",
+      "name": "JILA SAHAKARI KENDARIYA BANK MYDT KHANDWA"
+    },
+    {
+      "id": "JMAX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT"
+    },
+    {
+      "id": "JIBX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT ,BALAGHAT"
+    },
+    {
+      "id": "JIGX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT ,GUNA"
+    },
+    {
+      "id": "JKHX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT ,KHARGONE"
+    },
+    {
+      "id": "JSEX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT ,SEHORE"
+    },
+    {
+      "id": "JIOX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT ,SHAHDOL"
+    },
+    {
+      "id": "JMBX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT BETUL"
+    },
+    {
+      "id": "JCHX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT CHHATARPUR"
+    },
+    {
+      "id": "JICX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT CHHINDWARA"
+    },
+    {
+      "id": "JHSX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT HOSHANGABAD"
+    },
+    {
+      "id": "JKMX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT JAGDALPUR"
+    },
+    {
+      "id": "JMOX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT MORENA"
+    },
+    {
+      "id": "JSKX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT RAIPUR"
+    },
+    {
+      "id": "JIRX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT RAJGARH"
+    },
+    {
+      "id": "JRNX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT RAJNANDGAON"
+    },
+    {
+      "id": "JRAX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT RATLAM"
+    },
+    {
+      "id": "JSRX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT REWA"
+    },
+    {
+      "id": "JBMX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT SAGAR"
+    },
+    {
+      "id": "JSVX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT SHIVPURI"
+    },
+    {
+      "id": "JISX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT SIDHI"
+    },
+    {
+      "id": "JSDX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT,DHAR"
+    },
+    {
+      "id": "JJHX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT,JHABUA"
+    },
+    {
+      "id": "JNAX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADIT,NARSINGHPUR"
+    },
+    {
+      "id": "JIMX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADITMANDLA"
+    },
+    {
+      "id": "JSOX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MARYADITSEONI"
+    },
+    {
+      "id": "JKAX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT AMBIKAPUR"
+    },
+    {
+      "id": "JMYX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT DURG"
+    },
+    {
+      "id": "JKDX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT JABALPUR"
+    },
+    {
+      "id": "JPAX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT PANNA"
+    },
+    {
+      "id": "JSTX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT SATNA"
+    },
+    {
+      "id": "JSHX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT SHAJAPUR"
+    },
+    {
+      "id": "JTIX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT TIKAMGARH"
+    },
+    {
+      "id": "JRKX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT UJJAIN"
+    },
+    {
+      "id": "JLSX",
+      "name": "JILA SAHAKARI KENDRIYA BANK MYDT VIDISHA"
+    },
+    {
+      "id": "JBHX",
+      "name": "JILA SAHAKRI KENDRIYA BANK MARYADITBHIND"
+    },
+    {
+      "id": "JBIX",
+      "name": "JILA SAHKARI KENDRIYA BANK MARYADIT BILASPUR"
+    },
+    {
+      "id": "JDEX",
+      "name": "JILA SAHKARI KENDRIYA BANK MARYADIT DEWAS"
+    },
+    {
+      "id": "JIDX",
+      "name": "JILA SAHKARI KENDRIYA BANK MYDT DAMOH"
+    },
+    {
+      "id": "JMDX",
+      "name": "JILA SAHKARI KENDRIYA BANK MYDT DATIA"
+    },
+    {
+      "id": "JKRX",
+      "name": "JILLA SAHAKARI KENDRIYA BANK MYDT RAISEN"
+    },
+    {
+      "id": "JIOP",
+      "name": "JIO PAYMENTS BANK LTD"
+    },
+    {
+      "id": "JIVX",
+      "name": "JIVAJI SAHAKARI BANK LTD ICHALKARANJI"
+    },
+    {
+      "id": "JVCX",
+      "name": "JIVAN COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "JONX",
+      "name": "JODHPUR NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JGCX",
+      "name": "JOGINDRA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KAAX",
+      "name": "KADAPA DIST CO-OP CENTRAL BANK"
+    },
+    {
+      "id": "KYDX",
+      "name": "KALABURAGI AND YADGIR DIST CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "KAIJ",
+      "name": "KALLAPPANNA AWADE ICHALKARANJI JANATASAHAKARI BANK"
+    },
+    {
+      "id": "KLUX",
+      "name": "KALOL URBAN CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "KAMX",
+      "name": "KAMALA CO OP BANK LTD SOLAPUR"
+    },
+    {
+      "id": "KCCX",
+      "name": "KANCHEEPURAM CENTRAL CO OP BANK"
+    },
+    {
+      "id": "KKMX",
+      "name": "KANKARIA MAINAGAR NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KRMX",
+      "name": "KARAMANA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "KNPX",
+      "name": "KARNALA NAGARI SAHAKARI BANK LTD PANVEL"
+    },
+    {
+      "id": "KARB",
+      "name": "KARNATAKA BANK LTD"
+    },
+    {
+      "id": "PGBX",
+      "name": "KARNATAKA GRAMIN BANK"
+    },
+    {
+      "id": "CJMX",
+      "name": "KARNATAKA MAHILA SAHAKARA BANK NIYAMITHA"
+    },
+    {
+      "id": "KVGB",
+      "name": "KARNATAKA VIKAS GRAMEENA BANK"
+    },
+    {
+      "id": "KVBL",
+      "name": "KARUR VYSA BANK"
+    },
+    {
+      "id": "KRVX",
+      "name": "KARVY SECURITIES"
+    },
+    {
+      "id": "KGSX",
+      "name": "KASHI GOMTI SAMYUT GRAMIN BANK"
+    },
+    {
+      "id": "KSUX",
+      "name": "KASHIPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KASX",
+      "name": "KASHMIR MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "KGBX",
+      "name": "KAVERI GRAMEENA BANK"
+    },
+    {
+      "id": "KVCX",
+      "name": "KAVITA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KBHB",
+      "name": "KEB Hana Bank"
+    },
+    {
+      "id": "KEJX",
+      "name": "KEONJHAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KLGB",
+      "name": "KERALA GRAMIN BANK"
+    },
+    {
+      "id": "KEMX",
+      "name": "KERALA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "KSCX",
+      "name": "KERALA STATE CO OP BANK LTD"
+    },
+    {
+      "id": "KESX",
+      "name": "KESHAV SEHKARI BANK LTD"
+    },
+    {
+      "id": "KHAX",
+      "name": "KHALILABAD NAGAR SAHKARI BANK LTD"
+    },
+    {
+      "id": "KHCX",
+      "name": "KHARDAH CO OP BANK LTD"
+    },
+    {
+      "id": "KHTX",
+      "name": "KHURDA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KNSX",
+      "name": "KISAN NAGARI SAHAKARI BANK MARYADIT PARBHANI"
+    },
+    {
+      "id": "KHNX",
+      "name": "KOHINOOR SAHAKARI BANK LTD ICHALKARANJI"
+    },
+    {
+      "id": "KMCB",
+      "name": "KOKAN MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "KPCX",
+      "name": "KOLHAPUR DIST CENTRAL CO OP BANK LTD KOLHAPUR"
+    },
+    {
+      "id": "KMSX",
+      "name": "KOLHAPUR MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KONX",
+      "name": "KONNAGAR SAMABAYA BANK LTD"
+    },
+    {
+      "id": "KOCX",
+      "name": "KONOKLOTA MAHILA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KORX",
+      "name": "KORAPUT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KMNX",
+      "name": "KOTA MAHILA NAGRIK SAHAKARI BANK LTD KOTA"
+    },
+    {
+      "id": "KOSX",
+      "name": "KOTA NAGRIK SAHKARI BANK LTD KOTA"
+    },
+    {
+      "id": "KKBK",
+      "name": "KOTAK MAHINDRA BANK LTD"
+    },
+    {
+      "id": "KSNX",
+      "name": "KOTESHWARA SAHAKARI BANK NIYAMITHA"
+    },
+    {
+      "id": "KDCX",
+      "name": "KOZHIKODE DISTRICT CO OP BANK"
+    },
+    {
+      "id": "KBSX",
+      "name": "KRISHNA BHIMA SAMRUDDHI LOCAL AREA BANK"
+    },
+    {
+      "id": "KMCX",
+      "name": "KRISHNA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "KSBX",
+      "name": "KRISHNA SAHAKARI BANK LTD RETHARE BK"
+    },
+    {
+      "id": "KKSX",
+      "name": "KUMBHI KASARI SAHKARI BANK LTD KUDITRE"
+    },
+    {
+      "id": "KNSB",
+      "name": "KURLA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KCBX",
+      "name": "KUTCH CO OP BANK LTD"
+    },
+    {
+      "id": "KUTX",
+      "name": "KUTTIADY CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "LKHX",
+      "name": "LAKHIMPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "LCBX",
+      "name": "LALBAUG CO OP BANK LTD"
+    },
+    {
+      "id": "LDRX",
+      "name": "LANGPI DEHANGI RURAL BANK"
+    },
+    {
+      "id": "LMNX",
+      "name": "LAXMI MAHILA NAGRIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "LULX",
+      "name": "LAXMI URBAN CO OP BANK LTD LATUR"
+    },
+    {
+      "id": "LBMX",
+      "name": "LAXMIBAI MAHILA NAGRIK SAHAKARI BANK MARADIT"
+    },
+    {
+      "id": "LECX",
+      "name": "LIC EMPLOYEES CO OP BANK LTD UDUPI"
+    },
+    {
+      "id": "LICB",
+      "name": "LILUAH CO OP BANK LTD"
+    },
+    {
+      "id": "LKMX",
+      "name": "LOKMANGAL CO OP BANK LTD SOLAPUR"
+    },
+    {
+      "id": "LDPX",
+      "name": "LOKNETE DATTAJI PATIL SAHAKARI BANK LTD"
+    },
+    {
+      "id": "LOKX",
+      "name": "LOKVIKAS NAGARI SAHAKARI BANK LTD AURANGABAD"
+    },
+    {
+      "id": "LONX",
+      "name": "LONAVALA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "LUCX",
+      "name": "LUCKNOW URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MSBX",
+      "name": "M S CO OP BANK LTD"
+    },
+    {
+      "id": "MUDX",
+      "name": "MADHESHWARI URBAN DEVELOPMENT CO OP BANK LTD"
+    },
+    {
+      "id": "NJGX",
+      "name": "MADHYA PRADESH GRAMIN BANK"
+    },
+    {
+      "id": "MPRX",
+      "name": "MADHYA PRADESH RAJYA SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "MADX",
+      "name": "MADHYANCHAL GRAMIN BANK"
+    },
+    {
+      "id": "MHNX",
+      "name": "MAHANAGAR NAGRIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "MAPX",
+      "name": "MAHARANA PRATAP CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MGBX",
+      "name": "MAHARASHTRA GRAMIN BANK"
+    },
+    {
+      "id": "MSCI",
+      "name": "MAHARASHTRA STATE CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "MFUX",
+      "name": "MAHATMA FULE URBAN CO OP BANK LTD AMRAVATI"
+    },
+    {
+      "id": "MCUX",
+      "name": "MAHAVEER CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MHSX",
+      "name": "MAHESH SAHAKARI BANK LTD PUNE"
+    },
+    {
+      "id": "MCAX",
+      "name": "MAHESH URBAN CO OP BANK LTD AHMEDPUR"
+    },
+    {
+      "id": "MCOX",
+      "name": "MAHESH URBAN CO OP BANK LTD PARBHANI"
+    },
+    {
+      "id": "MASX",
+      "name": "MAHESH URBAN CO OP BANK LTD SOLAPUR"
+    },
+    {
+      "id": "MHUX",
+      "name": "MAHESH URBANK CO OP BANK LTD PARLI V"
+    },
+    {
+      "id": "MNBX",
+      "name": "MAHILA CO OP NAGARIK BANK LTD BHARUCH"
+    },
+    {
+      "id": "MMMX",
+      "name": "MAHILA NAGRIK SAHAKARI BANK MARYADIT MAHASAMUND"
+    },
+    {
+      "id": "MHCX",
+      "name": "MAHOBA URBAN CO OP BANK LTD MAHOBA"
+    },
+    {
+      "id": "MLDX",
+      "name": "MALDA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MKUX",
+      "name": "MALKAPUR URBAN CO-OP BANK"
+    },
+    {
+      "id": "MALX",
+      "name": "MALVIYA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MGRB",
+      "name": "MALWA GRAMIN BANK"
+    },
+    {
+      "id": "MDIX",
+      "name": "MANDYA DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "MGSX",
+      "name": "MANGALDAI NAGAR SAMABAI BANK LTD"
+    },
+    {
+      "id": "MINX",
+      "name": "MANINAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "MRBX",
+      "name": "MANIPUR RURAL BANK"
+    },
+    {
+      "id": "MAJX",
+      "name": "MANJERI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MDMX",
+      "name": "MANN DESHI MAHILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "MSOX",
+      "name": "MANORAMA CO OP BANK LTD SOLAPUR"
+    },
+    {
+      "id": "MSAX",
+      "name": "MANSAROVAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MGCX",
+      "name": "MANSING CO OP BANK LTD"
+    },
+    {
+      "id": "MAUX",
+      "name": "MANTHA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MVIX",
+      "name": "MANVI PATTANA SOUHARDA SAHAKARI BANK NI"
+    },
+    {
+      "id": "MNWX",
+      "name": "MANWATH URBAN COOPERATIVE BANK LTD MANWATH"
+    },
+    {
+      "id": "MRTX",
+      "name": "MARATHA CO OP BANK LTD"
+    },
+    {
+      "id": "MKYX",
+      "name": "MARKETYARD COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "MSHQ",
+      "name": "MASHREQ BANK"
+    },
+    {
+      "id": "ZBSX",
+      "name": "MATHURA ZILA SAHKARI BANK LTD MATHURA"
+    },
+    {
+      "id": "MDPX",
+      "name": "MD PAWAR PEOPLES CO OP BANK LTD URUN ISLAMPUR"
+    },
+    {
+      "id": "MERX",
+      "name": "MEGHALAYA RURAL BANK"
+    },
+    {
+      "id": "MZRX",
+      "name": "MIZORAM RURAL BANK"
+    },
+    {
+      "id": "MZCX",
+      "name": "MIZORAM URBAN CO OP DEVELOPMENT BANK LTD"
+    },
+    {
+      "id": "MHCB",
+      "name": "MIZUHO BANK LTD"
+    },
+    {
+      "id": "MDEX",
+      "name": "MODEL CO OP BANK LTD"
+    },
+    {
+      "id": "BOTM",
+      "name": "MUFG BANK LTD"
+    },
+    {
+      "id": "MDCB",
+      "name": "MUMBAI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MCDX",
+      "name": "MUZAFFARNAGAR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "NPPX",
+      "name": "NABAGRAM PEOPLES CO OPERATIVE CREDIT BANK LTD"
+    },
+    {
+      "id": "NADX",
+      "name": "NADAPURAM CO OP URBAN BANK"
+    },
+    {
+      "id": "NDDX",
+      "name": "NADIA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "NAGX",
+      "name": "NAGALAND RURAL BANK"
+    },
+    {
+      "id": "NSCX",
+      "name": "NAGALAND STATE CO OP BANK LTD"
+    },
+    {
+      "id": "NSGX",
+      "name": "NAGAR SAHAKARI BANK LTD GORAKHPUR"
+    },
+    {
+      "id": "NGBX",
+      "name": "NAGAR SAHAKARI BANK LTD MAHARAJGANJ"
+    },
+    {
+      "id": "NGRX",
+      "name": "NAGAR SAHKARI BANK LTD"
+    },
+    {
+      "id": "NUCB",
+      "name": "NAGAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NVSX",
+      "name": "NAGAR VIKAS SAHKARI BANK LTD"
+    },
+    {
+      "id": "NSBB",
+      "name": "NAGARIK SAHAKARI BANK LTD BHIWANDI"
+    },
+    {
+      "id": "NGSX",
+      "name": "NAGARIK SAHAKARI BANK MARYADIT DURG"
+    },
+    {
+      "id": "NSJX",
+      "name": "NAGARIK SAHAKARI BANK MARYADIT JAGDALPUR"
+    },
+    {
+      "id": "NGUX",
+      "name": "NAGAUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NGNX",
+      "name": "NAGINA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NCOX",
+      "name": "NAGNATH URBAN CO OP BANK LTD HINGOLI"
+    },
+    {
+      "id": "NMNX",
+      "name": "NAGPUR MAHANAGARPALIKA KARMACHARI SAHAKARI BANK"
+    },
+    {
+      "id": "NGSB",
+      "name": "NAGPUR NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "NSRX",
+      "name": "NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "NSIX",
+      "name": "NAGRIK SAHAKARI BANK LTD INDORE"
+    },
+    {
+      "id": "NSBX",
+      "name": "NAGRIK SAHAKARI BANK LTD LUCKNOW"
+    },
+    {
+      "id": "NBMX",
+      "name": "NAGRIK SAHAKARI BANK MARYADHIT VIDISHA"
+    },
+    {
+      "id": "NGKX",
+      "name": "NAGRIK SAHAKARI BANK MARYADIT GWALIOR"
+    },
+    {
+      "id": "NAIX",
+      "name": "NAINITAL DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "NACX",
+      "name": "NALANDA CENTRAL CO OP BANK LTD NALANDA"
+    },
+    {
+      "id": "NBCX",
+      "name": "NALBARI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NABX",
+      "name": "NANDANI SAHAKARI BANK LTD NANDANI"
+    },
+    {
+      "id": "NDGX",
+      "name": "Nashik District Girna Sahakari Bank Ltd"
+    },
+    {
+      "id": "NDIX",
+      "name": "NASHIK DISTRICT INDUSTRIAL AND MERCANTILE CO OP BA"
+    },
+    {
+      "id": "NJMX",
+      "name": "NASHIK JILLHA MAHILA VIKAS SAHAKARI BANK LTD"
+    },
+    {
+      "id": "NPKX",
+      "name": "NASHIK ZILHA SARKARI AND PARISHAD KARMACHARI SB NM"
+    },
+    {
+      "id": "NASX",
+      "name": "NASIK DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "NALX",
+      "name": "NATIONAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NLUX",
+      "name": "NATIONAL URBAN CO OP BANK LTD BAHRAICH"
+    },
+    {
+      "id": "NULX",
+      "name": "NATIONAL URBAN COOP BANK LTD PRATAPGARH"
+    },
+    {
+      "id": "NUCX",
+      "name": "NAVABHARAT CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "NVCX",
+      "name": "NAVANAGARA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NMCX",
+      "name": "NAVI MUMBAI CO OP BANK LTD"
+    },
+    {
+      "id": "NBSX",
+      "name": "NAVSARJAN INDUSTRIAL CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "NDOX",
+      "name": "NAYAGARH DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "NICB",
+      "name": "NEW INDIA CO-OP BANK LTD"
+    },
+    {
+      "id": "NIDX",
+      "name": "NIDHI CO OP BANK LTD"
+    },
+    {
+      "id": "NIUX",
+      "name": "NILESHWAR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "NILX",
+      "name": "NILKANTH CO OP BANK LTD"
+    },
+    {
+      "id": "NIRX",
+      "name": "NIRMAL URBAN CO OP BANK LTD NAGPUR"
+    },
+    {
+      "id": "NSPX",
+      "name": "NISHIGANDHA SAHAKARI BANK LTD PANDHARPUR"
+    },
+    {
+      "id": "NKGS",
+      "name": "NKGSB CO OP BANK LTD"
+    },
+    {
+      "id": "NOBX",
+      "name": "NOBLE CO OP BANK LTD"
+    },
+    {
+      "id": "NOIX",
+      "name": "NOIDA COMMERCIAL CO OP BAK LTD"
+    },
+    {
+      "id": "NESF",
+      "name": "NORTH EAST SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "NMGB",
+      "name": "NORTH MALABAR GRAMIN BANK"
+    },
+    {
+      "id": "NRMX",
+      "name": "NORTHERN RAILWAY MULTI STATE PRIMARY CO OP BANK LT"
+    },
+    {
+      "id": "NPCI",
+      "name": "NPCI"
+    },
+    {
+      "id": "NSPB",
+      "name": "NSDL Payments Banks Ltd"
+    },
+    {
+      "id": "NNSX",
+      "name": "NUTAN NAGARI SAHAKARI BANK LTD ICHALKARANJI"
+    },
+    {
+      "id": "NNSB",
+      "name": "NUTAN NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ODGB",
+      "name": "ODISHA GRAMYA BANK"
+    },
+    {
+      "id": "ONSX",
+      "name": "OMKAR NAGREEYA SAHKARI BANK LTD"
+    },
+    {
+      "id": "PCOX",
+      "name": "OMPRAKASH DEORA PEOPLES CO OP BANK LTD HINGOLI"
+    },
+    {
+      "id": "ORBC",
+      "name": "ORIENTAL BANK OF COMMERCE"
+    },
+    {
+      "id": "ODCX",
+      "name": "OSMANABAD DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "OSMX",
+      "name": "OSMANABAD JANATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PALX",
+      "name": "PALI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PLUX",
+      "name": "PALUS SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PDNX",
+      "name": "PANDYAN GRAMA BANK"
+    },
+    {
+      "id": "PNVX",
+      "name": "PANVEL CO OPERATIVE URBAN BANK LTD"
+    },
+    {
+      "id": "PRPX",
+      "name": "PARASPAR SAHAYAK CO OP BANK"
+    },
+    {
+      "id": "PCBX",
+      "name": "PARSHWANATH CO OP BANK LTD"
+    },
+    {
+      "id": "PASX",
+      "name": "PASCHIM BANGA GRAMIN BANK"
+    },
+    {
+      "id": "PCBL",
+      "name": "PATAN CO OP BANK LTD"
+    },
+    {
+      "id": "PTSX",
+      "name": "PATAN NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PATX",
+      "name": "PATHANMTHITTA DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "PYTM",
+      "name": "PAYTM PAYMENTS BANK LTD"
+    },
+    {
+      "id": "PCDX",
+      "name": "PEOPLES CO OP BANK LTD DHOLKA"
+    },
+    {
+      "id": "PUBX",
+      "name": "PEOPLES URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PCPX",
+      "name": "PIMPRI CHINCHWAD SAHAKARI BANK MARYADIT PIMPRI"
+    },
+    {
+      "id": "PITX",
+      "name": "PITHORAGARH ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "PNSX",
+      "name": "POORNAWADI NAGRIK SAHAKARI BANK M BEED"
+    },
+    {
+      "id": "PCLX",
+      "name": "PRAGATHI CO OP BANK LTD BANGALORE"
+    },
+    {
+      "id": "PKGB",
+      "name": "PRAGATHI KRISHNA GRAMIN BANK"
+    },
+    {
+      "id": "PMNX",
+      "name": "PRAGATI MAHILA NAGRIK SAHAKARI BANK LTD BHILAI"
+    },
+    {
+      "id": "PSBX",
+      "name": "PRAGATI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PRTH",
+      "name": "PRATHAMA BANK"
+    },
+    {
+      "id": "SUBX",
+      "name": "PRATHAMA UP GRAMIN BANK"
+    },
+    {
+      "id": "PRSX",
+      "name": "PRAVARA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PREX",
+      "name": "PRERANA CO OP BANK LTD"
+    },
+    {
+      "id": "PMEC",
+      "name": "PRIME CO OP BANK LTD"
+    },
+    {
+      "id": "PDSX",
+      "name": "PRIYADARSHANI NAGARI SAHAKARI BANK LTD JALNA"
+    },
+    {
+      "id": "PGCX",
+      "name": "PROGRESSIVE CO OP BANK LTD"
+    },
+    {
+      "id": "PROX",
+      "name": "PROGRESSIVE MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "PGRX",
+      "name": "PROGRESSIVE URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PUDX",
+      "name": "PUDUKOTTAI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PBGX",
+      "name": "PUDUVAI BHARATHIAR GRAMA BANK"
+    },
+    {
+      "id": "PCTX",
+      "name": "PUNE CANTONMENT SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PDCX",
+      "name": "PUNE DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PNMX",
+      "name": "PUNE MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "PPBX",
+      "name": "PUNE PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "PMCB",
+      "name": "PUNJAB AND MAHARASHTRA CO OP BANK"
+    },
+    {
+      "id": "PSIB",
+      "name": "PUNJAB AND SIND BANK"
+    },
+    {
+      "id": "PUGX",
+      "name": "PUNJAB GRAMIN BANK"
+    },
+    {
+      "id": "PUNB",
+      "name": "PUNJAB NATIONAL BANK"
+    },
+    {
+      "id": "PCCB",
+      "name": "PURULIA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PVCX",
+      "name": "PURVANCHAL CO OP BANK LTD GAZIPUR"
+    },
+    {
+      "id": "PURX",
+      "name": "PURVANCHAL GRAMIN BANK"
+    },
+    {
+      "id": "PUCX",
+      "name": "PUSAD URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "QNBX",
+      "name": "QATAR NATIONAL BANK SAQ"
+    },
+    {
+      "id": "RABO",
+      "name": "RABOBANK INTERNATIONAL"
+    },
+    {
+      "id": "RDCX",
+      "name": "RAIGAD DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "RSBX",
+      "name": "RAIGAD SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RJCX",
+      "name": "RAIGANJ CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "RECX",
+      "name": "RAILWAY EMPLOYEES CO OP BANKING SOCIETY LTD"
+    },
+    {
+      "id": "RCUX",
+      "name": "RAJADHANI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "RPUX",
+      "name": "RAJAPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RBBX",
+      "name": "RAJARAMBAPU SAHAKARI BANK LTD PETH"
+    },
+    {
+      "id": "RSVX",
+      "name": "RAJARSHI SHAHU GOVT SERVANTS CO OP BANK KOLH"
+    },
+    {
+      "id": "RSSX",
+      "name": "RAJARSHI SHAHU SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MDGX",
+      "name": "RAJASTHAN MARUDHARA GRAMIN BANK"
+    },
+    {
+      "id": "RNSX",
+      "name": "RAJDHANI NAGAR SAHKARI BANK LTD"
+    },
+    {
+      "id": "KAGX",
+      "name": "RAJE VIKRAMSINH GHATAGE CO OP BANK LTD"
+    },
+    {
+      "id": "RGSX",
+      "name": "RAJGURUNAGAR SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RACX",
+      "name": "RAJKOT COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "RNSB",
+      "name": "RAJKOT NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RAKX",
+      "name": "RAJKOT PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "RAUX",
+      "name": "RAJLAXMI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RJNX",
+      "name": "RAJPIPLA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RGCX",
+      "name": "RAMGARHIA CO OP BANK LTD"
+    },
+    {
+      "id": "RZSX",
+      "name": "RAMPUR ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "RRSX",
+      "name": "RAMRAJYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RNGX",
+      "name": "RANGA REDDY CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "ZRNB",
+      "name": "RANI CHANNAMMA MAHILA SAHAKARI BANK NIYAMT BELGAVI"
+    },
+    {
+      "id": "RCBX",
+      "name": "RANIGANJ CO OP BANK LTD"
+    },
+    {
+      "id": "RLUX",
+      "name": "RANILAXMIBAI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RTCX",
+      "name": "RATANCHAND SHAH SAHAKARI BANK LTD MANGALWEDHA"
+    },
+    {
+      "id": "RNDX",
+      "name": "RATNAGIRI DISTRICT CENTRAL CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "RCMX",
+      "name": "RAVI COMMERCIAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RATN",
+      "name": "RBL BANK LIMITED"
+    },
+    {
+      "id": "REBX",
+      "name": "RENDAL SAHAKARI BANK LTD RENDAL"
+    },
+    {
+      "id": "RBCX",
+      "name": "RESERVE BANK EMPLOYEES CO OP BANK LTD"
+    },
+    {
+      "id": "RBIN",
+      "name": "RESERVE BANK OF INDIA"
+    },
+    {
+      "id": "ROCX",
+      "name": "ROHIKA CENTRAL CO OP BANK LTD MADHUBANI"
+    },
+    {
+      "id": "SKUX",
+      "name": "S S L S A KURUNDWAD URBAN BANK LTD"
+    },
+    {
+      "id": "SGUX",
+      "name": "SADGURU GAHININATH URBAN CO OP BANK LTD AKLUJ"
+    },
+    {
+      "id": "SGSX",
+      "name": "SADGURU NAGRIK SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "SSKX",
+      "name": "SADHANA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SAHX",
+      "name": "SADHANA SAHAKARI BANK LTD PUNE"
+    },
+    {
+      "id": "SANX",
+      "name": "SAIBABA NAGARI SAHAKARI BANK MARYADIT"
+    },
+    {
+      "id": "SSOX",
+      "name": "SAMARTH SAHAKARI BANK LTD SOLAPUR"
+    },
+    {
+      "id": "SDBX",
+      "name": "SAMATA CO OP DEVELOPMENT BANK LTD"
+    },
+    {
+      "id": "SAMX",
+      "name": "SAMATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SDTX",
+      "name": "SAMBALPUR DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "SMBX",
+      "name": "SAMPADA SAHAKARI BANK LTD PUNE"
+    },
+    {
+      "id": "SCOB",
+      "name": "SAMRUDDHI CO OP BANK LTD NAGPUR"
+    },
+    {
+      "id": "SPSX",
+      "name": "SANDUR PATTANA SOUHARDA SAHAKARI BANK NIYAMITHA"
+    },
+    {
+      "id": "SGCX",
+      "name": "SANGLI DISTRICT CENTRAL CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "SGLX",
+      "name": "SANGLI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SUCX",
+      "name": "SANGLI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SISX",
+      "name": "SANMATI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SNMX",
+      "name": "SANMITRA MAHILA NAGARI SAHKARI BANK MARYADIT"
+    },
+    {
+      "id": "SAIX",
+      "name": "Sanmitra Sahakari Bank Ltd"
+    },
+    {
+      "id": "SMTX",
+      "name": "SANMITRA URBAN CO OP BANK LTD AKOLA"
+    },
+    {
+      "id": "SSSX",
+      "name": "SANT SOPANKAKA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SPBX",
+      "name": "SAPTAGIRI GRAMEENA BANK"
+    },
+    {
+      "id": "SNSV",
+      "name": "SARAKARI NAUKARARA SAHAKARI BANK NIYAMT VIJAYAPURA"
+    },
+    {
+      "id": "SNAX",
+      "name": "SARASPUR NAGARIK CO OP BANK LTD"
+    },
+    {
+      "id": "SRCB",
+      "name": "SARASWAT BANK"
+    },
+    {
+      "id": "SABX",
+      "name": "SARASWATI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SAVX",
+      "name": "SARDAR VALLABHBHAI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SARX",
+      "name": "SARDARGANJ MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "SNLX",
+      "name": "SARJERAODADA NAIK SHIRALA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "HGBX",
+      "name": "SARVA HARYANA GRAMIN BANK"
+    },
+    {
+      "id": "SVCX",
+      "name": "SARVODAYA COMMERICAL CO OP BANK LTD"
+    },
+    {
+      "id": "SDSX",
+      "name": "SATARA DISTRICT CENTRAL CO-OP BANK LTD"
+    },
+    {
+      "id": "SAGX",
+      "name": "SAURASHTRA GRAMIN BANK"
+    },
+    {
+      "id": "SAWX",
+      "name": "SAWAI MADHOPUR KENDRIYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SWMX",
+      "name": "SAWAI MADHOPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "STCB",
+      "name": "SBM BANK INDIA LTD"
+    },
+    {
+      "id": "SBPX",
+      "name": "SBPP CO OP BANK LTD"
+    },
+    {
+      "id": "SENX",
+      "name": "SEHORE NAGRIK SAHAKARI BANK LTD SEHORE"
+    },
+    {
+      "id": "SHAX",
+      "name": "SHANKAR NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SMPX",
+      "name": "SHANKARRAO MOHITE PATIL SAHAKRI BANK LTD AKLUJ"
+    },
+    {
+      "id": "SRSX",
+      "name": "SHARAD NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHSX",
+      "name": "SHARAD SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHUB",
+      "name": "SHIGGAON URBAN COOP BANK LTD"
+    },
+    {
+      "id": "SINX",
+      "name": "SHIHORI NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHKX",
+      "name": "SHIKSHAK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHBK",
+      "name": "SHINHAN BANK"
+    },
+    {
+      "id": "SVNX",
+      "name": "SHIVAJI NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SBSX",
+      "name": "SHIVAJIRAO BHOSALE SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SMCB",
+      "name": "Shivalik Small Finance Bank"
+    },
+    {
+      "id": "SHIX",
+      "name": "SHIVALIK SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "SSBX",
+      "name": "SHIVDAULAT SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SBUX",
+      "name": "SHREE BALAJI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SBCR",
+      "name": "SHREE BASAVESHWAR URBAN COOP BANK LTD RANEBENNUR"
+    },
+    {
+      "id": "SRCX",
+      "name": "SHREE BHARAT CO OP BANK LTD"
+    },
+    {
+      "id": "SBNX",
+      "name": "SHREE BHAVNAGAR NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BOTX",
+      "name": "SHREE BOTAD MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "SREX",
+      "name": "SHREE CO OP BANK LTD"
+    },
+    {
+      "id": "SRHX",
+      "name": "SHREE DHARATI CO OP BANK LTD"
+    },
+    {
+      "id": "KDIX",
+      "name": "SHREE KADI NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SLCX",
+      "name": "SHREE LAXMI CO OP BANK LTD PUNE"
+    },
+    {
+      "id": "SMMX",
+      "name": "SHREE MAHALAXMI MERCANTILE CO OP BANK LTD DABHOI"
+    },
+    {
+      "id": "MAHX",
+      "name": "SHREE MAHALAXMI URBAN CO OP CREDIT BANK LTD"
+    },
+    {
+      "id": "MAVX",
+      "name": "SHREE MAHAVIR SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHRX",
+      "name": "SHREE MAHESH CO OP BANK LTD NASHIK"
+    },
+    {
+      "id": "SMNX",
+      "name": "SHREE MAHUVA NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MORX",
+      "name": "SHREE MORBI NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SPNX",
+      "name": "SHREE PANCHGANGA NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "HPCX",
+      "name": "SHREE PARSWANATH CO OP BANK LTD"
+    },
+    {
+      "id": "SHEX",
+      "name": "SHREE SAMARTH SAHAKARI BANK LTD NASHIK"
+    },
+    {
+      "id": "SSAX",
+      "name": "SHREE SAVLI NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SSHX",
+      "name": "SHREE SHARADA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TYCX",
+      "name": "SHREE THYAGARAJA CO OP BANK LTD"
+    },
+    {
+      "id": "SVRX",
+      "name": "SHREE VARDHAMAN SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SWSX",
+      "name": "SHREE WARANA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ADCX",
+      "name": "SHRI ADINATH CO OP BANK LTD"
+    },
+    {
+      "id": "SACB",
+      "name": "SHRI ARIHANT CO OP BANK LTD"
+    },
+    {
+      "id": "BASX",
+      "name": "SHRI BASAVESHWAR SAHAKARI BANK NYT BAGALKOT"
+    },
+    {
+      "id": "SBUJ",
+      "name": "SHRI BHARAT URBAN CO OP BANK LTD JAYSINGPUR"
+    },
+    {
+      "id": "SCNX",
+      "name": "SHRI CHHANI NAGRIK SAHKARI BANK LTD"
+    },
+    {
+      "id": "CRUB",
+      "name": "SHRI CHHATRAPATI RAJARSHI SHAHU URBAN CO OP BANK"
+    },
+    {
+      "id": "SDTC",
+      "name": "SHRI D T PATIL CO OPERATIVE BANK LTD CHIKODI"
+    },
+    {
+      "id": "SHGX",
+      "name": "SHRI GANESH SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHNX",
+      "name": "SHRI KANYAKA NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MHMX",
+      "name": "SHRI MAHALAXMI CO OP BAK LTD KOLHAPUR"
+    },
+    {
+      "id": "SMUX",
+      "name": "SHRI MAHAVIR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SEWX",
+      "name": "SHRI MAHILA SEWA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "RJTX",
+      "name": "SHRI RAJKOT DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "RUKX",
+      "name": "SHRI RUKMINI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SSMX",
+      "name": "SHRI SWAMI SAMARTH SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VCCX",
+      "name": "SHRI VEERSHAIV CO OP BANK LTD"
+    },
+    {
+      "id": "SVMC",
+      "name": "SHRI VIJAY MAHANTESH COOP BANK LTD"
+    },
+    {
+      "id": "SVSX",
+      "name": "SHRI VINAYAK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SKCX",
+      "name": "SHRIKRISHNA CO OP BANK LTD UMRER"
+    },
+    {
+      "id": "SAPX",
+      "name": "SHRIMANT MALOJIRAJE SAHAKARI BANK LTD PHALTAN"
+    },
+    {
+      "id": "SPTX",
+      "name": "SHRIPATRAODADA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SHBX",
+      "name": "SHRIRAM URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SBLX",
+      "name": "SHUBHALAKSHMI MAHILA CO OP BANK LTD"
+    },
+    {
+      "id": "SHUX",
+      "name": "SHUSHRUTI SOUHARDA SAHAKARA BANK NIYAMITA"
+    },
+    {
+      "id": "SURX",
+      "name": "SIDDHESHWAR URBAN CO OP BANK MARYADIT SILLOD"
+    },
+    {
+      "id": "SIDX",
+      "name": "SIDDHI CO OP BANK LTD"
+    },
+    {
+      "id": "SHOX",
+      "name": "SIHOR MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "SIHX",
+      "name": "SIHOR NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SIKX",
+      "name": "SIKAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SKKX",
+      "name": "SIKKIM STATE CO OP BANK LTD"
+    },
+    {
+      "id": "SDCX",
+      "name": "SINDHUDURG DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SMVC",
+      "name": "SIR M VISVESVARAYA CO OP BANK LTD"
+    },
+    {
+      "id": "SIWX",
+      "name": "SIWAN CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SNSX",
+      "name": "SMRITI NAGRIK SAHAKARI BANK"
+    },
+    {
+      "id": "SOGE",
+      "name": "SOCIETE GENERALE"
+    },
+    {
+      "id": "SJSX",
+      "name": "SOLAPUR JANATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SDHX",
+      "name": "SOLAPUR SIDDHESHWAR SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SBLD",
+      "name": "SONALI BANK LTD"
+    },
+    {
+      "id": "SONX",
+      "name": "SONBHADRA NAGAR SAHKARI BANK LTD"
+    },
+    {
+      "id": "SMSX",
+      "name": "SOUBHAGYA MAHILA SOUHARDHA SAHAKARI BANK GADAG"
+    },
+    {
+      "id": "SIBL",
+      "name": "SOUTH INDIAN BANK"
+    },
+    {
+      "id": "SCSX",
+      "name": "SREE CHARAN SOUHARDHA CO OP BANK LTD"
+    },
+    {
+      "id": "SRGX",
+      "name": "SREE NARAYANA GURU CO OP BANK LTD"
+    },
+    {
+      "id": "SSNX",
+      "name": "SREENIDHI SOUHARDA SAHAKARI BANK NIYAMITHA"
+    },
+    {
+      "id": "SBMX",
+      "name": "SRI BANASHANKARI MAHILA CO OP BANK LTD"
+    },
+    {
+      "id": "SBPS",
+      "name": "SRI BASAVESHWAR PATTANA SAHAKARI BANK NIYAMT SINDG"
+    },
+    {
+      "id": "SBKX",
+      "name": "SRI CHANNABASAVASWAMY SOUHARDHA PATTANA SAHAK BANK"
+    },
+    {
+      "id": "GKCX",
+      "name": "SRI GOKARNANATH CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "KNNX",
+      "name": "SRI KANNIKAPARAMESWARI CO OP BANK LTD"
+    },
+    {
+      "id": "PSRX",
+      "name": "SRI POTTI SRIRAMULU NELLORE DCCB"
+    },
+    {
+      "id": "SRIX",
+      "name": "SRI SATYA SAI NAGRIK SAHAKARI BANK MYDT, BHOPAL"
+    },
+    {
+      "id": "SDUX",
+      "name": "SRI SUDHA CO OP BANK LTD"
+    },
+    {
+      "id": "SVAX",
+      "name": "SRI VASAVAMBA CO OP BANK LTD"
+    },
+    {
+      "id": "SCBL",
+      "name": "STANDARD CHARTERED BANK"
+    },
+    {
+      "id": "SBBJ",
+      "name": "STATE BANK OF BIKANER AND JAIPUR"
+    },
+    {
+      "id": "SBHY",
+      "name": "STATE BANK OF HYDERABAD"
+    },
+    {
+      "id": "SBIN",
+      "name": "STATE BANK OF INDIA"
+    },
+    {
+      "id": "SBMY",
+      "name": "STATE BANK OF MYSORE"
+    },
+    {
+      "id": "STBP",
+      "name": "STATE BANK OF PATIALA"
+    },
+    {
+      "id": "SBTR",
+      "name": "STATE BANK OF TRAVANCORE"
+    },
+    {
+      "id": "STCX",
+      "name": "STATE TRANSPORT CO OP BANK LTD"
+    },
+    {
+      "id": "STRX",
+      "name": "STERLING URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SLAX",
+      "name": "SUBHADRA LOCAL AREA BANK LTD"
+    },
+    {
+      "id": "SSDX",
+      "name": "SUCO SOUHARDA SAHAKARI BANK"
+    },
+    {
+      "id": "SCUX",
+      "name": "SUDHA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SULX",
+      "name": "SULAIMANI CO OP BANK LTD"
+    },
+    {
+      "id": "SMEX",
+      "name": "SUMERPUR MERCANTILE URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SMBC",
+      "name": "SUMITOMO MITSUI BANKING CORPORATION"
+    },
+    {
+      "id": "SSWX",
+      "name": "SUNDARLAL SAWAJI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SUNB",
+      "name": "SURAT NATIONAL CO OP BANK LTD"
+    },
+    {
+      "id": "SURY",
+      "name": "SURYODAY SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "SJGX",
+      "name": "SUTLEJ GRAMIN BANK"
+    },
+    {
+      "id": "SUVX",
+      "name": "SUVARNAYUG SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SVCB",
+      "name": "SVC CO OP BANK LTD"
+    },
+    {
+      "id": "SYNB",
+      "name": "SYNDICATE BANK"
+    },
+    {
+      "id": "TTBX",
+      "name": "TALIPARAMBA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "PABX",
+      "name": "TAMIL NADU GRAMA BANK"
+    },
+    {
+      "id": "TMBL",
+      "name": "TAMILNAD MERCANTILE BANK LTD"
+    },
+    {
+      "id": "TNSC",
+      "name": "TAMILNADU STATE APEX CO OP BANK LTD"
+    },
+    {
+      "id": "TGCX",
+      "name": "TAMLUK GHATAL CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TEHX",
+      "name": "TEHRI GARHWAL ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "DGBX",
+      "name": "TELANGANA GRAMEENA BANK"
+    },
+    {
+      "id": "TSAB",
+      "name": "TELANGANA STATE CO OP APEX BANK LTD"
+    },
+    {
+      "id": "TLCX",
+      "name": "TELLICHERRY CO-OPERATIVE URBAN BANK LTD"
+    },
+    {
+      "id": "TETX",
+      "name": "TEXTILE TRADERS CO OP BANK LTD"
+    },
+    {
+      "id": "TBSB",
+      "name": "THANE BHARAT SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TJCX",
+      "name": "THANJAVUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "ABSB",
+      "name": "THE ABHINAV SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ACUX",
+      "name": "THE ADARSH CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "ADDX",
+      "name": "THE ADILABAD DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "TACX",
+      "name": "THE ADINATH CO OP BANK LTD"
+    },
+    {
+      "id": "AGEX",
+      "name": "THE AGO EMPLOYEES' CO OPERATIVE BANK LTD"
+    },
+    {
+      "id": "AGCX",
+      "name": "THE AGRASEN CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "AGSX",
+      "name": "THE AGRASEN NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "ADBX",
+      "name": "THE AHMEDABAD DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "AHMX",
+      "name": "THE AHMEDNAGAR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "ANMX",
+      "name": "THE AHMEDNAGAR MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "AUCX",
+      "name": "THE AJARA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "ADCC",
+      "name": "THE AKOLA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "AJKB",
+      "name": "THE AKOLA JANATA COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "AKOX",
+      "name": "THE AKOLA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "APCX",
+      "name": "THE ALAPPUZHA DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "ALWX",
+      "name": "THE ALWAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "AWCX",
+      "name": "THE ALWAYE URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "AMBX",
+      "name": "THE AMBALA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "AMSX",
+      "name": "THE AMBIKA MAHILA SAHAKARI BANK LTD AHMEDNAGAR"
+    },
+    {
+      "id": "AVDX",
+      "name": "THE AMRAVATI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "AMCX",
+      "name": "THE AMRITSAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TAMX",
+      "name": "THE ANAND MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "TADX",
+      "name": "THE ANANTAPUR DISTRICT CO OPERATIVE CENTRAL BANK L"
+    },
+    {
+      "id": "APBL",
+      "name": "THE ANDHRA PRADESH STATE CO OP BANK LTD"
+    },
+    {
+      "id": "AUBX",
+      "name": "THE ANGUL UNITED CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TAUB",
+      "name": "THE ANKOLA URBAN COOP BANK LTD"
+    },
+    {
+      "id": "TASX",
+      "name": "THE ANNASAHEB SAVANT CO OP URBAN BANK MAHAD LTD"
+    },
+    {
+      "id": "APMX",
+      "name": "THE AP MAHAJANS CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "ACUB",
+      "name": "THE ARYAPURAM CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "ASHX",
+      "name": "THE ASHTA PEOPLES CO OP BANK LTD ASHTA"
+    },
+    {
+      "id": "TSKX",
+      "name": "THE ASKA CO OP CENTRAL BANK LTD ASKA"
+    },
+    {
+      "id": "ACAX",
+      "name": "THE ASSAM CO OP APEX BANK LTD"
+    },
+    {
+      "id": "ASOX",
+      "name": "THE ASSOCIATE CO OP BANK LTD"
+    },
+    {
+      "id": "AURX",
+      "name": "THE AURANGABAD DISTRICT CENTRAL CO OP BANK BIHAR"
+    },
+    {
+      "id": "ABCX",
+      "name": "THE AURANGABAD DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "AZAX",
+      "name": "THE AZAD CO OP BANK LTD GADAG"
+    },
+    {
+      "id": "AZUX",
+      "name": "THE AZAD URBAN CO OP BANK LTD HUBLI"
+    },
+    {
+      "id": "BDSX",
+      "name": "THE BABASAHEB DESHMUKH SAHAKARI BANK LTD ATPADI"
+    },
+    {
+      "id": "BAUX",
+      "name": "THE BADAGARA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "BODX",
+      "name": "THE BAGALKOT DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "BCUX",
+      "name": "THE BAGHAT URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BSCX",
+      "name": "THE BAIDYABATI SHEORAPHULI CO OP BANK LTD"
+    },
+    {
+      "id": "BBSX",
+      "name": "THE BALASORE BHADRAK CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TBUX",
+      "name": "THE BALUSSERI CO OP URBAN BANK LTD NO LL27"
+    },
+    {
+      "id": "BKDX",
+      "name": "THE BANASKANTHA DIST CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BMPX",
+      "name": "THE BANASKANTHA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "BBRX",
+      "name": "THE BANGALORE BANGALORE RURAL AND RAMANAGARA DCCB"
+    },
+    {
+      "id": "BCCB",
+      "name": "THE BANGALORE CITY CO OP BANK LTD"
+    },
+    {
+      "id": "NOSC",
+      "name": "THE BANK OF NOVA SCOTIA"
+    },
+    {
+      "id": "BNKX",
+      "name": "THE BANKI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BKTX",
+      "name": "THE BANKURA TOWN COOPERATIVE BANK LIMITED"
+    },
+    {
+      "id": "BCEX",
+      "name": "THE BANSWARA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BCBX",
+      "name": "THE BANTRA CO OP BANK LTD"
+    },
+    {
+      "id": "TBMX",
+      "name": "THE BAPUNAGAR MAHILA CO OP BANK LTD"
+    },
+    {
+      "id": "BSBX",
+      "name": "THE BARAMATI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BSNX",
+      "name": "THE BARDOLI NAGRIK SAHAKARI BANK LTD."
+    },
+    {
+      "id": "BMCX",
+      "name": "THE BARMER CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BRDX",
+      "name": "THE BARODA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BARX",
+      "name": "THE BARODA CITY CO OP BANK LTD"
+    },
+    {
+      "id": "TBTX",
+      "name": "THE BARODA TRADERS CO OP BANK LTD"
+    },
+    {
+      "id": "BCCX",
+      "name": "THE BATHINDA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BAVX",
+      "name": "THE BAVLA NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TBNS",
+      "name": "THE BECHARAJI NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BEDX",
+      "name": "THE BEED DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BGUX",
+      "name": "THE BEGUSARAI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BELX",
+      "name": "THE BELGAUM DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BDBX",
+      "name": "THE BELLARY DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "BBVX",
+      "name": "THE BHABHAR VIBHAG NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BPCX",
+      "name": "THE BHADGAON PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "TBHX",
+      "name": "THE BHADRAN PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "BHGX",
+      "name": "THE BHAGALPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BMSX",
+      "name": "THE BHAGYALAKSHMI MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "BHAX",
+      "name": "THE BHAGYODAYA CO OP BANK LTD"
+    },
+    {
+      "id": "BDIX",
+      "name": "THE BHANDARA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BUBX",
+      "name": "THE BHANDARA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TBCX",
+      "name": "THE BHARATH CO OP BANK LTD"
+    },
+    {
+      "id": "BHRX",
+      "name": "THE BHARATPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BRUX",
+      "name": "THE BHARUCH DISTRICT CENTRAL CO OP BANK LTD BHARUC"
+    },
+    {
+      "id": "BHTX",
+      "name": "THE BHATKAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BRCX",
+      "name": "THE BHAVANA RISHI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "BKCX",
+      "name": "THE BHAVASARA KSHATRIYA CO OP BANK LTD"
+    },
+    {
+      "id": "BAWX",
+      "name": "THE BHAWANIPATNA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BHWX",
+      "name": "THE BHIWANI CENTRAL CO OP BANK LTD BHIWANI"
+    },
+    {
+      "id": "BHCX",
+      "name": "THE BHUJ COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "BHJX",
+      "name": "THE BHUJ MERCENTILE CO OP BANK LTD"
+    },
+    {
+      "id": "BCUB",
+      "name": "THE BICHOLIM URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BACX",
+      "name": "THE BIHAR AWAMI CO OP BANK LTD"
+    },
+    {
+      "id": "TBSX",
+      "name": "THE BIHAR STATE CO OP BANK LTD"
+    },
+    {
+      "id": "BDCX",
+      "name": "THE BIJAPUR DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "BJUX",
+      "name": "THE BIJNOR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "BNTX",
+      "name": "THE BISHNUPUR TOWN COOPERATIVE BANK LIMITED"
+    },
+    {
+      "id": "BORX",
+      "name": "THE BORAL UNION CO OP BANK LTD"
+    },
+    {
+      "id": "TBPX",
+      "name": "THE BOTAD PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "BOCX",
+      "name": "THE BOUDH CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "TBDX",
+      "name": "THE BULDANA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BUNX",
+      "name": "THE BUNDI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BURX",
+      "name": "THE BURDWAN CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "BUSX",
+      "name": "THE BUSINESS CO OP BANK LTD"
+    },
+    {
+      "id": "CALX",
+      "name": "THE CALICUT CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "CSBK",
+      "name": "THE CATHOLIC SYRIAN BANK"
+    },
+    {
+      "id": "CBHX",
+      "name": "THE CENTRAL CO OP BANK LTD BHILWARA"
+    },
+    {
+      "id": "CEBX",
+      "name": "THE CENTRAL CO OP BANK LTD BIKANER"
+    },
+    {
+      "id": "CTOX",
+      "name": "THE CENTRAL CO OP BANK LTD TONK"
+    },
+    {
+      "id": "CHBX",
+      "name": "THE CHAMBA URBAN CO OP BANK LTD CHAMBA"
+    },
+    {
+      "id": "CCMX",
+      "name": "THE CHANASMA COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "TCNX",
+      "name": "THE CHANASMA NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CHSX",
+      "name": "THE CHANDIGARH STATE CO OP BANK LTD"
+    },
+    {
+      "id": "CPDX",
+      "name": "THE CHANDRAPUR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "CHNX",
+      "name": "THE CHARADA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CNSX",
+      "name": "THE CHEMBUR NAGARIK SAHAKARI BANK"
+    },
+    {
+      "id": "CPNX",
+      "name": "THE CHHAPI NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CHIX",
+      "name": "THE CHIKHLI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "CIDX",
+      "name": "THE CHIKMAGALUR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "CUCX",
+      "name": "THE CHIPLUN URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "CHTX",
+      "name": "THE CHITNAVISPURA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "CHDX",
+      "name": "THE CHITTOOR DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "CHPX",
+      "name": "THE CHOPDA PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "CHCX",
+      "name": "THE CHURU CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "CCBX",
+      "name": "THE CITIZEN CO OP BANK LTD"
+    },
+    {
+      "id": "CJAX",
+      "name": "THE CITIZENS CO OP BANK LTD JAMMU"
+    },
+    {
+      "id": "CURX",
+      "name": "THE CITIZENS URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TCBX",
+      "name": "THE CO OP BANK OF RAJKOT LTD"
+    },
+    {
+      "id": "COCX",
+      "name": "THE CO OP CITY BANK LTD"
+    },
+    {
+      "id": "TCTX",
+      "name": "THE COASTAL URBAN CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "CMDX",
+      "name": "THE COIMBATORE DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "CMLX",
+      "name": "THE COMMERCIAL CO OP BANK LTD JAMNAGAR"
+    },
+    {
+      "id": "TCCX",
+      "name": "THE COMMERCIAL CO-OP BANK LTD"
+    },
+    {
+      "id": "COMX",
+      "name": "THE COOP BANK OF MEHSANA LTD"
+    },
+    {
+      "id": "CDCX",
+      "name": "THE CUDDALORE DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "DAHX",
+      "name": "THE DAHOD MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "DHUX",
+      "name": "THE DAHOD URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DDDX",
+      "name": "THE DAKSHIN DINAJPUR DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "DCUX",
+      "name": "THE DARUSSALAM CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "DUCX",
+      "name": "THE DAUND URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "DHSX",
+      "name": "THE DAVANAGERE HARIHARA URBAN SAHAKARA BANK NIYAMITHA"
+    },
+    {
+      "id": "DCNX",
+      "name": "THE DECCAN CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "DMCB",
+      "name": "THE DECCAN MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "DSCB",
+      "name": "THE DELHI STATE CO OP BANK LTD"
+    },
+    {
+      "id": "DHBX",
+      "name": "THE DHANBAD CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TDMX",
+      "name": "THE DHANERA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "DNDC",
+      "name": "THE DHULE AND NANDURBAR DIST CENTRAL COOP BANK LTD"
+    },
+    {
+      "id": "DCDX",
+      "name": "THE DISTRICT CENTRAL CO OP BANK LTD ELLURU"
+    },
+    {
+      "id": "DCEX",
+      "name": "THE DISTRICT CENTRAL CO OP BANK LTD KHAMMAM"
+    },
+    {
+      "id": "DSAX",
+      "name": "THE DISTRICT CENTRAL COOP BANK LTDSUPAUL"
+    },
+    {
+      "id": "TDBX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD BIDAR"
+    },
+    {
+      "id": "TDIX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD KAKINADA"
+    },
+    {
+      "id": "DCKX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD KURNOOL"
+    },
+    {
+      "id": "MEDX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD MEDAK"
+    },
+    {
+      "id": "TSDX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD SRIKAKUL"
+    },
+    {
+      "id": "DICX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD VISAKHAPATNAM"
+    },
+    {
+      "id": "TVDX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK LTD VIZIANAGARAM"
+    },
+    {
+      "id": "DCCX",
+      "name": "THE DISTRICT CO OP CENTRAL BANK MAHABUBNAGAR"
+    },
+    {
+      "id": "DUNX",
+      "name": "THE DUNGARPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TECX",
+      "name": "THE EENADU CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "ELRX",
+      "name": "THE ELURU CO-OPERATIVE URBAN BANK LTD"
+    },
+    {
+      "id": "EDSX",
+      "name": "THE ERNAKULAM DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "EDCX",
+      "name": "THE ERODE DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FMCX",
+      "name": "THE FAIZ MERCANTILE CO OP BANK LTD NASIK"
+    },
+    {
+      "id": "FRIX",
+      "name": "THE FARIDABAD CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FCCX",
+      "name": "THE FARIDKOT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FDFX",
+      "name": "THE FARRUKHABAD DISTRICT CO OP BANK LTD FATEHGARH"
+    },
+    {
+      "id": "TFCX",
+      "name": "THE FATEHABAD CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FSCX",
+      "name": "THE FATEHGRAH SAHIB CENTRAL CO OP BANK"
+    },
+    {
+      "id": "FCBX",
+      "name": "THE FAZILKA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FZCX",
+      "name": "THE FEROZEPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "FINX",
+      "name": "THE FINANCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "GDCB",
+      "name": "THE GADCHIROLI DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "GADX",
+      "name": "THE GADHINGLAJ URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "GPCX",
+      "name": "THE GANDEVI PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "GNCX",
+      "name": "THE GANDHI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "GANX",
+      "name": "THE GANDHIDHAM CO OP BANK LTD"
+    },
+    {
+      "id": "GMBX",
+      "name": "THE GANDHIDHAM MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "TGNX",
+      "name": "THE GANDHINAGAR NAGRIK CO OP BANK LTD"
+    },
+    {
+      "id": "TGUX",
+      "name": "THE GANDHINAGAR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "GAMX",
+      "name": "THE GANGA MERCANTILE URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "GKNX",
+      "name": "THE GANGANAGAR KENDRIYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "GCUL",
+      "name": "THE GAUHATI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "GCUX",
+      "name": "THE GAYATRI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "GHPX",
+      "name": "THE GHATAL PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "GSBL",
+      "name": "THE GOA STATE CO OP BANK LTD"
+    },
+    {
+      "id": "GUCX",
+      "name": "THE GOA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "GDUX",
+      "name": "THE GODHRA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TGCG",
+      "name": "THE GOKAK URBAN CO OP CREDIT BANK LTD"
+    },
+    {
+      "id": "TGDX",
+      "name": "THE GONDIA DISTRICT CENTRAL CO OP BANK LTD GONDIA"
+    },
+    {
+      "id": "GGCX",
+      "name": "THE GOPALGANJ CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "GNSX",
+      "name": "THE GOZARIA NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "GRAX",
+      "name": "THE GRAIN MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "GBCB",
+      "name": "THE GREATER BOMBAY CO OP BANK LTD"
+    },
+    {
+      "id": "GSCB",
+      "name": "THE GUJARAT STATE CO OP BANK LTD"
+    },
+    {
+      "id": "GUNX",
+      "name": "THE GUNTUR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "GDCX",
+      "name": "THE GUNTUR DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "GCCX",
+      "name": "THE GURDASPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "GUOX",
+      "name": "THE GURGAON CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "THMX",
+      "name": "THE HALOL MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "HNSX",
+      "name": "THE HARIJ NAGRIK SAHAKARI BANK LTD HARIJ"
+    },
+    {
+      "id": "HSCX",
+      "name": "THE HARYANA STATE CO OP APEX BANK LTD"
+    },
+    {
+      "id": "HSDX",
+      "name": "THE HASSAN DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "HCBX",
+      "name": "THE HASTI CO OP BANK LTD"
+    },
+    {
+      "id": "HPSX",
+      "name": "THE HIMACHAL PRADESH STATE CO OP BANK LTD"
+    },
+    {
+      "id": "HINX",
+      "name": "THE HINDU CO OP BANK LTD"
+    },
+    {
+      "id": "HSSX",
+      "name": "THE HINDUSTAN SHIPYARD STAFF CO OP BANK LTD"
+    },
+    {
+      "id": "HCBL",
+      "name": "THE HINDUSTHAN CO OP BANK LTD"
+    },
+    {
+      "id": "HISX",
+      "name": "THE HISAR CENTRAL CO OP BANK LTD HISAR"
+    },
+    {
+      "id": "HSBC",
+      "name": "THE HONGKONG AND SHANGHAI BANKING CORPORATION LTD"
+    },
+    {
+      "id": "THCX",
+      "name": "THE HOOGHLY CO OP CREDIT BANK LTD"
+    },
+    {
+      "id": "HOCX",
+      "name": "THE HOSHIARPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "THWX",
+      "name": "THE HOWRAH DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "HDCX",
+      "name": "THE HYDERABAD DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "ICHX",
+      "name": "THE ICHALKARANJI MERCHANTS CO OP BANK"
+    },
+    {
+      "id": "IMPX",
+      "name": "THE IMPHAL URBAN CO OP BANK"
+    },
+    {
+      "id": "ITDX",
+      "name": "THE INCOME TAX DEPT CO OP BANK LTD MUMBAI"
+    },
+    {
+      "id": "ICBL",
+      "name": "THE INDUSTRIAL CO OP BANK LTD"
+    },
+    {
+      "id": "ISUX",
+      "name": "THE ISLAMPUR URBAN CO OPERATIVE BANK LIMITED"
+    },
+    {
+      "id": "JKSX",
+      "name": "THE J AND K STATE CO OP BANK LTD"
+    },
+    {
+      "id": "JSAB",
+      "name": "THE JAIN SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JCCB",
+      "name": "THE JAIPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TJAX",
+      "name": "THE JAISALMER CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JCCX",
+      "name": "THE JALANDHAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TJDX",
+      "name": "THE JALGAON DISTRICT CENTRAL CO OP BANK LTD JALGAO"
+    },
+    {
+      "id": "JPCB",
+      "name": "THE JALGAON PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "JLDX",
+      "name": "THE JALNA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JLNX",
+      "name": "THE JALNA PEOPLES CO OP BANK LTD JALNA"
+    },
+    {
+      "id": "JLCX",
+      "name": "THE JALORE CENTRAL CO OP BANK LTD JALORE"
+    },
+    {
+      "id": "JPCX",
+      "name": "THE JALPAIGURI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JAKA",
+      "name": "THE JAMMU AND KASHMIR BANK LTD"
+    },
+    {
+      "id": "JCDX",
+      "name": "THE JAMNAGAR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "TJNX",
+      "name": "THE JAMNAGAR MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JMPX",
+      "name": "THE JAMNAGAR PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "JALX",
+      "name": "THE JANALAXMI CO OP BANK LTD"
+    },
+    {
+      "id": "JANX",
+      "name": "THE JANATA CO OP BANK LTD"
+    },
+    {
+      "id": "JCPX",
+      "name": "THE JANATA CO OP BANK LTD GODHRA"
+    },
+    {
+      "id": "TJBX",
+      "name": "THE JANATA CO OP BANK LTD SADALGA"
+    },
+    {
+      "id": "TJMX",
+      "name": "THE JAYNAGAR MOZILPUR PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "JJCX",
+      "name": "THE JHAJJAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JLWX",
+      "name": "THE JHALAWAR NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "JINX",
+      "name": "THE JIND CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JODX",
+      "name": "THE JODHPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "JOWX",
+      "name": "THE JOWAI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "JUCX",
+      "name": "THE JUNAGADH COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "JNDX",
+      "name": "THE JUNAGADH JILLA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KACX",
+      "name": "THE KACHCHH DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KUBX",
+      "name": "THE KADUTHURUTHY URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KARX",
+      "name": "THE KAIRA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KICX",
+      "name": "THE KAITHAL CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TKCX",
+      "name": "THE KAKATIYA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "KALX",
+      "name": "THE KALNA TOWN CREDIT CO OP BANK LTD"
+    },
+    {
+      "id": "KNBX",
+      "name": "THE KALOL NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KCCB",
+      "name": "THE KALUPUR COMMERCIAL CO OP BANK"
+    },
+    {
+      "id": "KJSB",
+      "name": "THE KALYAN JANATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KBCX",
+      "name": "THE KANAKAMAHALAKSHMI CO OP BANK LTD"
+    },
+    {
+      "id": "KANX",
+      "name": "THE KANARA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KACE",
+      "name": "THE KANGRA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KCOB",
+      "name": "THE KANGRA CO OP BANK LTD"
+    },
+    {
+      "id": "KCUX",
+      "name": "THE KANNUR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "TKDX",
+      "name": "THE KANNUR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "KAYX",
+      "name": "THE KANYAKUMARI DISTRICT CENTRAL CO OP BANK"
+    },
+    {
+      "id": "KTCX",
+      "name": "THE KAPURTHALA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KUCB",
+      "name": "THE KARAD URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TKUX",
+      "name": "THE KARAN URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KDBX",
+      "name": "THE KARIMNAGAR DISTRICT CO OP CENTRAL BANK"
+    },
+    {
+      "id": "TKAX",
+      "name": "THE KARJAN NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KNCX",
+      "name": "THE KARNAL CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KCDX",
+      "name": "THE KARNATAK CENTRAL CO OP BANK LTD DHARWAD"
+    },
+    {
+      "id": "KSCB",
+      "name": "THE KARNATAKA STATE CO OP APEX BANK LTD"
+    },
+    {
+      "id": "KRNX",
+      "name": "THE KARNAVATI CO OP BANK LTD"
+    },
+    {
+      "id": "KADX",
+      "name": "THE KASARAGOD DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "KSTX",
+      "name": "THE KASARGOD CO-OPERATIVE TOWN BANK LTD"
+    },
+    {
+      "id": "KTDX",
+      "name": "THE KATIHAR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KATX",
+      "name": "THE KATTAPPANA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KGDX",
+      "name": "THE KHAGARIA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KBNX",
+      "name": "THE KHAMBHAT NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KHUX",
+      "name": "THE KHAMGAON URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KCUB",
+      "name": "THE KHATTRI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "KHDX",
+      "name": "THE KHEDA PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "KDUX",
+      "name": "THE KODAGU DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "KDNX",
+      "name": "THE KODINAR NAGRIK SAHAKARI BANK LTD KODINAR"
+    },
+    {
+      "id": "KOTX",
+      "name": "THE KODINAR TALUKA CO OP BANKING UNION LTD K"
+    },
+    {
+      "id": "KULX",
+      "name": "THE KODOLI URBAN CO OP BANK LTD KODOLI"
+    },
+    {
+      "id": "KODX",
+      "name": "THE KODUNGALLUR TOWN CO OP BANK LTD"
+    },
+    {
+      "id": "KRCX",
+      "name": "THE KOLAR AND CHICKBALLAPUR DT CO OP CENTRAL BANK"
+    },
+    {
+      "id": "KUCX",
+      "name": "THE KOLHAPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KLMX",
+      "name": "THE KOLLAM DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "KUOB",
+      "name": "THE KONARK URBAN CO­OP BANK LTD"
+    },
+    {
+      "id": "KOBX",
+      "name": "THE KOPARGAON PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "KSMX",
+      "name": "THE KOSAMBA MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "KCEX",
+      "name": "THE KOTA CENTRAL CO OP BANK LTD KOTA"
+    },
+    {
+      "id": "TKTX",
+      "name": "THE KOTTAKKAL CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "KTBX",
+      "name": "THE KOTTAYAM DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "KOYX",
+      "name": "THE KOYLANCHAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "KRTX",
+      "name": "THE KRANTHI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "KRDX",
+      "name": "THE KRISHNA DISTRICT CO OP BANK"
+    },
+    {
+      "id": "KRIX",
+      "name": "THE KRISHNAGAR CITY CO OP BANK LTD"
+    },
+    {
+      "id": "KUKX",
+      "name": "THE KUKARWADA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "KUMX",
+      "name": "THE KUMBAKONAM CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KUNS",
+      "name": "THE KURMANCHAL NAGAR SAHKARI BANK LTD"
+    },
+    {
+      "id": "KURX",
+      "name": "THE KURUKSHETRA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "KTMX",
+      "name": "THE KUTCH MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "LAVB",
+      "name": "THE LAKSHMI VILAS BANK LTD"
+    },
+    {
+      "id": "LDCX",
+      "name": "THE LATUR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "LATX",
+      "name": "THE LATUR URBAN CO OP BANK LTD LATUR"
+    },
+    {
+      "id": "LCCX",
+      "name": "THE LUDHIANA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "LNSX",
+      "name": "THE LUNAWADA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TLPX",
+      "name": "THE LUNAWADA PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "TMAX",
+      "name": "THE MADANAPALLE CO OP TOWN BANK LTD"
+    },
+    {
+      "id": "MGUX",
+      "name": "THE MADGAUM URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MDCX",
+      "name": "THE MADURAI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MGDX",
+      "name": "THE MAGADH CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MACX",
+      "name": "THE MAHABHAIRAB CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "TMNX",
+      "name": "THE MAHANAGAR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MUBX",
+      "name": "THE MAHARAJA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MVCX",
+      "name": "THE MAHAVEER CO OP BANK LTD"
+    },
+    {
+      "id": "MCLX",
+      "name": "THE MAHENDRAGARH CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TMUX",
+      "name": "THE MAHILA URBAN CO OP BANK LTD GONDIA"
+    },
+    {
+      "id": "MUNX",
+      "name": "THE MAHUDHA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MAKX",
+      "name": "THE MAKARPURA INDUSTRIAL ESTATE CO OP BANK LTD"
+    },
+    {
+      "id": "MSBL",
+      "name": "THE MALAD SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MPDX",
+      "name": "THE MALAPPURAM DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "MABL",
+      "name": "THE MALLESHWARAM CO OP BANK LTD"
+    },
+    {
+      "id": "MAMX",
+      "name": "THE MANDVI MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "TMBX",
+      "name": "THE MANGALORE CATHOLIC CO OP BANK LTD"
+    },
+    {
+      "id": "TMTX",
+      "name": "THE MANGALORE CO OP TOWN BANK LTD"
+    },
+    {
+      "id": "MSCX",
+      "name": "THE MANIPUR STATE CO OP BANK LTD"
+    },
+    {
+      "id": "MAWX",
+      "name": "THE MANIPUR WOMENS CO OP BANK LTD"
+    },
+    {
+      "id": "MBLX",
+      "name": "THE MANMANDIR CO OP BANK LTD"
+    },
+    {
+      "id": "MNCX",
+      "name": "THE MANSA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MANX",
+      "name": "THE MANSA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MUCX",
+      "name": "THE MAPUSA URBAN CO OP BANK OF GOA LTD"
+    },
+    {
+      "id": "MMCX",
+      "name": "THE MATTANCHERRY MAHAJANIK CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "MCSX",
+      "name": "THE MATTANCHERRY SARVAJANIK CO OP BANK LTD"
+    },
+    {
+      "id": "MAYX",
+      "name": "THE MAYANI URBAN CO OP BANK LTD MAYANI"
+    },
+    {
+      "id": "MYCX",
+      "name": "THE MAYURBHANJ CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MEUX",
+      "name": "THE MEENACHIL EAST URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "MYAX",
+      "name": "THE MEGHALAYA CO OP APEX BANK LTD"
+    },
+    {
+      "id": "TNBX",
+      "name": "THE MEGHRAJ NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MUPX",
+      "name": "THE MEHMADABAD URBAN PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "MSNX",
+      "name": "THE MEHSANA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MJPX",
+      "name": "THE MEHSANA JILLA PANCHAYAT KARMACHARI CO-OP BANK"
+    },
+    {
+      "id": "MNSX",
+      "name": "THE MEHSANA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "MSNU",
+      "name": "THE MEHSANA URBAN CO OP BANK"
+    },
+    {
+      "id": "SEMX",
+      "name": "THE MERCANTILE CO OP URBAN BANK SECUNDERABAD LTD"
+    },
+    {
+      "id": "MLCG",
+      "name": "THE MERCHANTS LIBERAL COOP BANK LTD GADAG"
+    },
+    {
+      "id": "MSSX",
+      "name": "THE MERCHANTS SOUHARDA SAHAKARA BANK N"
+    },
+    {
+      "id": "MUCG",
+      "name": "THE MERCHANTS URBAN COOP BANK LTD GADAG"
+    },
+    {
+      "id": "TMPX",
+      "name": "THE MIDNAPORE PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "MIZX",
+      "name": "THE MIZORAM CO OP APEX BANK LTD"
+    },
+    {
+      "id": "TMSX",
+      "name": "THE MODASA NAGARIK SAHKARI BANK LTD"
+    },
+    {
+      "id": "MOGX",
+      "name": "THE MOGA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MGCB",
+      "name": "THE MOGAVEERA CO OP BANK LTD"
+    },
+    {
+      "id": "MPCX",
+      "name": "THE MOIRANG PRIMARY CO OP BANK LTD"
+    },
+    {
+      "id": "MJCX",
+      "name": "THE MONGHYR JAMUI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TMCX",
+      "name": "THE MOTIHARI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MBCX",
+      "name": "THE MUGBERIA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MCCX",
+      "name": "THE MUKTSAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MUBL",
+      "name": "THE MUNICIPAL CO OP BANK LTD"
+    },
+    {
+      "id": "MURX",
+      "name": "THE MURSHIDABAD DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MUSX",
+      "name": "THE MUSLIM CO OP BANK LTD"
+    },
+    {
+      "id": "MVTX",
+      "name": "THE MUVATTUPUZHA URBAN CO-OPERATIVE BANK LTD"
+    },
+    {
+      "id": "MFCX",
+      "name": "THE MUZAFFARPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "MYSX",
+      "name": "THE MYSORE CHAMARAJANAGAR DIST CO OP CEN BANK LTD"
+    },
+    {
+      "id": "TMSC",
+      "name": "THE MYSORE SILK CLOTH MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "NCCX",
+      "name": "THE NABADWIP CO OP CREDIT BANK LTD"
+    },
+    {
+      "id": "NPCX",
+      "name": "THE NADIAD PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "NAUX",
+      "name": "THE NAGAUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "NCDX",
+      "name": "THE NAGPUR DISTRICT CENTRAL COOPERATIVE BANK LTD."
+    },
+    {
+      "id": "NTBL",
+      "name": "THE NAINITAL BANK LIMITED"
+    },
+    {
+      "id": "TNHX",
+      "name": "THE NAKODAR HINDU URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "NLGX",
+      "name": "THE NALGONDA DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "NANX",
+      "name": "THE NANDED DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TNMX",
+      "name": "THE NANDED MERCHANTS CO OP BANK LTD NANDED"
+    },
+    {
+      "id": "TNUX",
+      "name": "THE NANDURA URBAN CO OP BANK LTD NANDURA"
+    },
+    {
+      "id": "NNCX",
+      "name": "THE NARODA NAGRIK CO OP BANK LTD"
+    },
+    {
+      "id": "NJSX",
+      "name": "THE NASIK JILHA MAHILA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "NMCB",
+      "name": "THE NASIK MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "NRDX",
+      "name": "THE NASIK ROAD DEOLALI VYAPARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TNCX",
+      "name": "THE NATIONAL CENTRAL CO OP BANK LTD BETTIAH"
+    },
+    {
+      "id": "NCBL",
+      "name": "THE NATIONAL CO OP BANK LTD"
+    },
+    {
+      "id": "NBBX",
+      "name": "THE NATIONAL CO OP BANK LTD BANGALORE"
+    },
+    {
+      "id": "NJCX",
+      "name": "THE NAV JEEVAN CO OP BANK LTD"
+    },
+    {
+      "id": "NDCB",
+      "name": "THE NAVAL DOCKYARD CO OP BANK LTD"
+    },
+    {
+      "id": "NAVX",
+      "name": "THE NAVNIRMAN CO OP BANK LTD"
+    },
+    {
+      "id": "NWCX",
+      "name": "THE NAWADA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "NAWX",
+      "name": "THE NAWANAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "NCBX",
+      "name": "THE NAWANSHAHR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TNKX",
+      "name": "THE NEELA KRISHNA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "TNEX",
+      "name": "THE NEHRUNAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "NUBX",
+      "name": "THE NEW URBAN CO OP BANK LTD RAMPUR"
+    },
+    {
+      "id": "NEYX",
+      "name": "THE NEYYATTINKARA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "NCUX",
+      "name": "THE NILAMBUR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "NDCX",
+      "name": "THE NILGIRIS DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "ORCB",
+      "name": "THE ODISHA STATE CO OP BANK LTD"
+    },
+    {
+      "id": "OMCX",
+      "name": "THE OJHAR MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "TOCX",
+      "name": "THE OTTAPALAM CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "PPCX",
+      "name": "THE PACHORA PEOPLES CO OP BANK LTD PACHORA"
+    },
+    {
+      "id": "PADX",
+      "name": "THE PADRA NAGAR NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PKDX",
+      "name": "THE PALAKKAD DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "PLOX",
+      "name": "THE PALAMOOR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "PACX",
+      "name": "THE PALI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PCCX",
+      "name": "THE PANCHKULA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PKBX",
+      "name": "THE PANCHKULA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PANX",
+      "name": "THE PANCHMAHAL DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "PCMX",
+      "name": "THE PANCHSHEEL MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "PDUX",
+      "name": "THE PANDHARPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PHIX",
+      "name": "THE PANIHATI COOPERATIVE BANK LTD"
+    },
+    {
+      "id": "PNCX",
+      "name": "THE PANIPAT URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PARX",
+      "name": "THE PARBHANI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PWUX",
+      "name": "THE PARWANOO URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PTNX",
+      "name": "THE PATAN URBAN CO OP BANK LTD PATAN"
+    },
+    {
+      "id": "PTCX",
+      "name": "THE PATIALA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TPCX",
+      "name": "THE PATLIPUTRA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "PVAX",
+      "name": "THE PAVANA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PAYX",
+      "name": "THE PAYANGADI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PYYX",
+      "name": "THE PAYYANUR CO OPERATIVE TOWN BANK LTD"
+    },
+    {
+      "id": "PYCX",
+      "name": "THE PAYYOLI CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "PMCX",
+      "name": "THE PIMPALGAON MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "PCUX",
+      "name": "THE POCHAMPALLY CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "PGTX",
+      "name": "THE PRAGATI CO OP BANK LTD THARA"
+    },
+    {
+      "id": "TPDX",
+      "name": "THE PRAKASAM DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "PSSX",
+      "name": "THE PRATHAMIK SHIKSHAK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "PRCX",
+      "name": "THE PRODDATUR CO OP TOWN BANK LTD"
+    },
+    {
+      "id": "PCSX",
+      "name": "THE PUDUCHERRY STATE CO OP BANK LTD"
+    },
+    {
+      "id": "PUNX",
+      "name": "THE PUNE URBAN CO-OP BANK"
+    },
+    {
+      "id": "PSCX",
+      "name": "THE PUNJAB STATE CO OP BANK LTD"
+    },
+    {
+      "id": "PUUX",
+      "name": "THE PURI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "PDBX",
+      "name": "THE PURNEA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "QUCX",
+      "name": "THE QUILON CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "RSUX",
+      "name": "THE RADHASOAMI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "THRX",
+      "name": "THE RAICHUR DISTRICT CENTRAL CO OP BANK LTD RAICHU"
+    },
+    {
+      "id": "RAEX",
+      "name": "THE RAILWAY EMPLOYEES CO OP BANK LTD"
+    },
+    {
+      "id": "RUMX",
+      "name": "THE RAIPUR URBAN MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "RHMX",
+      "name": "THE RAJ LAXMI MAHILA URBAN CO OP BANK LTD JAIPUR"
+    },
+    {
+      "id": "RJJX",
+      "name": "THE RAJAJINAGAR CO OP BANK LTD"
+    },
+    {
+      "id": "RSCB",
+      "name": "THE RAJASTHAN STATE CO OP BANK LTD"
+    },
+    {
+      "id": "RUCX",
+      "name": "THE RAJASTHAN URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RAMX",
+      "name": "THE RAJPUTANA MAHILA URBAN CO OP BAK LTD"
+    },
+    {
+      "id": "RAJX",
+      "name": "THE RAJSAMAND URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "RCDX",
+      "name": "THE RAMANATHAPURAM DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "RANX",
+      "name": "THE RANDER PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "RNBX",
+      "name": "THE RANUJ NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "REWX",
+      "name": "THE REWARI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "ROHX",
+      "name": "THE ROHTAK CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "RCCX",
+      "name": "THE ROPAR CENTRAL CO OP BANK"
+    },
+    {
+      "id": "SADX",
+      "name": "THE SABARKANTHA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SAHE",
+      "name": "THE SAHEBRAO DESHMUKH CO OP BANK LTD"
+    },
+    {
+      "id": "SASA",
+      "name": "THE SAHYADRI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SALX",
+      "name": "THE SALAL SARVODAYA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SCCX",
+      "name": "THE SALEM DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "STDX",
+      "name": "THE SAMASTIPUR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SMCX",
+      "name": "THE SANGAMNER MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "SHMX",
+      "name": "THE SANGHAMITRA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SCPX",
+      "name": "THE SANGRUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SKNX",
+      "name": "THE SANKHEDA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TSCX",
+      "name": "THE SANTRAGACHI CO OP BANK LTD"
+    },
+    {
+      "id": "STNX",
+      "name": "THE SANTRAMPUR URBAN CO OP BANK LIMITED"
+    },
+    {
+      "id": "SNGX",
+      "name": "THE SARANGPUR CO OP BANK LTD"
+    },
+    {
+      "id": "TSMX",
+      "name": "THE SARDARGUNJ MERCANTILE CO OP BANK LTD PATAN"
+    },
+    {
+      "id": "SACX",
+      "name": "THE SARVODAYA CO OP BANK LTD MUMBAI"
+    },
+    {
+      "id": "SNBX",
+      "name": "THE SARVODAYA NAGRIK SAHKARI BANK LTD"
+    },
+    {
+      "id": "SVOX",
+      "name": "THE SARVODAYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SASX",
+      "name": "THE SAS NAGAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TSBX",
+      "name": "THE SASARAM BHABHUA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TSAX",
+      "name": "THE SATANA MERCHANTS CO OP BANK LTD SATANA"
+    },
+    {
+      "id": "SSBL",
+      "name": "THE SATARA SHAKARI BANK LTD"
+    },
+    {
+      "id": "TSPX",
+      "name": "THE SATHAMBA PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "TSUX",
+      "name": "THE SAURASHTRA CO OP BANK LTD"
+    },
+    {
+      "id": "SOBX",
+      "name": "THE SECUNDERABAD CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SVBL",
+      "name": "THE SEVA VIKAS CO OP BANK LTD"
+    },
+    {
+      "id": "SEUX",
+      "name": "THE SEVALIA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TSIX",
+      "name": "THE SHILLONG CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SHCX",
+      "name": "THE SHIMLA URBAN COOP BANK LTD"
+    },
+    {
+      "id": "SAOX",
+      "name": "THE SHIMOGA ARECANUT MANDY MERCHANTS CO OP BANK LT"
+    },
+    {
+      "id": "SCOX",
+      "name": "THE SHIMOGA DIST CO OP CENTRAL BANK LTD SHIMOGA"
+    },
+    {
+      "id": "SPCX",
+      "name": "THE SHIRPUR PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "TSNX",
+      "name": "THE SHORANUR CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SIBX",
+      "name": "THE SIKAR KENDRIYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "SNDX",
+      "name": "THE SIND CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SIRX",
+      "name": "THE SIRCILLA CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SCBX",
+      "name": "THE SIROHI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SICX",
+      "name": "THE SIRSA CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SUSX",
+      "name": "THE SIRSI URBAN SAHAKARI BANK LTD SIRSI"
+    },
+    {
+      "id": "SITX",
+      "name": "THE SITAMARHI CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SVGX",
+      "name": "THE SIVAGANGAI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SCIX",
+      "name": "THE SOCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "SOLX",
+      "name": "THE SOLAPUR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SSLX",
+      "name": "THE SOLAPUR SOCIAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SNPX",
+      "name": "THE SONEPAT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SNCX",
+      "name": "THE SONEPAT URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "SCDX",
+      "name": "THE SOUTH CANARA DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SBCX",
+      "name": "THE SULTANS BATTERY CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "SGDX",
+      "name": "THE SUNDARGARH DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "SDCB",
+      "name": "THE SURAT DISTRICT CO OP BANK"
+    },
+    {
+      "id": "SUMX",
+      "name": "THE SURAT MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "SPCB",
+      "name": "THE SURAT PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "SUDX",
+      "name": "THE SURENDRANAGAR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "SUTB",
+      "name": "THE SUTEX CO OP BANK LTD"
+    },
+    {
+      "id": "TNIX",
+      "name": "THE TAMILNADU INDUSTRIAL CO OP BANK LTD"
+    },
+    {
+      "id": "TAPX",
+      "name": "THE TAPINDU URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TTCX",
+      "name": "THE TARN TARAN CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TTGX",
+      "name": "THE TASGAON URBAN CO OP BANK LTD TASGAON"
+    },
+    {
+      "id": "TESX",
+      "name": "THE TEXTILE CO OP BANK OF SURAT LTD"
+    },
+    {
+      "id": "TEMX",
+      "name": "THE TEXTILE MANUFACTURERS CO OP BANK LTD"
+    },
+    {
+      "id": "TDCB",
+      "name": "THE THANE DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TNDC",
+      "name": "THE THIRUVANANTHAPURAM DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "TIDX",
+      "name": "THE THIRUVANNAMALAI DISTRICT CENTRAL CO OP BANK LT"
+    },
+    {
+      "id": "THOX",
+      "name": "THE THOOTHUKUDI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TRDX",
+      "name": "THE TIRUCHIRAPALLI DIST CENT CO OP BANK LTD"
+    },
+    {
+      "id": "TIRX",
+      "name": "THE TIRUNELVELI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "TTUX",
+      "name": "THE TIRUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TCHX",
+      "name": "THE TOWN CO OP BANK LTD HOSKOTE"
+    },
+    {
+      "id": "TUBX",
+      "name": "THE TRICHUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TURX",
+      "name": "THE TURA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "UCCX",
+      "name": "THE UDAIPUR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "UMSX",
+      "name": "THE UDAIPUR MAHILA SAMRIDHI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TUMX",
+      "name": "THE UDAIPUR MAHILA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "UUCX",
+      "name": "THE UDAIPUR URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "UCTX",
+      "name": "THE UDUPI CO-OPERATIVE TOWN BANK LTD"
+    },
+    {
+      "id": "UMCX",
+      "name": "THE UMRETH URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "UNAX",
+      "name": "THE UNA PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "UNSX",
+      "name": "THE UNAVA NAGRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TUNX",
+      "name": "THE UNION CO OP BANK LTD"
+    },
+    {
+      "id": "TUCL",
+      "name": "THE UNION CO OP BANK LTD MAHINAGAR"
+    },
+    {
+      "id": "UNIX",
+      "name": "THE UNITED CO OP BANK LTD"
+    },
+    {
+      "id": "UPNX",
+      "name": "THE UNITED PURI NIMAPARA CENTRAL CO OP BANK"
+    },
+    {
+      "id": "TUDX",
+      "name": "THE URBAN CO OP BANK LTD DHARANGAON"
+    },
+    {
+      "id": "TPUX",
+      "name": "THE URBAN CO OP BANK LTD NO 1758 PERINTHALMANNA"
+    },
+    {
+      "id": "UROX",
+      "name": "THE URBAN CO OP BANK LTD ROURKELA"
+    },
+    {
+      "id": "TUOX",
+      "name": "THE URBAN CO OP BANK LTD SAHARANPUR"
+    },
+    {
+      "id": "UTBX",
+      "name": "THE UTTARPARA CO OP BANK LTD"
+    },
+    {
+      "id": "VUCX",
+      "name": "THE VAIDYANATH URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "VMMX",
+      "name": "THE VAIJAPUR MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "VCAX",
+      "name": "THE VAISH CO OP ADARSH BANK LTD"
+    },
+    {
+      "id": "VCNB",
+      "name": "THE VAISH CO OP NEW BANK LTD"
+    },
+    {
+      "id": "VHDX",
+      "name": "THE VAISHALI DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VSVX",
+      "name": "THE VAISHALI SHAHARI VIKAS CO OP BANK LTD"
+    },
+    {
+      "id": "VVCX",
+      "name": "THE VALLABH VIDYANAGAR COMMERCIAL BANK LTD"
+    },
+    {
+      "id": "VARA",
+      "name": "THE VARACHHA CO OP BANK LTD"
+    },
+    {
+      "id": "VRDX",
+      "name": "THE VARDHAMAN CO OP BANK LTD"
+    },
+    {
+      "id": "VEDX",
+      "name": "THE VELLORE DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VUVX",
+      "name": "THE VEPAR UDHYOG VIKAS SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VERX",
+      "name": "THE VERAVAL MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "TVPX",
+      "name": "THE VERAVAL PEOPLES CO OP BANK LTD"
+    },
+    {
+      "id": "VIJX",
+      "name": "THE VIJAY CO OP BANK LTD"
+    },
+    {
+      "id": "VDCX",
+      "name": "THE VILLUPURAM DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VIMX",
+      "name": "THE VIRAMGAM MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "VIRX",
+      "name": "THE VIRUDHUNAGAR DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VISX",
+      "name": "THE VISAKHAPATNAM CO OP BANK LTD"
+    },
+    {
+      "id": "VSBL",
+      "name": "THE VISHWESHWAR SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VCOX",
+      "name": "THE VITA MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "TVUX",
+      "name": "THE VITA URBAN CO OP BANK LTD VITA"
+    },
+    {
+      "id": "WACX",
+      "name": "THE WAGHODIA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WAIX",
+      "name": "THE WAI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WARX",
+      "name": "THE WARANGAL DISTRICT CO OP CENTRAL BANK LTD"
+    },
+    {
+      "id": "WUCX",
+      "name": "THE WASHIM URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WDCX",
+      "name": "THE WAYANAD DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "WBSC",
+      "name": "THE WEST BENGAL STATE CO OP BANK LTD"
+    },
+    {
+      "id": "WCBX",
+      "name": "THE WOMENS CO OP BANK LTD"
+    },
+    {
+      "id": "YNCX",
+      "name": "THE YAMUNA NAGAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "YCBX",
+      "name": "THE YASHWANT CO OP BANK LTD"
+    },
+    {
+      "id": "YAVX",
+      "name": "THE YAVATMAL URBAN CO OP BANK LTD YAVATMAL"
+    },
+    {
+      "id": "ZCBL",
+      "name": "THE ZOROASTRIAN CO OP BANK LTD"
+    },
+    {
+      "id": "TDCX",
+      "name": "THRISSUR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "TUCX",
+      "name": "TIRUPATI URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "TJSB",
+      "name": "TJSB SAHAKARI BANK LTD"
+    },
+    {
+      "id": "TRAX",
+      "name": "TRANSPORT CO OP BANK LTD"
+    },
+    {
+      "id": "TGBX",
+      "name": "TRIPURA GRAMIN BANK"
+    },
+    {
+      "id": "TPSX",
+      "name": "TRIPURA STATE CO OP BANK LTD"
+    },
+    {
+      "id": "TGMB",
+      "name": "TUMKUR GRAIN MERCHANTS CO OP BANK LTD"
+    },
+    {
+      "id": "UCBA",
+      "name": "UCO BANK"
+    },
+    {
+      "id": "USNX",
+      "name": "UDHAM SINGH NAGAR DISTRICT CO OP BANK LTD"
+    },
+    {
+      "id": "UDVX",
+      "name": "UDYAM VIKAS SAHAKARI BANK LTD. PUNE"
+    },
+    {
+      "id": "UJVN",
+      "name": "Ujjivan Small Finance Bank"
+    },
+    {
+      "id": "USFB",
+      "name": "UJJIVAN SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "UMAX",
+      "name": "UMA CO OP BANK LTD"
+    },
+    {
+      "id": "UMUX",
+      "name": "UMIYA URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "UBIN",
+      "name": "UNION BANK OF INDIA"
+    },
+    {
+      "id": "UTBI",
+      "name": "UNITED BANK OF INDIA"
+    },
+    {
+      "id": "UICX",
+      "name": "UNITED INDIA CO OP BANK LTD NAGINA"
+    },
+    {
+      "id": "UNMX",
+      "name": "UNITED MERCANTILE CO OP BANK LTD"
+    },
+    {
+      "id": "UNBA",
+      "name": "Unity Small Finance Bank"
+    },
+    {
+      "id": "UCUX",
+      "name": "UNIVERSAL CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "UJSX",
+      "name": "UNJHA NAGARIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "UCBX",
+      "name": "URBAN CO OP BANK LTD BAREILLY"
+    },
+    {
+      "id": "UBBX",
+      "name": "URBAN CO OP BANK LTD BASTI"
+    },
+    {
+      "id": "URDX",
+      "name": "URBAN CO OP BANK LTD BUDAUN"
+    },
+    {
+      "id": "UCDX",
+      "name": "URBAN CO OP BANK LTD DEHRADUN"
+    },
+    {
+      "id": "URMX",
+      "name": "URBAN CO OP BANK LTD MAINPURI"
+    },
+    {
+      "id": "URCX",
+      "name": "URBAN CO OPERATIVA BANK LTD SIDDHARTHNAGAR"
+    },
+    {
+      "id": "UGBX",
+      "name": "UTKAL GRAMEEN BANK"
+    },
+    {
+      "id": "UTKS",
+      "name": "UTKARSH SMALL FINANCE BANK LTD"
+    },
+    {
+      "id": "UBGX",
+      "name": "UTTAR BIHAR GRAMIN BANK"
+    },
+    {
+      "id": "UPCX",
+      "name": "UTTAR PRADESH CO OP BANK LTD"
+    },
+    {
+      "id": "UTGX",
+      "name": "UTTARAKHAND GRAMIN BANK"
+    },
+    {
+      "id": "UTKX",
+      "name": "UTTARAKHAND STATE CO OP BANK LTD"
+    },
+    {
+      "id": "UKGX",
+      "name": "UTTARBANGA KSHETRIYA GRAMIN BANK"
+    },
+    {
+      "id": "UTZX",
+      "name": "UTTARKASHI ZILA SAHKARI BANK LTD"
+    },
+    {
+      "id": "UTCX",
+      "name": "UTTRAKHAND CO OP BANK LTD"
+    },
+    {
+      "id": "VSMX",
+      "name": "VAIJANATH APPASARAF MARATHWADA NAGARISAHAKARI BANK"
+    },
+    {
+      "id": "VANX",
+      "name": "VAISHYA NAGARI SAHAKARI BANK LTD PARBHANI"
+    },
+    {
+      "id": "VAIX",
+      "name": "VAISHYA SAHAKARI BANK LTD MUMBAI"
+    },
+    {
+      "id": "VAUX",
+      "name": "VALMIKI URBAN CO OP BANK LTD PATHRI"
+    },
+    {
+      "id": "VADX",
+      "name": "VALSAD DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VMCX",
+      "name": "VARDHAMAN (MAHILA) CO OP URBAN BANK LTD"
+    },
+    {
+      "id": "VJSX",
+      "name": "VASAI JANATA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VVSB",
+      "name": "VASAI VIKAS SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VSSX",
+      "name": "VEERASHAIVA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VMUX",
+      "name": "VIDARBHA MERCHANTS URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WKGX",
+      "name": "VIDHARBHA KONKAN GRAMIN BANK"
+    },
+    {
+      "id": "VSBX",
+      "name": "VIDYA SAHAKARI BANK LTD"
+    },
+    {
+      "id": "VDYX",
+      "name": "VIDYANAND CO OP BANK LTD"
+    },
+    {
+      "id": "VIDX",
+      "name": "VIDYASAGAR CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "VICX",
+      "name": "VIJAY COMMERCIAL CO OP BANK LTD"
+    },
+    {
+      "id": "VIJB",
+      "name": "VIJAYA BANK"
+    },
+    {
+      "id": "VKSX",
+      "name": "VIKAS SAHAKARI BANK LTD SOLAPUR"
+    },
+    {
+      "id": "VSCX",
+      "name": "VIKAS SOUHARDA CO OP BANK LTD"
+    },
+    {
+      "id": "VIKX",
+      "name": "VIKRAMADITYA NAGRIK SAHAKARI BANK"
+    },
+    {
+      "id": "VKCX",
+      "name": "VIMA KAMGAR CO OP BANK LTD"
+    },
+    {
+      "id": "VCBX",
+      "name": "VISHWAS CO OP BANK LTD"
+    },
+    {
+      "id": "VNSX",
+      "name": "VIVEKANAND NAGRIK SAHKARI BANK MYDT"
+    },
+    {
+      "id": "VYPX",
+      "name": "VYAPARI SAHAKARI BANK MARYADIT SOLAPUR"
+    },
+    {
+      "id": "VASX",
+      "name": "VYAPARIK AUDHYOGIK SAHAKARI BANK KTD"
+    },
+    {
+      "id": "VYAX",
+      "name": "VYAVSAYAK SAHKARI BANK LTD"
+    },
+    {
+      "id": "WNBX",
+      "name": "WANA NAGIRIK SAHAKARI BANK LTD"
+    },
+    {
+      "id": "WRCX",
+      "name": "WARANGAL URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WZUX",
+      "name": "WARDHA ZILLA PARISHAD EMP URBAN CO OP BANK LTD"
+    },
+    {
+      "id": "WAUX",
+      "name": "WARDHAMAN URBAN CO OP BANK LTD NAGPUR"
+    },
+    {
+      "id": "YLNX",
+      "name": "YADAGIRI LAKSHMI NARSIMHA SWAMY CO OP URBAN BANK"
+    },
+    {
+      "id": "YADX",
+      "name": "YAVATMAL DISTRICT CENTRAL CO OP BANK LTD"
+    },
+    {
+      "id": "YMSX",
+      "name": "YAVATMAL MAHILA SAHAKARI BANK LTD YAVATMAL"
+    },
+    {
+      "id": "YESB",
+      "name": "YES BANK"
+    },
+    {
+      "id": "YNSX",
+      "name": "YESHWANT NAGARI SAHAKARI BANK LTD"
+    },
+    {
+      "id": "YDCX",
+      "name": "YOUTH DEVELOPMENT CO OP BANK LTD"
+    },
+    {
+      "id": "ZISX",
+      "name": "ZILA SAHAKARI BANK LIMTED LUCKNOW"
+    },
+    {
+      "id": "ZSBX",
+      "name": "ZILA SAHAKARI BANK LTD BIJNOR"
+    },
+    {
+      "id": "ZSBG",
+      "name": "ZILA SAHAKARI BANK LTD GORAKHPUR"
+    },
+    {
+      "id": "ZSHX",
+      "name": "ZILA SAHAKARI BANK LTD HARIDWAR"
+    },
+    {
+      "id": "ZSLX",
+      "name": "ZILA SAHAKARI BANK LTD LAKHIMPUR KHERI"
+    },
+    {
+      "id": "ZLLX",
+      "name": "ZILA SAHAKARI BANK LTD LALITPUR"
+    },
+    {
+      "id": "ZSMX",
+      "name": "ZILA SAHAKARI BANK LTD MEERUT"
+    },
+    {
+      "id": "ZIBX",
+      "name": "ZILA SAHKARI BANK LTD BAREILLY"
+    },
+    {
+      "id": "ZBBX",
+      "name": "ZILA SAHKARI BANK LTD BULANDSHAHAR"
+    },
+    {
+      "id": "ZSGX",
+      "name": "ZILA SAHKARI BANK LTD GARHWAL KOTDWAR"
+    },
+    {
+      "id": "ZSBL",
+      "name": "ZILA SAHKARI BANK LTD GHAZIABAD"
+    },
+    {
+      "id": "ZSJX",
+      "name": "ZILA SAHKARI BANK LTD JHANSI"
+    },
+    {
+      "id": "ZSKX",
+      "name": "ZILA SAHKARI BANK LTD KANPUR"
+    },
+    {
+      "id": "ZSAX",
+      "name": "ZILA SAHKARI BANK LTD MAU"
+    },
+    {
+      "id": "ZIMX",
+      "name": "ZILA SAHKARI BANK LTD MIRZAPUR"
+    },
+    {
+      "id": "ZMMX",
+      "name": "ZILA SAHKARI BANK LTD MORADABAD"
+    },
+    {
+      "id": "ZILX",
+      "name": "ZILA SAHKARI BANK LTD UNNAO"
+    }
+  ]
+}
