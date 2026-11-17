@@ -1,0 +1,18 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+.DS_Store
+coverage/
+playwright-report/
+test-results/
+
+# Commit reproducible dependency locks; exclude all local secrets/artifacts.
+!package-lock.json
+.env.*
+!.env.example
+data/
+test-results/
+playwright-report/
+*.jsonl

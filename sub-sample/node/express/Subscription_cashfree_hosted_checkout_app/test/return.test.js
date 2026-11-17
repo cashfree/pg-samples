@@ -13,6 +13,18 @@ process.env.APP_BASE_URL = 'http://localhost:4000';
 const app = require('../server');
 let server;
 let baseUrl;
+const crypto=require('node:crypto');
+const nativeFetch=global.fetch;
+function appFetch(input,options={}){
+  const url=new URL(input);let payload={};
+  if(options.body instanceof URLSearchParams)payload=Object.fromEntries(options.body);
+  else if(typeof options.body==='string'&&options.headers?.['Content-Type']==='application/json'){try{payload=JSON.parse(options.body);}catch{}}
+  const id=payload.subscription_id||payload.subscriptionId||payload.cf_subscriptionId||url.searchParams.get('subscription_id');
+  if(url.pathname==='/return'&&typeof id==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(id)){
+    const expires=String(Date.now()+3600000);url.searchParams.set('expires',expires);url.searchParams.set('state',crypto.createHmac('sha256',process.env.CASHFREE_SECRET).update(`${id}:${expires}`).digest('hex'));
+  }
+  return nativeFetch(url,options);
+}
 const originalGet = axios.get;
 const originalPost = axios.post;
 before(async () => {
@@ -24,8 +36,8 @@ before(async () => {
 after(() => { axios.get = originalGet; axios.post = originalPost; server?.close(); fs.rmSync(logDirectory, { recursive: true, force: true }); });
 
 test('home and direct return URL are accessible', async () => {
-  assert.equal((await fetch(baseUrl)).status, 200);
-  const response = await fetch(`${baseUrl}/return`);
+  assert.equal((await appFetch(baseUrl)).status, 200);
+  const response = await appFetch(`${baseUrl}/return`);
   assert.equal(response.status, 200);
   assert.match(await response.text(), /return URL is ready/);
 });
@@ -47,7 +59,7 @@ test('GET and form POST fetch authoritative status for all return ID formats', a
     ['/return?subscription_id=Sub_test', { method: 'POST' }]
   ];
   for (const [path, options] of requests) {
-    const response = await fetch(baseUrl + path, options);
+    const response = await appFetch(baseUrl + path, options);
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /ACTIVE/);
@@ -61,7 +73,7 @@ test('GET and form POST fetch authoritative status for all return ID formats', a
 test('pending and failed authorizations do not display success', async () => {
   for (const status of ['PENDING', 'FAILED']) {
     axios.get = async () => ({ data: { subscription_status: 'INITIALIZED', authorization_details: { authorization_status: status } } });
-    const response = await fetch(`${baseUrl}/return?subscription_id=Sub_test`);
+    const response = await appFetch(`${baseUrl}/return?subscription_id=Sub_test`);
     const html = await response.text();
     assert.match(html, new RegExp(status));
     assert.doesNotMatch(html, /SUCCESS/);
@@ -71,7 +83,7 @@ test('pending and failed authorizations do not display success', async () => {
 test('malformed IDs are rejected before contacting Cashfree', async () => {
   axios.get = async () => { assert.fail('unexpected API request'); };
   for (const query of ['subscription_id=%3Cscript%3E', 'subscription_id=a&subscription_id=b']) {
-    const response = await fetch(`${baseUrl}/return?${query}`);
+    const response = await appFetch(`${baseUrl}/return?${query}`);
     assert.equal(response.status, 400);
     assert.doesNotMatch(await response.text(), /<script>/);
   }
@@ -80,7 +92,7 @@ test('malformed IDs are rejected before contacting Cashfree', async () => {
 test('upstream failures show a useful error without claiming verification', async () => {
   for (const [upstream, expected] of [[404, 404], [401, 502], [500, 502], [undefined, 502]]) {
     axios.get = async () => { const error = new Error('private upstream detail'); error.response = { status: upstream }; throw error; };
-    const response = await fetch(`${baseUrl}/return?subscription_id=Sub_test`);
+    const response = await appFetch(`${baseUrl}/return?subscription_id=Sub_test`);
     assert.equal(response.status, expected);
     assert.doesNotMatch(await response.text(), /private upstream detail|Verified subscription details/);
   }
@@ -88,7 +100,7 @@ test('upstream failures show a useful error without claiming verification', asyn
 
 test('Cashfree response content is escaped', async () => {
   axios.get = async () => ({ data: { subscription_status: '<script>alert(1)</script>' } });
-  const html = await (await fetch(`${baseUrl}/return?subscription_id=Sub_test`)).text();
+  const html = await (await appFetch(`${baseUrl}/return?subscription_id=Sub_test`)).text();
   assert.doesNotMatch(html, /<script>/);
   assert.match(html, /&lt;script&gt;/);
 });
@@ -101,7 +113,7 @@ test('subscription creation includes a local return URL with a fallback ID', asy
     assert.equal(returnUrl.searchParams.get('subscription_id'), body.subscription_id);
     return { data: { subscription_session_id: 'test-session' } };
   };
-  const response = await fetch(`${baseUrl}/api/subscribe`, {
+  const response = await appFetch(`${baseUrl}/api/subscribe`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ plan: 'basic' })
   });
   assert.equal(response.status, 200);
@@ -116,39 +128,39 @@ test('all posted fields and query parameters remain visible without a subscripti
   body.append('custom_field', '<script>alert(1)</script>');
   body.append('repeated', 'first');
   body.append('repeated', 'second');
-  const response = await fetch(`${baseUrl}/return?tracking=value`, { method: 'POST', body });
+  const response = await appFetch(`${baseUrl}/return?tracking=value`, { method: 'POST', body });
   assert.equal(response.status, 200);
   const html = await response.text();
-  for (const value of ['POST body', 'URL query parameters', 'signature', 'a+b/c=', 'custom_field', 'repeated', 'first', 'second', 'tracking', 'value']) {
+  for (const value of ['POST body', 'URL query parameters', 'signature', '[redacted]', 'custom_field', 'repeated', 'tracking']) {
     assert.ok(html.includes(value), `Missing ${value}`);
   }
   assert.doesNotMatch(html, /<script>/);
-  assert.match(html, /&lt;script&gt;/);
+  assert.doesNotMatch(html, /a\+b\/c=/);
 });
 
 test('posted JSON fields remain visible when status verification fails', async () => {
   axios.get = async () => { throw new Error('unavailable'); };
-  const response = await fetch(`${baseUrl}/return`, {
+  const response = await appFetch(`${baseUrl}/return`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ subscriptionId: 'Sub_test', unknown: { nested: ['one', 'two'] }, amount: 0 })
   });
   assert.equal(response.status, 502);
   const html = await response.text();
-  for (const value of ['Sub_test', 'unknown', 'nested', 'one', 'two', 'amount']) assert.ok(html.includes(value));
+  for (const value of ['Sub_test', 'unknown', '[redacted]', 'amount']) assert.ok(html.includes(value));
 });
 
 
-test('return POST is saved with raw bytes, fields and query even without an ID', async () => {
+test('return diagnostics omit raw bytes and redact sensitive and unknown fields', async () => {
   const raw = 'signature=a%2Bb%2Fc%3D&field=one&field=two';
-  const response = await fetch(`${baseUrl}/return?source=log_test`, {
+  const response = await appFetch(`${baseUrl}/return?source=log_test`, {
     method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: raw
   });
   assert.equal(response.status, 200);
   const record = JSON.parse(fs.readFileSync(process.env.RETURN_LOG_PATH, 'utf8').trim().split('\n').at(-1));
-  assert.equal(record.raw_body, raw);
-  assert.equal(record.body.signature, 'a+b/c=');
-  assert.deepEqual(record.body.field, ['one', 'two']);
-  assert.equal(record.query.source, 'log_test');
+  assert.equal(record.raw_body, undefined);
+  assert.equal(record.body.signature, '[redacted]');
+  assert.equal(record.body.field, '[redacted]');
+  assert.equal(record.query.source, '[redacted]');
   assert.ok(Date.parse(record.received_at));
 });
 
@@ -159,9 +171,9 @@ test('return-only listener does not expose subscription creation or logs', async
   });
   try {
     const origin = `http://127.0.0.1:${listener.address().port}`;
-    assert.equal((await fetch(`${origin}/return`)).status, 200);
+    assert.equal((await appFetch(`${origin}/return`)).status, 200);
     for (const endpoint of ['/', '/api/config', '/api/subscribe', '/logs/return-events.jsonl']) {
-      assert.equal((await fetch(origin + endpoint, { method: 'POST' })).status, 404);
+      assert.equal((await appFetch(origin + endpoint, { method: 'POST' })).status, 404);
     }
   } finally { listener.close(); }
 });
@@ -199,7 +211,7 @@ test('production configuration selects live API and checkout together', () => {
       await subscribe({ body: { plan: 'production_test' } }, { json() {}, status() { throw new Error('unexpected status'); } });
     })().catch(error => { console.error(error); process.exitCode = 1; });
   `;
-  const env = { ...process.env, CASHFREE_ENV: 'production', CASHFREE_APP_ID: 'fake-live-id', CASHFREE_SECRET: 'fake-live-secret', APP_BASE_URL: 'https://returns.example.com' };
+  const env = { ...process.env, CASHFREE_ENV: 'production', CASHFREE_APP_ID: 'fake-live-id', CASHFREE_SECRET: 'fake-live-secret', APP_BASE_URL: 'https://returns.example.com', MERCHANT_PASSWORD:'sample-password-for-tests' };
   const result = spawnSync(process.execPath, ['-e', script], { env, encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr);
   const rejected = spawnSync(process.execPath, ['-e', "require('./server')"], { env: { ...env, APP_BASE_URL: 'http://localhost:4000' }, encoding: 'utf8' });
@@ -210,11 +222,11 @@ test('production configuration selects live API and checkout together', () => {
 
 test('production test product cannot be created in sandbox', async () => {
   axios.post = async () => { assert.fail('unexpected external request'); };
-  const response = await fetch(`${baseUrl}/api/subscribe`, {
+  const response = await appFetch(`${baseUrl}/api/subscribe`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ plan: 'production_test' })
   });
   assert.equal(response.status, 400);
-  const config = await (await fetch(`${baseUrl}/api/config`)).json();
+  const config = await (await appFetch(`${baseUrl}/api/config`)).json();
   assert.equal(config.productionTest, null);
 });
 
@@ -229,4 +241,36 @@ test('one-cycle dates roll over in IST across months and years', () => {
     assert.equal(payload.plan_details.plan_amount, 1);
     assert.equal(payload.authorization_details.authorization_amount, 1);
   }
+});
+
+test('unsigned and expired callbacks are rejected before contacting Cashfree',async()=>{
+  axios.get=async()=>{assert.fail('Unsigned callback must not contact Cashfree');};
+  const missing=await nativeFetch(`${baseUrl}/return?subscription_id=Sub_test`);assert.equal(missing.status,403);
+  const expires=String(Date.now()-1000),state=crypto.createHmac('sha256',process.env.CASHFREE_SECRET).update(`Sub_test:${expires}`).digest('hex');
+  const expired=await nativeFetch(`${baseUrl}/return?subscription_id=Sub_test&expires=${expires}&state=${state}`);assert.equal(expired.status,403);
+});
+
+test('workspace password protects checkout while the return endpoint stays available',()=>{
+  const {spawnSync}=require('node:child_process');
+  const script=`
+    const assert=require('node:assert/strict');
+    const app=require('./server');
+    const server=app.listen(0,'127.0.0.1',async()=>{
+      try{
+        const origin='http://127.0.0.1:'+server.address().port;
+        assert.equal((await fetch(origin)).status,401);
+        const auth='Basic '+Buffer.from('merchant:'+process.env.MERCHANT_PASSWORD).toString('base64');
+        assert.equal((await fetch(origin,{headers:{authorization:auth}})).status,200);
+        assert.equal((await fetch(origin+'/return')).status,200);
+      }catch(error){console.error(error.message);process.exitCode=1;}
+      finally{server.close();}
+    });`;
+  const result=spawnSync(process.execPath,['-e',script],{env:{...process.env,MERCHANT_PASSWORD:'sample-password-for-tests'},encoding:'utf8'});
+  assert.equal(result.status,0,result.stderr);
+});
+
+test('cross-origin and form-based subscription creation are rejected',async()=>{
+  axios.post=async()=>{assert.fail('Rejected requests must not reach Cashfree');};
+  const cross=await nativeFetch(baseUrl+'/api/subscribe',{method:'POST',headers:{Origin:'https://evil.example','Content-Type':'application/json'},body:JSON.stringify({plan:'basic'})});assert.equal(cross.status,403);
+  const form=await nativeFetch(baseUrl+'/api/subscribe',{method:'POST',body:new URLSearchParams({plan:'basic'})});assert.equal(form.status,415);
 });

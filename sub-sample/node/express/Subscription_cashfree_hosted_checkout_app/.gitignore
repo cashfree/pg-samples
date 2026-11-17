@@ -40,3 +40,11 @@ coverage/
 # ASP.NET
 bin/
 obj/
+# Commit reproducible dependency locks; exclude all local secrets/artifacts.
+!package-lock.json
+.env.*
+!.env.example
+data/
+test-results/
+playwright-report/
+*.jsonl

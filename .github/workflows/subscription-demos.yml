@@ -1,0 +1,41 @@
+name: Subscription demo checks
+on:
+  push:
+    paths: ['sub-sample/**', '.github/workflows/subscription-demos.yml']
+  pull_request:
+    paths: ['sub-sample/**', '.github/workflows/subscription-demos.yml']
+permissions:
+  contents: read
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node sub-sample/node/express/check-publication.mjs
+  node:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        sample: [Subscription_cashfree_hosted_checkout_app, Subscription_Seamless_Demo_app]
+    defaults:
+      run:
+        working-directory: sub-sample/node/express/${{ matrix.sample }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sub-sample/node/express/${{ matrix.sample }}/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm audit --audit-level=low
+      - run: npm test
+      - if: matrix.sample == 'Subscription_Seamless_Demo_app'
+        run: npm run check
+      - if: matrix.sample == 'Subscription_Seamless_Demo_app'
+        run: npx playwright install --with-deps chromium
+      - if: matrix.sample == 'Subscription_Seamless_Demo_app'
+        run: npm run test:browser
